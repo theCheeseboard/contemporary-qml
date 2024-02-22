@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Effects
+import Contemporary
 
 ApplicationWindow {
     id: window
@@ -15,6 +16,11 @@ ApplicationWindow {
     minimumHeight: 480
 
     color: "transparent"
+
+    palette: Palette {
+        window: Contemporary.background
+        windowText: Contemporary.foreground
+    }
 
     MouseArea {
         id: outsideMouseArea
@@ -30,7 +36,7 @@ ApplicationWindow {
 
             Rectangle {
                 id: rootRect
-                color: "black"
+                color: Contemporary.background
                 anchors.fill: parent
                 radius: 5
 
@@ -42,7 +48,7 @@ ApplicationWindow {
 
                         Loader {
                             id: actionBarLoader
-                            height: childrenRect.height
+                            Layout.preferredHeight: childrenRect.height
                             Layout.fillWidth: true
                         }
                     }
@@ -59,7 +65,7 @@ ApplicationWindow {
             anchors.fill: insideMouseArea
             shadowBlur: 1.0
             shadowEnabled: true
-            shadowColor: "#808080"
+            shadowColor: "#000000"
             shadowVerticalOffset: 0
             shadowHorizontalOffset: 0
             shadowScale: 1

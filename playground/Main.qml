@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "pages" as Pages
 import com.vicr123.Contemporary
+import Contemporary
 
 ContemporaryWindow {
     id: window
@@ -53,7 +54,8 @@ ContemporaryWindow {
             }
 
             highlight: Rectangle {
-                color: "lightsteelblue"; radius: 5
+                color: Contemporary.accent;
+                radius: 5
             }
 
             focus: true

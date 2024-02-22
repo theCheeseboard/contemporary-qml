@@ -10,7 +10,8 @@ class ContemporaryStyle : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QColor accent READ accent WRITE setAccent NOTIFY accentChanged)
-
+    Q_PROPERTY(QColor background READ background WRITE setBackground NOTIFY backgroundChanged)
+    Q_PROPERTY(QColor foreground READ foreground WRITE setForeground NOTIFY foregroundChanged)
 public:
     explicit ContemporaryStyle(QObject *parent = nullptr);
     ~ContemporaryStyle();
@@ -20,13 +21,21 @@ public:
     QColor accent() const;
     void setAccent(QColor accent);
 
-    Q_INVOKABLE QColor hovered(QColor color);
-    Q_INVOKABLE QColor pressed(QColor color);
-    Q_INVOKABLE QColor disabled(QColor color);
+    QColor background() const;
+    void setBackground(QColor background);
+
+    QColor foreground() const;
+    void setForeground(QColor foreground);
+
+    Q_INVOKABLE static QColor hovered(QColor color);
+    Q_INVOKABLE static QColor pressed(QColor color);
+    Q_INVOKABLE static QColor disabled(QColor color);
     Q_INVOKABLE QColor calculateColor(QColor color, bool hovered, bool pressed, bool disabled);
 
 signals:
     void accentChanged();
+    void backgroundChanged();
+    void foregroundChanged();
 
 private:
     ContemporaryStylePrivate* d;
