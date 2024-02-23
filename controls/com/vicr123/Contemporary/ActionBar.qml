@@ -15,13 +15,11 @@ MouseArea {
         anchors.right: root.right
 
         Button {
-            text: qsTr("Button");
-            onClicked: root.control.close()
-        }
-
-        Button {
-            text: qsTr("Button");
-            onClicked: root.control.showFullScreen()
+            id: menuButton
+            icon.name: "com.vicr123.thebeat"
+            icon.color: "transparent"
+            flat: true
+            Layout.preferredWidth: menuButton.height
         }
 
         Rectangle {

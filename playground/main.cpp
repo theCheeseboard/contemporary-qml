@@ -2,13 +2,14 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QQmlEngine>
-#include <QQmlEngineExtensionPlugin>
+#include <QIcon>
 
 #include "contemporaryinitialisation.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+    app.setWindowIcon(QIcon::fromTheme("com.vicr123.thebeat"));
 
     QQuickStyle::setStyle("com.vicr123.Contemporary.CoreStyles");
     // QQuickStyle::setStyle("Material");
