@@ -8,21 +8,40 @@ Control {
     Layout.fillHeight: true
     Layout.fillWidth: true
 
-    ColumnLayout {
-        Button {
-            text: qsTr("Default Button")
+    RowLayout {
+        ColumnLayout {
+            Button {
+                text: qsTr("Default Button")
+            }
+
+            Button {
+                enabled: false
+                text: qsTr("Disabled Button")
+            }
+
+            Button {
+                checkable: true
+                text: qsTr("Checkable Button")
+            }
         }
 
-        Button {
-            enabled: false
-            text: qsTr("Disabled Button")
-        }
+        ColumnLayout {
+            Button {
+                text: qsTr("Flat Default Button")
+                flat: true
+            }
 
-        Button {
-            checkable: true
-            text: qsTr("Checkable Button")
-        }
+            Button {
+                enabled: false
+                flat: true
+                text: qsTr("Flat Disabled Button")
+            }
 
-        ExampleControl { }
+            Button {
+                checkable: true
+                flat: true
+                text: qsTr("Flat Checkable Button")
+            }
+        }
     }
 }

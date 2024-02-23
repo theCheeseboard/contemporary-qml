@@ -38,19 +38,26 @@ T.Button {
         id: background
         implicitWidth: 100
         implicitHeight: 40
-        visible: !control.flat || control.down || control.checked || control.highlighted
 
-        color: Contemporary.accent
+        color: baseColor()
         border.color: control.palette.highlight
         border.width: control.visualFocus ? 2 : 0
         radius: 5
+
+        function baseColor() {
+            if (control.flat) {
+                return Contemporary.background;
+            } else {
+                return Contemporary.accent;
+            }
+        }
 
         states: [
             State {
                 name: "off"
                 PropertyChanges {
                     target: background
-                    color: Contemporary.accent
+                    color: baseColor()
                 }
             },
             State {
@@ -58,7 +65,7 @@ T.Button {
                 when: !control.enabled
                 PropertyChanges {
                     target: background
-                    color: Contemporary.disabled(Contemporary.accent)
+                    color: Contemporary.disabled(baseColor())
                 }
             },
             State {
@@ -66,7 +73,7 @@ T.Button {
                 when: control.highlighted || control.checked || control.pressed
                 PropertyChanges {
                     target: background
-                    color: Contemporary.pressed(Contemporary.accent)
+                    color: Contemporary.pressed(baseColor())
                 }
             },
             State {
@@ -74,7 +81,7 @@ T.Button {
                 when: control.hovered
                 PropertyChanges {
                     target: background
-                    color: Contemporary.hovered(Contemporary.accent)
+                    color: Contemporary.hovered(baseColor())
                 }
             }
         ]
