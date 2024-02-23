@@ -9,6 +9,8 @@ qt_add_qml_module(contemporary-corecontrols
         contemporarystyle.cpp contemporarystyle.h
         contemporaryinitialisation.h contemporaryinitialisation.cpp
     PLUGIN_TARGET contemporary-corecontrols-plugin
+    QML_FILES CheckBox.qml
+    QML_FILES RadioButton.qml
 )
 
 target_link_libraries(contemporary-corecontrols
