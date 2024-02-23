@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import "pages" as Pages
 import com.vicr123.Contemporary
 import Contemporary
+import Qt.labs.platform as Labs
 
 ContemporaryWindow {
     id: window
@@ -14,6 +15,28 @@ ContemporaryWindow {
 
     actionBar: ActionBar {
         control: window
+    }
+
+    Labs.MenuBar {
+        Labs.Menu {
+            title: qsTr("&File")
+            Labs.MenuItem { text: qsTr("&New...") }
+            Labs.MenuItem { text: qsTr("&Open...") }
+            Labs.MenuItem { text: qsTr("&Save") }
+            Labs.MenuItem { text: qsTr("Save &As...") }
+            MenuSeparator { }
+            Labs.MenuItem { text: qsTr("&Quit") }
+        }
+        Labs.Menu {
+            title: qsTr("&Edit")
+            Labs.MenuItem { text: qsTr("Cu&t") }
+            Labs.MenuItem { text: qsTr("&Copy") }
+            Labs.MenuItem { text: qsTr("&Paste") }
+        }
+        Labs.Menu {
+            title: qsTr("&Help")
+            Labs.MenuItem { text: qsTr("&About") }
+        }
     }
 
     RowLayout {

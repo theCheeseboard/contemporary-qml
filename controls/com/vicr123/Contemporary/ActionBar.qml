@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import com.vicr123.Contemporary.impl
 
 MouseArea {
     id: root
@@ -25,6 +26,10 @@ MouseArea {
 
         Rectangle {
             Layout.fillWidth: true
+        }
+
+        WindowControls {
+            control: root.control
         }
     }
 
