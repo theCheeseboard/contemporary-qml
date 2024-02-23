@@ -64,7 +64,7 @@ ApplicationWindow {
             source: rootRect
             anchors.fill: insideMouseArea
             shadowBlur: 1.0
-            shadowEnabled: true
+            shadowEnabled: window.visibility !== Window.Maximized
             shadowColor: "#000000"
             shadowVerticalOffset: 0
             shadowHorizontalOffset: 0
