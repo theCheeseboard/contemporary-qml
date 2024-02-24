@@ -66,7 +66,7 @@ ContemporaryWindow {
                 }
             }
 
-            delegate: Text {
+            delegate: Label {
                 text: name
                 width: sidebar.width
 

@@ -83,7 +83,7 @@ ApplicationWindow {
                             Layout.preferredHeight: parent.height
                             Layout.leftMargin: 6
 
-                            Text {
+                            Label {
                                 anchors.fill: parent
                                 text: window.title
                                 horizontalAlignment: Qt.AlignLeft
