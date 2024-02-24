@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Effects
 import Contemporary
+import com.vicr123.Contemporary.impl
 
 ApplicationWindow {
     id: window
@@ -12,10 +13,13 @@ ApplicationWindow {
     default property alias contents: contentContainer.data
     property alias actionBar: actionBarLoader.sourceComponent
 
-    minimumWidth: 640
+    minimumWidth: 200
     minimumHeight: 480
 
     color: "transparent"
+
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
 
     palette: Palette {
         window: Contemporary.background
@@ -33,6 +37,7 @@ ApplicationWindow {
             id: insideMouseArea
             anchors.fill: parent
             anchors.margins: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
+            clip: true
 
             Rectangle {
                 id: rootRect
@@ -42,19 +47,83 @@ ApplicationWindow {
 
                 ColumnLayout {
                     anchors.fill: parent
+                    id: desktopLayout
 
-                    RowLayout {
-                        Layout.fillHeight: false
-
-                        Loader {
-                            id: actionBarLoader
-                            Layout.preferredHeight: childrenRect.height
-                            Layout.fillWidth: true
+                    GridLayout {
+                        LayoutItemProxy {
+                            Layout.column: Contemporary.windowControlSide == Qt.RightEdge ? 1 : 0
+                            target: windowControls
+                        }
+                        LayoutItemProxy {
+                            Layout.column: Contemporary.windowControlSide == Qt.RightEdge ? 0 : 1
+                            target: actionBarLoader
                         }
                     }
 
-                    RowLayout {
-                        id: contentContainer
+                    LayoutItemProxy {
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        target: contentContainer
+                    }
+                }
+
+                ColumnLayout {
+                    anchors.fill: parent
+                    id: mobileLayout
+
+                    GridLayout {
+                        LayoutItemProxy {
+                            Layout.column: Contemporary.windowControlSide == Qt.RightEdge ? 1 : 0
+                            target: windowControls
+                        }
+                        MouseArea {
+                            Layout.column: Contemporary.windowControlSide == Qt.RightEdge ? 0 : 1
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: parent.height
+
+                            Text {
+                                anchors.fill: parent
+                                text: window.title
+                                horizontalAlignment: Qt.AlignLeft
+                                verticalAlignment: Qt.AlignVCenter
+                            }
+
+                            onPressed: window.startSystemMove();
+                        }
+                    }
+                    LayoutItemProxy {
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        target: contentContainer
+                    }
+                    LayoutItemProxy {
+                        Layout.fillWidth: true
+                        target: actionBarLoader
+                    }
+                }
+
+                Loader {
+                    id: actionBarLoader
+                    Layout.preferredHeight: childrenRect.height
+                    Layout.fillWidth: true
+                }
+
+                WindowControls {
+                    id: windowControls
+                    control: window
+                }
+
+                RowLayout {
+                    id: contentContainer
+                }
+
+                onWidthChanged: {
+                    if (width < 300) {
+                        desktopLayout.visible = false
+                        mobileLayout.visible = true
+                    } else {
+                        desktopLayout.visible = true
+                        mobileLayout.visible = false
                     }
                 }
             }

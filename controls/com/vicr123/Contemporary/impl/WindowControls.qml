@@ -12,8 +12,37 @@ Item {
     property Window control
 
     RowLayout {
+        height: Math.max(childrenRect.height, 24)
         spacing: 0
-        // visible: Qt.platform.os === "osx"
+
+        RowLayout {
+            visible: nmin.haveNativeControls
+
+            Rectangle {
+                Layout.preferredWidth: 3
+            }
+
+            NativeWindowButton {
+                id: nmin
+                Layout.preferredWidth: 16
+                Layout.preferredHeight: 16
+                systemWindowType: 0
+            }
+
+            NativeWindowButton {
+                id: nmax
+                Layout.preferredWidth: 16
+                Layout.preferredHeight: 16
+                systemWindowType: 1
+            }
+
+            NativeWindowButton {
+                id: nclose
+                Layout.preferredWidth: 16
+                Layout.preferredHeight: 16
+                systemWindowType: 2
+            }
+        }
 
         Button {
             id: min
@@ -21,6 +50,7 @@ Item {
             icon.source: "qrc:/com/vicr123/Contemporary/qml/icons/min.svg"
             flat: true
             onClicked: root.control.showMinimized()
+            visible: !nmin.haveNativeControls
         }
 
         Button {
@@ -29,6 +59,7 @@ Item {
             icon.source: `qrc:/com/vicr123/Contemporary/qml/icons/${root.control.visibility === Window.Maximized ? "res" : "max"}.svg`
             flat: true
             onClicked: root.control.visibility === Window.Maximized ? root.control.showNormal() : root.control.showMaximized()
+            visible: !nmin.haveNativeControls
         }
 
         Button {
@@ -37,6 +68,7 @@ Item {
             icon.source: "qrc:/com/vicr123/Contemporary/qml/icons/close.svg"
             flat: true
             onClicked: root.control.close()
+            visible: !nmin.haveNativeControls
         }
     }
 }

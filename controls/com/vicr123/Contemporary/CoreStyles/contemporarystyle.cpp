@@ -51,6 +51,15 @@ void ContemporaryStyle::setForeground(QColor foreground) {
     emit foregroundChanged();
 }
 
+Qt::Edge ContemporaryStyle::windowControlSide() const
+{
+#ifdef Q_OS_MAC
+    return Qt::LeftEdge;
+#else
+    return Qt::RightEdge;
+#endif
+}
+
 QColor ContemporaryStyle::hovered(QColor color)
 {
     return color.lighter();

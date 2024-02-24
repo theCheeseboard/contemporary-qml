@@ -31,6 +31,10 @@ NativeWindowButton::NativeWindowButton(QQuickItem *parent) : QQuickPaintedItem(p
     connect(this, &NativeWindowButton::windowChanged, this, [this](QQuickWindow* window) {
         d->setupWindow(window);
     });
+    connect(this, &NativeWindowButton::visibleChanged, this, [this] {
+        [d->button setHidden:!this->isVisible()];
+    });
+
     d->setupWindow(this->window());
 }
 
