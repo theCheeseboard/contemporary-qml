@@ -25,7 +25,7 @@ ContemporaryWindow {
             Labs.MenuItem { text: qsTr("&Save") }
             Labs.MenuItem { text: qsTr("Save &As...") }
             MenuSeparator { }
-            Labs.MenuItem { text: qsTr("&Quit") }
+            Labs.MenuItem { text: qsTr("&Quit"); onTriggered: window.close() }
         }
         Labs.Menu {
             title: qsTr("&Edit")

@@ -32,13 +32,13 @@ ApplicationWindow {
         MouseArea {
             id: insideMouseArea
             anchors.fill: parent
-            anchors.margins: window.visibility === Window.Maximized ? 0 : 5
+            anchors.margins: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
 
             Rectangle {
                 id: rootRect
                 color: Contemporary.background
                 anchors.fill: parent
-                radius: window.visibility === Window.Maximized ? 0 : 5
+                radius: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
 
                 ColumnLayout {
                     anchors.fill: parent
@@ -64,7 +64,7 @@ ApplicationWindow {
             source: rootRect
             anchors.fill: insideMouseArea
             shadowBlur: 1.0
-            shadowEnabled: window.visibility !== Window.Maximized
+            shadowEnabled: window.visibility !== Window.Maximized && window.visibility !== Window.FullScreen
             shadowColor: "#000000"
             shadowVerticalOffset: 0
             shadowHorizontalOffset: 0

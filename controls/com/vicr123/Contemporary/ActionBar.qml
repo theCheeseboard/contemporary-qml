@@ -14,6 +14,31 @@ MouseArea {
         anchors.left: root.left
         anchors.right: root.right
 
+        Rectangle {
+            Layout.preferredWidth: 3
+        }
+
+        NativeWindowButton {
+            id: nmin
+            Layout.preferredWidth: 16
+            Layout.preferredHeight: 16
+            systemWindowType: 0
+        }
+
+        NativeWindowButton {
+            id: nmax
+            Layout.preferredWidth: 16
+            Layout.preferredHeight: 16
+            systemWindowType: 1
+        }
+
+        NativeWindowButton {
+            id: nclose
+            Layout.preferredWidth: 16
+            Layout.preferredHeight: 16
+            systemWindowType: 2
+        }
+
         Button {
             id: menuButton
             icon.name: "com.vicr123.thebeat"
@@ -28,6 +53,7 @@ MouseArea {
 
         WindowControls {
             control: root.control
+            visible: !nclose.haveNativeControls
         }
     }
 
