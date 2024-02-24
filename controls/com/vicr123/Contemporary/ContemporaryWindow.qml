@@ -37,7 +37,6 @@ ApplicationWindow {
             id: insideMouseArea
             anchors.fill: parent
             anchors.margins: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
-            clip: true
 
             Rectangle {
                 id: rootRect
@@ -48,6 +47,7 @@ ApplicationWindow {
                 ColumnLayout {
                     anchors.fill: parent
                     id: desktopLayout
+                    clip: true
 
                     GridLayout {
                         LayoutItemProxy {
@@ -70,6 +70,7 @@ ApplicationWindow {
                 ColumnLayout {
                     anchors.fill: parent
                     id: mobileLayout
+                    clip: true
 
                     GridLayout {
                         LayoutItemProxy {
@@ -80,6 +81,7 @@ ApplicationWindow {
                             Layout.column: Contemporary.windowControlSide == Qt.RightEdge ? 0 : 1
                             Layout.fillWidth: true
                             Layout.preferredHeight: parent.height
+                            Layout.leftMargin: 6
 
                             Text {
                                 anchors.fill: parent
@@ -118,7 +120,7 @@ ApplicationWindow {
                 }
 
                 onWidthChanged: {
-                    if (width < 300) {
+                    if (window.width < 640) {
                         desktopLayout.visible = false
                         mobileLayout.visible = true
                     } else {
