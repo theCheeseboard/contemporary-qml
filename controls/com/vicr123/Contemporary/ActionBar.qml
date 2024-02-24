@@ -16,6 +16,7 @@ MouseArea {
 
         Rectangle {
             Layout.preferredWidth: 3
+            visible: nmin.visible
         }
 
         NativeWindowButton {

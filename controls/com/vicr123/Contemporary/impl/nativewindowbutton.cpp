@@ -2,9 +2,12 @@
 
 #include <QPainter>
 
-NativeWindowButton::NativeWindowButton(QQuickItem *parent) : QQuickPaintedItem(parent) {
-
+NativeWindowButton::NativeWindowButton(QQuickItem *parent)
+    : QQuickPaintedItem(parent) {
+    this->setVisible(false);
 }
+
+NativeWindowButton::~NativeWindowButton() {}
 
 bool NativeWindowButton::haveNativeControls()
 {
