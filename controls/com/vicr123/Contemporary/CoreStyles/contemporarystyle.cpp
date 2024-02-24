@@ -6,6 +6,7 @@ struct ContemporaryStylePrivate {
     QColor accent{0, 50, 150};
     QColor background{40, 40, 40};
     QColor foreground{255, 255, 255};
+    QColor line{85, 85, 85};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)
@@ -49,6 +50,15 @@ QColor ContemporaryStyle::foreground() const {
 void ContemporaryStyle::setForeground(QColor foreground) {
     d->foreground = foreground;
     emit foregroundChanged();
+}
+
+QColor ContemporaryStyle::line() const {
+    return d->line;
+}
+
+void ContemporaryStyle::setLine(QColor line) {
+    d->line = line;
+    emit lineChanged();
 }
 
 Qt::Edge ContemporaryStyle::windowControlSide() const
