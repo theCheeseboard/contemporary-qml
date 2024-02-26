@@ -69,7 +69,7 @@ T.TextField {
                     },
                     State {
                         name: "on"
-                        when: control.activeFocus
+                        when: control.activeFocus && !control.readOnly
                         PropertyChanges {
                             target: focusBorder
                             width: borderBottom.width

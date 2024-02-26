@@ -8,9 +8,24 @@ Control {
     Layout.fillWidth: true
 
     ColumnLayout {
-        SpinBox {
+        RowLayout {
+            SpinBox {
+                id: spin1
+                from: 0
+                to: 100
+                value: 50
+                onValueChanged: slider1.value = spin1.value
+            }
 
+            Slider {
+                id: slider1
+                from: 0
+                to: 100
+                value: 50
+                onValueChanged: spin1.value = slider1.value;
+            }
         }
+
 
         SpinBox {
             from: 0

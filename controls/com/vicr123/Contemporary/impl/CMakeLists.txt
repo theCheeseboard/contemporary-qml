@@ -7,6 +7,7 @@ qt_add_qml_module(contemporary-controls-impl
     SOURCES
         nativewindowbutton.h
     PLUGIN_TARGET contemporary-controls-impl-plugin
+    QML_FILES ButtonBackground.qml
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
