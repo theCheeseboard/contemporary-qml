@@ -39,6 +39,7 @@ T.CheckBox {
             states: [
                 State {
                     name: "off"
+                    when: control.checkState === Qt.Unchecked
                     PropertyChanges {
                         target: innerIndicator
                         width: 0

@@ -7,6 +7,7 @@ qt_add_qml_module(contemporary-corecontrols
         Button.qml
         CheckBox.qml
         RadioButton.qml
+        TextField.qml
     SOURCES
         contemporarystyle.cpp contemporarystyle.h
         contemporaryinitialisation.h contemporaryinitialisation.cpp
