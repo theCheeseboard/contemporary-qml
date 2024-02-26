@@ -12,6 +12,7 @@ Control {
             Layout.preferredHeight: 64
             Layout.preferredWidth: 64
         }
+
         BusyIndicator {
 
         }

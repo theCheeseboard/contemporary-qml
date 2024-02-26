@@ -6,15 +6,17 @@ import Contemporary
 T.BusyIndicator {
     id: control
 
-    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                            implicitContentWidth + leftPadding + rightPadding)
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             implicitContentHeight + topPadding + bottomPadding)
+    implicitWidth: 32
+    implicitHeight: 32
+
+    // implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
+    //     implicitContentWidth + leftPadding + rightPadding)
+    // implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+    //     implicitContentHeight + topPadding + bottomPadding)
 
     contentItem: Shape {
         id: indicator
-        implicitWidth: 32
-        implicitHeight: 32
+        anchors.fill: parent
         asynchronous: true
         preferredRendererType: Shape.CurveRenderer
 
