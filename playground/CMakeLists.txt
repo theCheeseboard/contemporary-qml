@@ -19,6 +19,7 @@ qt_add_qml_module(appplayground
     QML_FILES pages/TumblerPage.qml
     QML_FILES pages/ComboBoxPage.qml
     QML_FILES pages/Ranges.qml
+    QML_FILES pages/Progress.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

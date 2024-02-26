@@ -13,6 +13,7 @@ qt_add_qml_module(contemporary-corecontrols
         contemporaryinitialisation.h contemporaryinitialisation.cpp
     PLUGIN_TARGET contemporary-corecontrols-plugin
     QML_FILES SpinBox.qml
+    QML_FILES BusyIndicator.qml
 )
 
 target_link_libraries(contemporary-corecontrols

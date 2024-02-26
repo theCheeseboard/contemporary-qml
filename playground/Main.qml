@@ -59,6 +59,9 @@ ContemporaryWindow {
                     name: qsTr("Combo Box")
                 }
                 ListElement {
+                    name: qsTr("Progress")
+                }
+                ListElement {
                     name: qsTr("Ranges")
                 }
                 ListElement {
@@ -94,6 +97,7 @@ ContemporaryWindow {
             Pages.CheckboxesRadioButtons { }
             Pages.TextInput { }
             Pages.ComboBoxPage { }
+            Pages.Progress { }
             Pages.Ranges { }
             Pages.TumblerPage { }
         }
