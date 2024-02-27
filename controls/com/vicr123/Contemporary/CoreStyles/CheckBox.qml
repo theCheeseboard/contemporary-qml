@@ -74,7 +74,7 @@ T.CheckBox {
 
         FocusDecoration {
             anchors.fill: parent
-            visible: control.visualFocus
+            focused: control.visualFocus
             radius: 4
             renderOutside: true
         }

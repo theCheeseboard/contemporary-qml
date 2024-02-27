@@ -57,8 +57,8 @@ T.RadioButton {
         FocusDecoration {
             id: focusDecoration
             anchors.fill: parent
-            visible: control.visualFocus
-            radius: (focusDecoration.width + 3) / 2
+            focused: control.visualFocus
+            radius: 9999
             renderOutside: true
         }
     }
