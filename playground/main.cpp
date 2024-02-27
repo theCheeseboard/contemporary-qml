@@ -31,5 +31,6 @@ int main(int argc, char *argv[])
 }
 
 #ifdef Q_OS_IOS
-Q_IMPORT_QML_PLUGIN(com_vicr123_ContemporaryPlugin)
+#include <QQmlExtensionPlugin>
+Q_IMPORT_QML_PLUGIN(com_vicr123_Contemporary_CoreStylesPlugin)
 #endif

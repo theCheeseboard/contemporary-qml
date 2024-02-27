@@ -44,11 +44,18 @@ set_target_properties(appplayground PROPERTIES
 )
 
 target_link_libraries(appplayground
-    PRIVATE contemporary-corecontrols contemporary-controls Qt6::Quick Qt6::QuickControls2
+    PRIVATE contemporary-corecontrols contemporary-controls Qt::Quick Qt::QuickControls2
 )
+
 target_include_directories(appplayground
     PRIVATE ../controls/com/vicr123/Contemporary/CoreStyles
 )
+
+if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
+    target_link_libraries(appplayground
+        PRIVATE contemporary-corecontrols-plugin contemporary-controls-plugin
+    )
+endif()
 
 include(GNUInstallDirs)
 install(TARGETS appplayground
