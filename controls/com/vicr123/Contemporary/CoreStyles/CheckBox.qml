@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Templates as T
 import QtQuick.Controls.impl
 import Contemporary
+import com.vicr123.Contemporary.impl
 
 T.CheckBox {
     id: control
@@ -69,6 +70,13 @@ T.CheckBox {
                     easing.type: Easing.InOutCubic
                 }
             }
+        }
+
+        FocusDecoration {
+            anchors.fill: parent
+            visible: control.visualFocus
+            radius: 4
+            renderOutside: true
         }
     }
 

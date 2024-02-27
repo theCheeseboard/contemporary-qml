@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Templates as T
 import QtQuick.Controls.impl
 import Contemporary
+import com.vicr123.Contemporary.impl
 
 T.RadioButton {
     id: control
@@ -51,6 +52,14 @@ T.RadioButton {
                 duration: 200
                 easing.type: Easing.OutCubic
             }
+        }
+
+        FocusDecoration {
+            id: focusDecoration
+            anchors.fill: parent
+            visible: control.visualFocus
+            radius: (focusDecoration.width + 3) / 2
+            renderOutside: true
         }
     }
 

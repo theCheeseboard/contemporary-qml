@@ -4,6 +4,7 @@ qt_add_qml_module(contemporary-controls-impl
     URI com.vicr123.Contemporary.impl
     QML_FILES
         WindowControls.qml
+        FocusDecoration.qml
     SOURCES
         nativewindowbutton.h
     PLUGIN_TARGET contemporary-controls-impl-plugin

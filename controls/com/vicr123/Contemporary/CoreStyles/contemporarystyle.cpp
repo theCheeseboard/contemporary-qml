@@ -7,6 +7,7 @@ struct ContemporaryStylePrivate {
     QColor background{40, 40, 40};
     QColor foreground{255, 255, 255};
     QColor line{85, 85, 85};
+    QColor focusDecoration{20, 125, 200};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)
@@ -59,6 +60,15 @@ QColor ContemporaryStyle::line() const {
 void ContemporaryStyle::setLine(QColor line) {
     d->line = line;
     emit lineChanged();
+}
+
+QColor ContemporaryStyle::focusDecoration() const {
+    return d->focusDecoration;
+}
+
+void ContemporaryStyle::setFocusDecoration(QColor focusDecoration) {
+    d->focusDecoration = focusDecoration;
+    emit focusDecorationChanged();
 }
 
 Qt::Edge ContemporaryStyle::windowControlSide() const
