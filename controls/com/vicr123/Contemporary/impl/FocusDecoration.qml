@@ -49,7 +49,7 @@ Item {
                 when: !root.focused
                 PropertyChanges {
                     target: rect
-                    plusMargins: 6
+                    plusMargins: 3
                     opacity: 0
                 }
             },
