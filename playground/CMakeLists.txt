@@ -22,6 +22,14 @@ qt_add_qml_module(appplayground
         pages/ComboBoxPage.qml
         pages/Ranges.qml
         pages/Progress.qml
+        pages/Scrollable.qml
+)
+
+
+qt_add_resources(appplayground "contemporary-playground-resources"
+    PREFIX "/com/vicr123/Contemporary/playground"
+    FILES
+        exploration.jpeg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

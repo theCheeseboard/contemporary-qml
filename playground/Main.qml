@@ -67,6 +67,9 @@ ContemporaryWindow {
                 ListElement {
                     name: qsTr("Tumbler")
                 }
+                ListElement {
+                    name: qsTr("Scrollable")
+                }
             }
 
             delegate: Label {
@@ -100,6 +103,7 @@ ContemporaryWindow {
             Pages.Progress { }
             Pages.Ranges { }
             Pages.TumblerPage { }
+            Pages.Scrollable { }
         }
     }
 }
