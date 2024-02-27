@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt${QT_VERSION_MAJOR} 6.4 REQUIRED COMPONENTS Quick QuickControls2)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
 qt_standard_project_setup()
 
@@ -13,13 +13,15 @@ qt_add_executable(appplayground
 qt_add_qml_module(appplayground
     URI playground
     VERSION 1.0
-    QML_FILES Main.qml pages/Buttons.qml
-    QML_FILES pages/CheckboxesRadioButtons.qml
-    QML_FILES pages/TextInput.qml
-    QML_FILES pages/TumblerPage.qml
-    QML_FILES pages/ComboBoxPage.qml
-    QML_FILES pages/Ranges.qml
-    QML_FILES pages/Progress.qml
+    QML_FILES
+        Main.qml
+        pages/Buttons.qml
+        pages/CheckboxesRadioButtons.qml
+        pages/TextInput.qml
+        pages/TumblerPage.qml
+        pages/ComboBoxPage.qml
+        pages/Ranges.qml
+        pages/Progress.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
