@@ -98,3 +98,8 @@ void NativeWindowButton::paint(QPainter *painter)
 {
     d->repositionButton();
 }
+
+bool NativeWindowButton::haveWindowControls()
+{
+    return true;
+}

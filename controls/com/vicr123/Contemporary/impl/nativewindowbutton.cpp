@@ -14,6 +14,15 @@ bool NativeWindowButton::haveNativeControls()
     return false;
 }
 
+bool NativeWindowButton::haveWindowControls()
+{
+#if defined(Q_OS_IOS) | defined(Q_OS_ANDROID)
+    return false;
+#else
+    return true;
+#endif
+}
+
 void NativeWindowButton::paint(QPainter *painter)
 {
 

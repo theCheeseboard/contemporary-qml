@@ -8,7 +8,7 @@ import com.vicr123.Contemporary.impl
 ApplicationWindow {
     id: window
 
-    flags: Qt.Window | Qt.FramelessWindowHint
+    flags: Qt.Window | Qt.FramelessWindowHint | Qt.MaximizeUsingFullScreenGeometryHint
 
     default property alias contents: contentContainer.data
     property alias actionBar: actionBarLoader.sourceComponent

@@ -10,9 +10,11 @@ Item {
     Layout.preferredHeight: childrenRect.height
 
     implicitHeight: childrenRect.height
-    implicitWidth: childrenRect.width
+    implicitWidth: nmin.haveWindowControls ? childrenRect.width : 0
 
     property Window control
+
+    visible: nmin.haveWindowControls
 
     RowLayout {
         height: Math.max(childrenRect.height, 24)

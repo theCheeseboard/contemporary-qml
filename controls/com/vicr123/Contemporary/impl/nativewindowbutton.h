@@ -10,6 +10,7 @@ class NativeWindowButton : public QQuickPaintedItem
     Q_OBJECT
     Q_PROPERTY(int systemWindowType READ systemWindowType WRITE setSystemWindowType NOTIFY systemWindowTypeChanged FINAL)
     Q_PROPERTY(bool haveNativeControls READ haveNativeControls CONSTANT)
+    Q_PROPERTY(bool haveWindowControls READ haveWindowControls CONSTANT)
     QML_ELEMENT
 
 public:
@@ -17,6 +18,7 @@ public:
     ~NativeWindowButton();
 
     static bool haveNativeControls();
+    static bool haveWindowControls();
 
     int systemWindowType();
     void setSystemWindowType(int systemWindowType);
