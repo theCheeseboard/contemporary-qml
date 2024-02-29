@@ -9,6 +9,9 @@ Item {
     Layout.preferredWidth: childrenRect.width
     Layout.preferredHeight: childrenRect.height
 
+    implicitHeight: childrenRect.height
+    implicitWidth: childrenRect.width
+
     property Window control
 
     RowLayout {

@@ -9,6 +9,8 @@ MouseArea {
     Layout.fillWidth: true
     property Window control
 
+    implicitHeight: childrenRect.height
+
     RowLayout {
         height: childrenRect.height
         anchors.left: root.left

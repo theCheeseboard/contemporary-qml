@@ -17,6 +17,8 @@ ContemporaryWindow {
         control: window
     }
 
+    // overlayActionBar: true
+
     Labs.MenuBar {
         Labs.Menu {
             title: qsTr("&File")
