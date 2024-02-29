@@ -82,11 +82,13 @@ Qt::Edge ContemporaryStyle::windowControlSide() const
 
 QColor ContemporaryStyle::hovered(QColor color)
 {
+    if (color.alpha() == 0) return QColor{255, 255, 255, 75};
     return color.lighter();
 }
 
 QColor ContemporaryStyle::pressed(QColor color)
 {
+    if (color.alpha() == 0) return QColor{0, 0, 0, 75};
     return color.darker();
 }
 

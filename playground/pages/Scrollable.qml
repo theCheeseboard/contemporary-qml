@@ -14,8 +14,8 @@ Control {
         Image {
             id: largeImage
             source: "/com/vicr123/Contemporary/playground/exploration.jpeg"
-            anchors.top: parent
-            anchors.left: parent
+            anchors.top: parent.top
+            anchors.left: parent.left
         }
     }
 }

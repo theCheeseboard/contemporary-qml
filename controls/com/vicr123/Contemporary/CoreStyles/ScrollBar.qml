@@ -27,9 +27,9 @@ T.ScrollBar {
             height: 3
 
             anchors.right: gutter.right
-            anchors.top: orientation === Qt.Vertical ? gutter.top : null
+            anchors.top: orientation === Qt.Vertical ? gutter.top : undefined
             anchors.bottom: gutter.bottom
-            anchors.left: orientation === Qt.Horizontal ? gutter.left : null
+            anchors.left: orientation === Qt.Horizontal ? gutter.left : undefined
 
             color: control.pressed ? Contemporary.pressed(Contemporary.accent) : Contemporary.accent
             opacity: 0.1

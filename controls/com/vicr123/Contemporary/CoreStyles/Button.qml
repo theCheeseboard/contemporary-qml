@@ -36,7 +36,7 @@ T.Button {
     }
 
     background: ButtonBackground {
-        buttonColor: control.flat ? Contemporary.background : Contemporary.accent
+        buttonColor: control.flat ? "transparent" : Contemporary.accent
         flat: control.flat
         highlighted: control.highlighted
         checked: control.checked
