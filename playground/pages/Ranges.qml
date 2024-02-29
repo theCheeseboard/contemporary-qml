@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls
 import QtQuick.Layouts
+import com.vicr123.Contemporary
 
 Control {
     id: rectangle
@@ -8,6 +9,10 @@ Control {
     Layout.fillWidth: true
 
     ColumnLayout {
+        anchors.top: parent.top
+        anchors.topMargin: SafeZone.top
+        anchors.bottomMargin: SafeZone.bottom
+
         RowLayout {
             SpinBox {
                 id: spin1

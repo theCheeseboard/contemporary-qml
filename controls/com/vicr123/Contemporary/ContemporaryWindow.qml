@@ -47,6 +47,15 @@ ApplicationWindow {
 
                 clip: true
 
+                QtObject {
+                    id: safeZones
+                    property real top: 0
+                    property real bottom: 0
+                }
+
+                SafeZone.top: safeZones.top
+                SafeZone.bottom: safeZones.bottom
+
                 Loader {
                     id: actionBarLoader
                     Layout.preferredHeight: childrenRect.height
@@ -113,6 +122,11 @@ ApplicationWindow {
                             target: titleBar
                             visible: true
                         }
+                        PropertyChanges {
+                            target: safeZones
+                            top: Math.max(windowControls.height, titleBar.height)
+                            bottom: actionBarLoader.height
+                        }
                     },
                     State {
                         name: "desktop"
@@ -140,6 +154,11 @@ ApplicationWindow {
                         PropertyChanges {
                             target: titleBar
                             visible: false
+                        }
+                        PropertyChanges {
+                            target: safeZones
+                            top: Math.max(windowControls.height, actionBarLoader.height)
+                            bottom: 0
                         }
                     }
                 ]

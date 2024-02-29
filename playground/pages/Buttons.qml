@@ -9,6 +9,10 @@ Control {
     Layout.fillWidth: true
 
     RowLayout {
+        anchors.top: parent.top
+        anchors.topMargin: SafeZone.top
+        anchors.bottomMargin: SafeZone.bottom
+
         ColumnLayout {
             Button {
                 text: qsTr("Default Button")

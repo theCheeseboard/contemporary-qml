@@ -17,7 +17,7 @@ ContemporaryWindow {
         control: window
     }
 
-    // overlayActionBar: true
+    overlayActionBar: true
 
     Labs.MenuBar {
         Labs.Menu {
@@ -44,6 +44,8 @@ ContemporaryWindow {
     RowLayout {
         ListView {
             id: sidebar
+            Layout.topMargin: SafeZone.top
+            Layout.bottomMargin: SafeZone.bottom
             Layout.fillHeight: true
             width: 300
 
