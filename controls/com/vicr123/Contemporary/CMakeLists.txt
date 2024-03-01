@@ -7,11 +7,12 @@ qt_add_qml_module(contemporary-controls
     QML_FILES
         ExampleControl.qml
         ContemporaryWindow.qml
+        ActionBar.qml
+        ActionBarTabber.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp
     PLUGIN_TARGET contemporary-controls-plugin
-    QML_FILES ActionBar.qml
 )
 
 target_link_libraries(contemporary-controls

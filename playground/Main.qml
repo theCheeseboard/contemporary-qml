@@ -15,6 +15,10 @@ ContemporaryWindow {
 
     actionBar: ActionBar {
         control: window
+
+        ActionBarTabber {
+
+        }
     }
 
     overlayActionBar: true
@@ -46,6 +50,8 @@ ContemporaryWindow {
             id: sidebar
             Layout.topMargin: SafeZone.top
             Layout.bottomMargin: SafeZone.bottom
+            displayMarginBeginning: SafeZone.top
+            displayMarginEnd: SafeZone.bottom
             Layout.fillHeight: true
             width: 300
 
