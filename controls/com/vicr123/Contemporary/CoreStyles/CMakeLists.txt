@@ -11,6 +11,7 @@ qt_add_qml_module(contemporary-corecontrols
         Drawer.qml
         ScrollBar.qml
         ScrollView.qml
+        Switch.qml
     SOURCES
         contemporarystyle.cpp contemporarystyle.h
         contemporaryinitialisation.h contemporaryinitialisation.cpp
