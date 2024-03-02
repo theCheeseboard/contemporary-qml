@@ -13,19 +13,19 @@ Control {
         anchors.topMargin: SafeZone.top
         anchors.bottomMargin: SafeZone.bottom
 
-        BusyIndicator {
-            Layout.preferredHeight: 64
-            Layout.preferredWidth: 64
-        }
-
-        BusyIndicator {
-
-        }
-
-        BusyIndicator {
-            Layout.preferredHeight: 16
-            Layout.preferredWidth: 16
-        }
+        // BusyIndicator {
+        //     Layout.preferredHeight: 64
+        //     Layout.preferredWidth: 64
+        // }
+        //
+        // BusyIndicator {
+        //
+        // }
+        //
+        // BusyIndicator {
+        //     Layout.preferredHeight: 16
+        //     Layout.preferredWidth: 16
+        // }
 
         ProgressBar {
             from: 0

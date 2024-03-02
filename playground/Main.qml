@@ -134,29 +134,24 @@ ContemporaryWindow {
 
             onCurrentIndexChanged: stack.currentIndex = sidebar.currentIndex
         }
+    }
 
-        Item {
-            anchors.top: parent.top
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.left: sidebarContainer.right
-            anchors.margins: 9
+    Pager {
+        id: stack
+        anchors.top: parent.top
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.left: sidebarContainer.right
 
-            Pager {
-                id: stack
-                currentAnimation: Pager.Animation.SlideHorizontal
+        currentAnimation: Pager.Animation.SlideHorizontal
 
-                anchors.fill: parent
-
-                Pages.Buttons { }
-                Pages.CheckboxesRadioButtons { }
-                Pages.TextInput { }
-                Pages.ComboBoxPage { }
-                Pages.Progress { }
-                Pages.Ranges { }
-                Pages.TumblerPage { }
-                Pages.Scrollable { }
-            }
-        }
+        Pages.Buttons { }
+        Pages.CheckboxesRadioButtons { }
+        Pages.TextInput { }
+        Pages.ComboBoxPage { }
+        Pages.Progress { }
+        Pages.Ranges { }
+        Pages.TumblerPage { }
+        Pages.Scrollable { }
     }
 }

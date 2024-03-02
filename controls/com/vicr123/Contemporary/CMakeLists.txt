@@ -9,6 +9,7 @@ qt_add_qml_module(contemporary-controls
         ContemporaryWindow.qml
         ActionBar.qml
         ActionBarTabber.qml
+        Pager.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp
