@@ -18,8 +18,8 @@ T.Button {
     horizontalPadding: padding + 2
     spacing: 6
 
-    icon.width: 24
-    icon.height: 24
+    icon.width: 16
+    icon.height: 16
     icon.color: control.checked || control.highlighted ? control.palette.brightText :
         (control.flat && !control.down ? control.palette.windowText : control.palette.buttonText)
 

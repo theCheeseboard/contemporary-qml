@@ -1,19 +1,20 @@
 #include <QGuiApplication>
+#include <QIcon>
 #include <QQmlApplicationEngine>
-#include <QQuickStyle>
 #include <QQmlEngine>
+#include <QQuickStyle>
 #include <QIcon>
 
 #include "contemporaryinitialisation.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char* argv[]) {
     QGuiApplication app(argc, argv);
     app.setWindowIcon(QIcon::fromTheme("com.vicr123.thebeat"));
 
     QQuickStyle::setStyle("com.vicr123.Contemporary.CoreStyles");
     // QQuickStyle::setStyle("Material");
     // QQuickStyle::setStyle("Fusion");
+    QIcon::setThemeName("contemporary");
 
     ContemporaryInitialisation::init();
 
@@ -23,7 +24,9 @@ int main(int argc, char *argv[])
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
-        []() { QCoreApplication::exit(-1); },
+        []() {
+        QCoreApplication::exit(-1);
+    },
         Qt::QueuedConnection);
     engine.load(url);
 

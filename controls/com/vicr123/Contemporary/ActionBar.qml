@@ -25,6 +25,8 @@ MouseArea {
             icon.color: "transparent"
             flat: true
             Layout.preferredWidth: menuButton.height
+            icon.width: 24
+            icon.height: 24
         }
 
         Flickable {
