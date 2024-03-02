@@ -45,15 +45,26 @@ ContemporaryWindow {
         }
     }
 
-    RowLayout {
+    Rectangle {
+        id: sidebarContainer
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        width: 300
+
+        color: Contemporary.backgroundAccent
+        radius: 4
+
+        z: 10
+
         ListView {
             id: sidebar
-            Layout.topMargin: SafeZone.top
-            Layout.bottomMargin: SafeZone.bottom
             displayMarginBeginning: SafeZone.top
             displayMarginEnd: SafeZone.bottom
-            Layout.fillHeight: true
-            width: 300
+
+            anchors.topMargin: SafeZone.top
+            anchors.bottomMargin: SafeZone.bottom
+            anchors.fill: parent
 
             model: ListModel {
                 ListElement {
@@ -82,19 +93,41 @@ ContemporaryWindow {
                 }
             }
 
-            delegate: Label {
-                text: name
-                width: sidebar.width
+            Component {
+                id: leftDelegate
+                Item {
+                    height: childrenRect.height + 3
+                    width: sidebar.width
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: sidebar.currentIndex = index
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: sidebar.currentIndex = index
+                    }
+
+                    Label {
+                        id: leftDelegateLabel
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.topMargin: 3
+                        anchors.leftMargin: 6
+                        anchors.rightMargin: 6
+
+                        text: name
+                    }
                 }
             }
 
-            highlight: Rectangle {
-                color: Contemporary.accent;
-                radius: 5
+            delegate: leftDelegate
+
+            highlight: Item {
+                Rectangle {
+                    anchors.fill: parent
+                    anchors.leftMargin: 3
+                    anchors.rightMargin: 3
+                    color: Contemporary.accent;
+                    radius: 4
+                }
             }
 
             focus: true
@@ -102,18 +135,28 @@ ContemporaryWindow {
             onCurrentIndexChanged: stack.currentIndex = sidebar.currentIndex
         }
 
-        StackLayout {
-            id: stack
-            Layout.fillHeight: true
+        Item {
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: sidebarContainer.right
+            anchors.margins: 9
 
-            Pages.Buttons { }
-            Pages.CheckboxesRadioButtons { }
-            Pages.TextInput { }
-            Pages.ComboBoxPage { }
-            Pages.Progress { }
-            Pages.Ranges { }
-            Pages.TumblerPage { }
-            Pages.Scrollable { }
+            Pager {
+                id: stack
+                currentAnimation: Pager.Animation.SlideHorizontal
+
+                anchors.fill: parent
+
+                Pages.Buttons { }
+                Pages.CheckboxesRadioButtons { }
+                Pages.TextInput { }
+                Pages.ComboBoxPage { }
+                Pages.Progress { }
+                Pages.Ranges { }
+                Pages.TumblerPage { }
+                Pages.Scrollable { }
+            }
         }
     }
 }

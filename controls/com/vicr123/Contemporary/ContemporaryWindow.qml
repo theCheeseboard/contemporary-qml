@@ -70,7 +70,7 @@ ApplicationWindow {
                     z: 100
                 }
 
-                RowLayout {
+                Item {
                     id: contentContainer
                 }
 

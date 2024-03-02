@@ -8,6 +8,7 @@ struct ContemporaryStylePrivate {
     QColor foreground{255, 255, 255};
     QColor line{85, 85, 85};
     QColor focusDecoration{20, 125, 200};
+    QColor backgroundAccent{60, 60, 60};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)
@@ -69,6 +70,15 @@ QColor ContemporaryStyle::focusDecoration() const {
 void ContemporaryStyle::setFocusDecoration(QColor focusDecoration) {
     d->focusDecoration = focusDecoration;
     emit focusDecorationChanged();
+}
+
+QColor ContemporaryStyle::backgroundAccent() const {
+    return d->backgroundAccent;
+}
+
+void ContemporaryStyle::setBackgroundAccent(QColor backgroundAccent) {
+    d->backgroundAccent = backgroundAccent;
+    emit backgroundAccentChanged();
 }
 
 Qt::Edge ContemporaryStyle::windowControlSide() const
