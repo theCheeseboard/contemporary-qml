@@ -52,19 +52,33 @@ ContemporaryWindow {
         anchors.left: parent.left
         width: 300
 
-        color: Contemporary.backgroundAccent
+        color: Contemporary.calculateLayer(1)
         radius: 4
 
         z: 10
+
+        Grandstand {
+            id: title
+            anchors.top: parent.top;
+            anchors.left: parent.left;
+            anchors.right: parent.right
+
+            innerTopMargin: SafeZone.top
+
+            z: 10
+            text: "Contemporary Playground";
+            color: Contemporary.calculateLayer(2)
+        }
 
         ListView {
             id: sidebar
             displayMarginBeginning: SafeZone.top
             displayMarginEnd: SafeZone.bottom
-
-            anchors.topMargin: SafeZone.top
-            anchors.bottomMargin: SafeZone.bottom
-            anchors.fill: parent
+            anchors.top: title.bottom
+            anchors.left: parent.left;
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.topMargin: 6
 
             model: ListModel {
                 ListElement {
@@ -142,6 +156,7 @@ ContemporaryWindow {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.left: sidebarContainer.right
+        anchors.leftMargin: 3
 
         currentAnimation: Pager.Animation.SlideHorizontal
 

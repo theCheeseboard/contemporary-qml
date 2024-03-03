@@ -15,6 +15,7 @@ class ContemporaryStyle : public QObject
     Q_PROPERTY(QColor line READ line WRITE setLine NOTIFY lineChanged)
     Q_PROPERTY(QColor focusDecoration READ focusDecoration WRITE setFocusDecoration NOTIFY focusDecorationChanged)
     Q_PROPERTY(QColor backgroundAccent READ backgroundAccent WRITE setBackgroundAccent NOTIFY backgroundAccentChanged)
+    Q_PROPERTY(QColor layer READ layer WRITE setlayer NOTIFY layerChanged)
     Q_PROPERTY(Qt::Edge windowControlSide READ windowControlSide CONSTANT)
 public:
     explicit ContemporaryStyle(QObject *parent = nullptr);
@@ -40,12 +41,17 @@ public:
     QColor backgroundAccent() const;
     void setBackgroundAccent(QColor backgroundAccent);
 
+    QColor layer() const;
+    void setlayer(QColor layer);
+
     Qt::Edge windowControlSide() const;
 
     Q_INVOKABLE static QColor hovered(QColor color);
     Q_INVOKABLE static QColor pressed(QColor color);
     Q_INVOKABLE static QColor disabled(QColor color);
     Q_INVOKABLE QColor calculateColor(QColor color, bool hovered, bool pressed, bool disabled);
+    Q_INVOKABLE QColor calculateLayer(uint layer);
+    Q_INVOKABLE QColor calculateLayer(uint layer, QColor base);
 
 signals:
     void accentChanged();
@@ -54,6 +60,7 @@ signals:
     void lineChanged();
     void focusDecorationChanged();
     void backgroundAccentChanged();
+    void layerChanged();
 
 private:
     ContemporaryStylePrivate* d;

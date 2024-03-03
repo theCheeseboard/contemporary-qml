@@ -8,7 +8,15 @@ struct ContemporaryStylePrivate {
     QColor foreground{255, 255, 255};
     QColor line{85, 85, 85};
     QColor focusDecoration{20, 125, 200};
-    QColor backgroundAccent{60, 60, 60};
+    QColor backgroundAccent{50, 50, 50};
+    QColor layer{255, 255, 255, 10};
+    // QColor accent{0, 150, 255};
+    // QColor background{245, 245, 245};
+    // QColor foreground{0, 0, 0};
+    // QColor line{230, 230, 230};
+    // QColor focusDecoration{20, 125, 200};
+    // QColor backgroundAccent{50, 50, 50};
+    // QColor layer{0, 0, 0, 10};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)
@@ -81,6 +89,15 @@ void ContemporaryStyle::setBackgroundAccent(QColor backgroundAccent) {
     emit backgroundAccentChanged();
 }
 
+QColor ContemporaryStyle::layer() const {
+    return d->layer;
+}
+
+void ContemporaryStyle::setlayer(QColor layer) {
+    d->layer = layer;
+    emit layerChanged();
+}
+
 Qt::Edge ContemporaryStyle::windowControlSide() const
 {
 #ifdef Q_OS_MAC
@@ -107,10 +124,25 @@ QColor ContemporaryStyle::disabled(QColor color)
     return QColor::fromHsvF(color.hsvHueF(), color.hsvSaturationF() / 2, color.valueF() / 2);
 }
 
-QColor ContemporaryStyle::calculateColor(QColor color, bool hovered, bool pressed, bool disabled)
-{
+QColor ContemporaryStyle::calculateColor(QColor color, bool hovered, bool pressed, bool disabled) {
     if (disabled) return this->disabled(color);
     if (pressed) return this->pressed(color);
     if (hovered) return this->hovered(color);
     return color;
+}
+
+QColor ContemporaryStyle::calculateLayer(uint layer) {
+    return this->calculateLayer(layer, this->background());
+}
+
+QColor ContemporaryStyle::calculateLayer(uint layer, QColor base) {
+    if (layer <= 0) return base;
+
+    auto layerColor = this->layer();
+    for (auto i = 0; i < layer; i++) {
+        base.setRedF(layerColor.alphaF() * layerColor.redF() + (1 - layerColor.alphaF()) * base.redF());
+        base.setGreenF(layerColor.alphaF() * layerColor.greenF() + (1 - layerColor.alphaF()) * base.greenF());
+        base.setBlueF(layerColor.alphaF() * layerColor.blueF() + (1 - layerColor.alphaF()) * base.blueF());
+    }
+    return base;
 }

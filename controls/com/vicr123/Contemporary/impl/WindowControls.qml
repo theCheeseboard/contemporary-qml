@@ -56,6 +56,8 @@ Item {
             flat: true
             onClicked: root.control.showMinimized()
             visible: !nmin.haveNativeControls
+            icon.width: 24
+            icon.height: 24
         }
 
         Button {
@@ -65,6 +67,8 @@ Item {
             flat: true
             onClicked: root.control.visibility === Window.Maximized ? root.control.showNormal() : root.control.showMaximized()
             visible: !nmin.haveNativeControls
+            icon.width: 24
+            icon.height: 24
         }
 
         Button {
@@ -74,6 +78,8 @@ Item {
             flat: true
             onClicked: root.control.close()
             visible: !nmin.haveNativeControls
+            icon.width: 24
+            icon.height: 24
         }
     }
 }
