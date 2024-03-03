@@ -16,6 +16,25 @@ ContemporaryWindow {
     actionBar: ActionBar {
         control: window
 
+        menuItems: [
+            Menu {
+                title: qsTr("Theme")
+
+                Action {
+                    text: qsTr("Light")
+                }
+                Action {
+                    text: qsTr("Dark")
+                }
+            },
+            MenuSeparator {},
+            Action {
+                text: qsTr("Exit")
+                shortcut: "Ctrl+Q"
+                onTriggered: window.close()
+            }
+        ]
+
         ActionBarTabber {
 
         }

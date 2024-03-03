@@ -11,6 +11,7 @@ MouseArea {
 
     property Window control
     default property alias contents: contentContainer.data
+    property alias menuItems: windowMenu.contentData
 
     implicitHeight: childrenRect.height
 
@@ -27,6 +28,15 @@ MouseArea {
             Layout.preferredWidth: menuButton.height
             icon.width: 24
             icon.height: 24
+
+            onClicked: {
+                windowMenu.open()
+            }
+
+            Menu {
+                id: windowMenu
+                y: menuButton.height
+            }
         }
 
         Flickable {

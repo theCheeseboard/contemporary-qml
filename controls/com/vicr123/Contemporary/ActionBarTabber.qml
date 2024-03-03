@@ -18,7 +18,7 @@ Rectangle {
         spacing: 2
 
         Repeater {
-            model: 3
+            model: 2
             Button {
                 required property int index
                 text: qsTr("Button %1").arg(index)
