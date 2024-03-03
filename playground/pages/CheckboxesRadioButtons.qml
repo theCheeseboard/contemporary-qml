@@ -2,15 +2,28 @@ import QtQuick 2.15
 import QtQuick.Controls
 import QtQuick.Layouts
 import com.vicr123.Contemporary
+import Contemporary
 
 Control {
     id: rectangle
-    Layout.fillHeight: true
-    Layout.fillWidth: true
+
+    Grandstand {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+
+        id: grandstand
+
+        innerTopMargin: SafeZone.top
+
+        z: 10
+        text: "Checkboxes and Radio Buttons";
+        color: Contemporary.calculateLayer(2)
+    }
 
     RowLayout {
-        anchors.top: parent.top
-        anchors.topMargin: SafeZone.top
+        anchors.top: grandstand.bottom
+        anchors.topMargin: 6
         anchors.bottomMargin: SafeZone.bottom
 
         ColumnLayout {
