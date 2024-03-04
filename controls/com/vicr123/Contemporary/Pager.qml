@@ -15,6 +15,13 @@ StackView {
     property int currentAnimation: Pager.Animation.Fade
     property var defaultItem: Item { }
 
+    QtObject {
+        id: d
+
+        property bool animBackward
+        property int oldIndex
+    }
+
     initialItem: defaultItem
 
     Transition {
@@ -50,7 +57,7 @@ StackView {
                 easing.type: Easing.OutCubic
             }
             XAnimator {
-                from: 50
+                from: d.animBackward ? 50 : -50
                 to: 0
                 duration: 150
                 easing.type: Easing.OutCubic
@@ -70,7 +77,7 @@ StackView {
             }
             XAnimator {
                 from: 0
-                to: -50
+                to: d.animBackward ? -50 : 50
                 duration: 150
                 easing.type: Easing.OutCubic
             }
@@ -112,7 +119,11 @@ StackView {
     replaceEnter: animFadeEnter;
     replaceExit: animFadeExit;
 
-    onCurrentIndexChanged: replacePage()
+    onCurrentIndexChanged: {
+        d.animBackward = root.currentIndex >= d.oldIndex;
+        d.oldIndex = root.currentIndex
+        replacePage()
+    }
 
     onCurrentAnimationChanged: () => {
         switch (root.currentAnimation) {
