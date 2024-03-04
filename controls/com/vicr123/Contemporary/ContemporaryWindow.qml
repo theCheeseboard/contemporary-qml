@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import QtQuick.Effects
+// import QtQuick.Effects
 import Contemporary
 import com.vicr123.Contemporary.impl
 
@@ -165,16 +165,16 @@ ApplicationWindow {
             }
         }
 
-        MultiEffect {
-            source: rootRect
-            anchors.fill: insideMouseArea
-            shadowBlur: 1.0
-            shadowEnabled: window.visibility !== Window.Maximized && window.visibility !== Window.FullScreen
-            shadowColor: "#000000"
-            shadowVerticalOffset: 0
-            shadowHorizontalOffset: 0
-            shadowScale: 1
-        }
+        // MultiEffect {
+        //     source: rootRect
+        //     anchors.fill: insideMouseArea
+        //     shadowBlur: 1.0
+        //     shadowEnabled: window.visibility !== Window.Maximized && window.visibility !== Window.FullScreen
+        //     shadowColor: "#000000"
+        //     shadowVerticalOffset: 0
+        //     shadowHorizontalOffset: 0
+        //     shadowScale: 1
+        // }
 
         function edges(event) {
             const edgeSize = 10;
