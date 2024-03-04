@@ -121,6 +121,8 @@ QColor ContemporaryStyle::pressed(QColor color)
 
 QColor ContemporaryStyle::disabled(QColor color)
 {
+    if (color.alpha() == 0) return color;
+
     return QColor::fromHsvF(color.hsvHueF(), color.hsvSaturationF() / 2, color.valueF() / 2);
 }
 
