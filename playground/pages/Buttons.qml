@@ -23,45 +23,68 @@ Control {
         color: Contemporary.calculateLayer(2)
     }
 
-    RowLayout {
+    ColumnLayout {
         anchors.top: grandstand.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
         anchors.topMargin: 6
 
-        ColumnLayout {
-            Button {
-                text: qsTr("Default Button")
-                onClicked: popover1.open()
-            }
+        GroupBox {
+            title: qsTr("Normal Buttons")
+            implicitWidth: 600
 
-            Button {
-                enabled: false
-                text: qsTr("Disabled Button")
-            }
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-            Button {
-                checkable: true
-                text: qsTr("Checkable Button")
+            RowLayout {
+                anchors.fill: parent
+                Button {
+                    text: qsTr("Default Button")
+                    onClicked: popover1.open()
+                }
+
+                Button {
+                    enabled: false
+                    text: qsTr("Disabled Button")
+                }
+
+                Button {
+                    checkable: true
+                    text: qsTr("Checkable Button")
+                }
             }
         }
 
-        ColumnLayout {
-            Button {
-                text: qsTr("Flat Default Button")
-                flat: true
-            }
+        GroupBox {
+            title: qsTr("Flat Buttons")
+            implicitWidth: 600
 
-            Button {
-                enabled: false
-                flat: true
-                text: qsTr("Flat Disabled Button")
-            }
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-            Button {
-                checkable: true
-                flat: true
-                text: qsTr("Flat Checkable Button")
+            RowLayout {
+                anchors.fill: parent
+                Button {
+                    text: qsTr("Flat Default Button")
+                    flat: true
+                }
+
+                Button {
+                    enabled: false
+                    flat: true
+                    text: qsTr("Flat Disabled Button")
+                }
+
+                Button {
+                    checkable: true
+                    flat: true
+                    text: qsTr("Flat Checkable Button")
+                }
             }
+        }
+
+        Item {
+            Layout.fillHeight: true
         }
     }
 

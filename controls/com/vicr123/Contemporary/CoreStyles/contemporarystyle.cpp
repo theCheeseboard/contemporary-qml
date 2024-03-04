@@ -16,7 +16,7 @@ struct ContemporaryStylePrivate {
     // QColor line{230, 230, 230};
     // QColor focusDecoration{20, 125, 200};
     // QColor backgroundAccent{50, 50, 50};
-    // QColor layer{0, 0, 0, 10};
+    // QColor layer{0, 0, 0, 20};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)

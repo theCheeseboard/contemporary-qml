@@ -15,6 +15,7 @@ qt_add_qml_module(contemporary-corecontrols
         Menu.qml
         MenuItem.qml
         MenuSeparator.qml
+        GroupBox.qml
     SOURCES
         contemporarystyle.cpp contemporarystyle.h
         contemporaryinitialisation.h contemporaryinitialisation.cpp
