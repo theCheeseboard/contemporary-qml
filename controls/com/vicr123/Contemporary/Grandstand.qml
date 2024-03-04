@@ -9,6 +9,7 @@ Rectangle {
     property real innerTopMargin
     property alias text: label.text
     property bool backButtonVisible: false
+    signal backButtonClicked
 
     color: Contemporary.layer
     implicitHeight: label.implicitHeight + innerTopMargin + 15
@@ -19,7 +20,7 @@ Rectangle {
 
     Item {
         anchors.fill: parent
-        anchors.topMargin: innerTopMargin + 3
+        anchors.topMargin: innerTopMargin
 
         Button {
             id: backButton
@@ -29,6 +30,8 @@ Rectangle {
             anchors.bottom: parent.bottom
             width: backButtonVisible ? 32 : 0
             flat: true
+
+            onClicked: root.backButtonClicked()
         }
 
         Label {

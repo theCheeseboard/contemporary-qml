@@ -90,11 +90,10 @@ Control {
 
     Drawer {
         id: popover1
-        width: window.width + 1
-        height: window.height
-        edge: Qt.RightEdge
+        width: window.width
+        height: Math.max(window.height - 300, 300)
+        edge: Qt.BottomEdge
         interactive: false
-
 
         Drawer {
             id: popover2
@@ -117,21 +116,48 @@ Control {
             }
         }
 
+        Grandstand {
+            id: popover1Grandstand
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+
+            backButtonVisible: true
+            text: qsTr("Popover")
+
+            onBackButtonClicked: popover1.close()
+        }
+
         ColumnLayout {
-            anchors.centerIn: parent
+            anchors.top: popover1Grandstand.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.topMargin: 3
 
-            Label {
-                text: "Popover Contents"
+            GroupBox {
+                title: qsTr("Popover Contents")
+                implicitWidth: 600
+
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+                ColumnLayout {
+                    anchors.fill: parent
+
+                    Label {
+                        text: qsTr("This is the contents of the popover.")
+                    }
+
+                    Button {
+                        Layout.fillWidth: true
+                        text: qsTr("Open Popover 2")
+                        onClicked: popover2.open()
+                    }
+                }
             }
 
-            Button {
-                text: "Open another"
-                onClicked: popover2.open()
-            }
-
-            Button {
-                text: "Close"
-                onClicked: popover1.close()
+            Item {
+                Layout.fillHeight: true
             }
         }
     }

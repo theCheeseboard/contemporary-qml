@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.impl
 import QtQuick.Templates as T
 import Contemporary
+import com.vicr123.Contemporary
 
 T.GroupBox {
     id: control
@@ -16,17 +17,15 @@ T.GroupBox {
     padding: 12
     topPadding: padding + (implicitLabelWidth > 0 ? implicitLabelHeight + spacing : 0)
 
-    label: Text {
+    label: SubtitleLabel {
         id: label
         x: control.leftPadding
         y: 6
         width: control.availableWidth
 
-        text: control.title.toLocaleUpperCase()
-        font.family: control.font.name
-        font.bold: true
+        text: control.title
+        font: control.font
         color: Contemporary.foreground
-        elide: Text.ElideRight
         verticalAlignment: Text.AlignVCenter
     }
 
