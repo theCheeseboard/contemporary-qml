@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-Item {
+MouseArea {
     id: root
     Layout.fillWidth: false
     Layout.fillHeight: false
@@ -47,6 +47,10 @@ Item {
                 Layout.preferredHeight: 16
                 systemWindowType: 2
             }
+
+            Rectangle {
+                Layout.preferredWidth: 3
+            }
         }
 
         Button {
@@ -82,4 +86,6 @@ Item {
             icon.height: 24
         }
     }
+
+    onPressed: root.control.startSystemMove();
 }

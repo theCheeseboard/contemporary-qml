@@ -37,6 +37,8 @@ MouseArea {
                 id: windowMenu
                 y: menuButton.height
             }
+
+            visible: Qt.platform.os !== "osx"
         }
 
         Flickable {

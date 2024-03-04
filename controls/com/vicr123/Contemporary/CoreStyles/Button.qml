@@ -20,8 +20,7 @@ T.Button {
 
     icon.width: 16
     icon.height: 16
-    icon.color: control.checked || control.highlighted ? control.palette.brightText :
-        (control.flat && !control.down ? control.palette.windowText : control.palette.buttonText)
+    icon.color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
 
     contentItem: IconLabel {
         spacing: control.spacing
@@ -31,8 +30,7 @@ T.Button {
         icon: control.icon
         text: control.text
         font: control.font
-        color: control.checked || control.highlighted ? control.palette.brightText :
-            (control.flat && !control.down ? control.palette.windowText : control.palette.buttonText)
+        color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
     }
 
     background: ButtonBackground {
