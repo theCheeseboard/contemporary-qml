@@ -33,14 +33,6 @@ T.Drawer {
 
     background: Rectangle {
         color: Contemporary.background
-        Rectangle {
-            readonly property bool horizontal: control.edge === Qt.LeftEdge || control.edge === Qt.RightEdge
-            width: horizontal ? 1 : parent.width
-            height: horizontal ? parent.height : 1
-            color: Contemporary.line
-            x: control.edge === Qt.LeftEdge ? parent.width - 1 : 0
-            y: control.edge === Qt.TopEdge ? parent.height - 1 : 0
-        }
     }
 
     T.Overlay.modal: Rectangle {

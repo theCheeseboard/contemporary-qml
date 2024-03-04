@@ -72,12 +72,8 @@ StackView {
 
     replaceEnter: animFadeEnter;
     replaceExit: animFadeExit;
-    pushEnter: animFadeEnter;
-    pushExit: animFadeExit;
 
-    onCurrentIndexChanged: () => {
-        root.replace(null, pages[currentIndex] ?? defaultItem);
-    }
+    onCurrentIndexChanged: replacePage()
 
     onCurrentAnimationChanged: () => {
         switch (root.currentAnimation) {
@@ -96,5 +92,14 @@ StackView {
         }
     }
 
-    Component.onCompleted: root.currentIndex = 0
+    Component.onCompleted: replacePage()
+
+    onPagesChanged: () => {
+        console.log(`Pages Changed ${root.currentIndex}`)
+        if (root.currentItem === defaultItem) replacePage()
+    }
+
+    function replacePage() {
+        root.replace(null, pages[currentIndex] ?? defaultItem);
+    }
 }

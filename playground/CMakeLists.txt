@@ -15,14 +15,15 @@ qt_add_qml_module(appplayground
     VERSION 1.0
     QML_FILES
         Main.qml
-        pages/Buttons.qml
-        pages/CheckboxesRadioButtons.qml
-        pages/TextInput.qml
-        pages/TumblerPage.qml
-        pages/ComboBoxPage.qml
-        pages/Ranges.qml
-        pages/Progress.qml
-        pages/Scrollable.qml
+        components/Root.qml
+        components/Buttons.qml
+        components/CheckboxesRadioButtons.qml
+        components/TextInput.qml
+        components/TumblerPage.qml
+        components/ComboBoxPage.qml
+        components/Ranges.qml
+        components/Progress.qml
+        components/Scrollable.qml
 )
 
 
