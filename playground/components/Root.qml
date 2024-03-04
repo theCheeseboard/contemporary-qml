@@ -113,7 +113,7 @@ Item {
         anchors.leftMargin: 3
         anchors.right: parent.right
         anchors.top: parent.top
-        currentAnimation: Pager.Animation.SlideHorizontal
+        currentAnimation: Pager.Animation.Lift
 
         Pages.Buttons {
         }

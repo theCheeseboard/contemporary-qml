@@ -6,7 +6,8 @@ StackView {
 
     enum Animation {
         Fade,
-        SlideHorizontal
+        SlideHorizontal,
+        Lift
     }
 
     default property list<Item> pages
@@ -23,6 +24,7 @@ StackView {
             from: 0
             to: 1
             duration: 150
+            easing.type: Easing.OutCubic
         }
     }
 
@@ -33,6 +35,7 @@ StackView {
             from: 1
             to: 0
             duration: 150
+            easing.type: Easing.OutCubic
         }
     }
 
@@ -44,11 +47,13 @@ StackView {
                 from: 0
                 to: 1
                 duration: 150
+                easing.type: Easing.OutCubic
             }
             XAnimator {
                 from: 50
                 to: 0
                 duration: 150
+                easing.type: Easing.OutCubic
             }
         }
     }
@@ -61,11 +66,45 @@ StackView {
                 from: 1
                 to: 0
                 duration: 150
+                easing.type: Easing.OutCubic
             }
             XAnimator {
                 from: 0
                 to: -50
                 duration: 150
+                easing.type: Easing.OutCubic
+            }
+        }
+    }
+
+    Transition {
+        id: animLiftEnter
+        ParallelAnimation {
+            NumberAnimation {
+                property: "opacity"
+                from: 0
+                to: 1
+                duration: 150
+                easing.type: Easing.OutCubic
+            }
+            YAnimator {
+                from: 50
+                to: 0
+                duration: 150
+                easing.type: Easing.OutCubic
+            }
+        }
+    }
+
+    Transition {
+        id: animLiftExit
+        ParallelAnimation {
+            NumberAnimation {
+                property: "opacity"
+                from: 1
+                to: 0
+                duration: 150
+                easing.type: Easing.OutCubic
             }
         }
     }
@@ -80,14 +119,14 @@ StackView {
             case Pager.Animation.Fade:
                 root.replaceEnter = animFadeEnter;
                 root.replaceExit = animFadeExit;
-                root.pushEnter = animFadeEnter;
-                root.pushExit = animFadeExit;
                 break;
             case Pager.Animation.SlideHorizontal:
                 root.replaceEnter = animSlideHEnter;
                 root.replaceExit = animSlideHExit;
-                root.pushEnter = animSlideHEnter;
-                root.pushExit = animSlideHExit;
+                break;
+            case Pager.Animation.Lift:
+                root.replaceEnter = animLiftEnter;
+                root.replaceExit = animLiftExit;
                 break;
         }
     }
@@ -95,7 +134,6 @@ StackView {
     Component.onCompleted: replacePage()
 
     onPagesChanged: () => {
-        console.log(`Pages Changed ${root.currentIndex}`)
         if (root.currentItem === defaultItem) replacePage()
     }
 
