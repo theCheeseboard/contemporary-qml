@@ -29,15 +29,9 @@ T.GroupBox {
         verticalAlignment: Text.AlignVCenter
     }
 
-    background: Rectangle {
-        // y: control.topPadding - control.bottomPadding
+    background: Layer {
         y: 0
         width: parent.width
-        // height: parent.height - control.topPadding + control.bottomPadding
         height: parent.height
-
-        radius: 4
-
-        color: Contemporary.layer
     }
 }

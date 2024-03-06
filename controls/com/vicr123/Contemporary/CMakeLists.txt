@@ -12,6 +12,7 @@ qt_add_qml_module(contemporary-controls
         Pager.qml
         Grandstand.qml
         SubtitleLabel.qml
+        Layer.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp
