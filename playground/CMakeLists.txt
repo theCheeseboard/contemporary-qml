@@ -47,7 +47,7 @@ set_target_properties(appplayground PROPERTIES
 )
 
 target_link_libraries(appplayground
-    PRIVATE contemporary-corecontrols contemporary-controls Qt::Quick Qt::QuickControls2
+    PRIVATE Qt::Quick Qt::QuickControls2
 )
 
 target_include_directories(appplayground

@@ -16,14 +16,24 @@ qt_add_qml_module(contemporary-corecontrols
         MenuItem.qml
         MenuSeparator.qml
         GroupBox.qml
-    SOURCES
-        contemporarystyle.cpp contemporarystyle.h
-        contemporaryinitialisation.h contemporaryinitialisation.cpp
+        SpinBox.qml
+        BusyIndicator.qml
     PLUGIN_TARGET contemporary-corecontrols-plugin
-    QML_FILES SpinBox.qml
-    QML_FILES BusyIndicator.qml
+    NO_GENERATE_PLUGIN_SOURCE
+    NO_PLUGIN_OPTIONAL
+    CLASS_NAME ContemporaryStylePlugin
 )
 
 target_link_libraries(contemporary-corecontrols
     PRIVATE Qt6::Quick Qt6::QuickControls2
+)
+
+target_sources(contemporary-corecontrols-plugin PRIVATE
+    contemporarystyleplugin.h contemporarystyleplugin.cpp
+    contemporarystyle.cpp contemporarystyle.h
+    contemporaryinitialisation.h contemporaryinitialisation.cpp
+)
+
+target_link_libraries(contemporary-corecontrols-plugin
+        PRIVATE Qt6::Quick Qt6::QuickControls2
 )

@@ -17,6 +17,11 @@ class ContemporaryStyle : public QObject
     Q_PROPERTY(QColor backgroundAccent READ backgroundAccent WRITE setBackgroundAccent NOTIFY backgroundAccentChanged)
     Q_PROPERTY(QColor layer READ layer WRITE setlayer NOTIFY layerChanged)
     Q_PROPERTY(Qt::Edge windowControlSide READ windowControlSide CONSTANT)
+
+    QML_NAMED_ELEMENT(Contemporary)
+    QML_UNCREATABLE("")
+    QML_ATTACHED(ContemporaryStyle)
+
 public:
     explicit ContemporaryStyle(QObject *parent = nullptr);
     ~ContemporaryStyle();

@@ -1,11 +1,8 @@
 #include <QGuiApplication>
-#include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlEngine>
 #include <QQuickStyle>
 #include <QIcon>
-
-#include "contemporaryinitialisation.h"
 
 int main(int argc, char* argv[]) {
     QGuiApplication app(argc, argv);
@@ -15,8 +12,6 @@ int main(int argc, char* argv[]) {
     // QQuickStyle::setStyle("Material");
     // QQuickStyle::setStyle("Fusion");
     QIcon::setThemeName("contemporary");
-
-    ContemporaryInitialisation::init();
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/qt/qml/playground/Main.qml"_qs);
