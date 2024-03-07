@@ -34,6 +34,7 @@ T.Menu {
 
         radius: 4
         color: Contemporary.background
+        border.color: Contemporary.line
     }
 
     T.Overlay.modal: Rectangle {

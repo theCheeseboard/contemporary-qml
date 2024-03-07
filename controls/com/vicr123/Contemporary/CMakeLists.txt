@@ -13,6 +13,7 @@ qt_add_qml_module(contemporary-controls
         Grandstand.qml
         SubtitleLabel.qml
         Layer.qml
+        MenuSection.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp

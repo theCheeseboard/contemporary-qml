@@ -15,9 +15,11 @@ T.MenuItem {
     padding: 6
     spacing: 6
 
-    icon.width: 24
-    icon.height: 24
+    icon.width: 16
+    icon.height: 16
     icon.color: control.palette.windowText
+
+    hoverEnabled: true
 
     contentItem: IconLabel {
         readonly property real arrowPadding: control.subMenu && control.arrow ? control.arrow.width + control.spacing : 0
@@ -60,11 +62,12 @@ T.MenuItem {
     background: Rectangle {
         implicitWidth: 200
         implicitHeight: 40
-        x: 1
-        y: 1
-        width: control.width - 2
-        height: control.height - 2
+        x: 3
+        y: 3
+        width: control.width - 6
+        height: control.height - 6
         radius: 4
-        color: control.down ? Contemporary.pressed(Contemporary.accent) : control.highlighted ? Contemporary.accent : "transparent"
+
+        color: control.highlighted ? Contemporary.accent : "transparent"
     }
 }
