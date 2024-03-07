@@ -10,6 +10,7 @@ struct ContemporaryStylePrivate {
     QColor focusDecoration{20, 125, 200};
     QColor backgroundAccent{50, 50, 50};
     QColor layer{255, 255, 255, 10};
+    QColor destructiveAccent{200, 0, 0};
     // QColor accent{0, 150, 255};
     // QColor background{245, 245, 245};
     // QColor foreground{0, 0, 0};
@@ -96,6 +97,15 @@ QColor ContemporaryStyle::layer() const {
 void ContemporaryStyle::setlayer(QColor layer) {
     d->layer = layer;
     emit layerChanged();
+}
+
+QColor ContemporaryStyle::destructiveAccent() const {
+    return d->destructiveAccent;
+}
+
+void ContemporaryStyle::setDestructiveAccent(QColor destructiveAccent) {
+    d->destructiveAccent = destructiveAccent;
+    emit destructiveAccentChanged();
 }
 
 Qt::Edge ContemporaryStyle::windowControlSide() const

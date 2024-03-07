@@ -16,6 +16,7 @@ class ContemporaryStyle : public QObject
     Q_PROPERTY(QColor focusDecoration READ focusDecoration WRITE setFocusDecoration NOTIFY focusDecorationChanged)
     Q_PROPERTY(QColor backgroundAccent READ backgroundAccent WRITE setBackgroundAccent NOTIFY backgroundAccentChanged)
     Q_PROPERTY(QColor layer READ layer WRITE setlayer NOTIFY layerChanged)
+    Q_PROPERTY(QColor destructiveAccent READ destructiveAccent WRITE setDestructiveAccent NOTIFY destructiveAccentChanged)
     Q_PROPERTY(Qt::Edge windowControlSide READ windowControlSide CONSTANT)
 
     QML_NAMED_ELEMENT(Contemporary)
@@ -49,6 +50,9 @@ public:
     QColor layer() const;
     void setlayer(QColor layer);
 
+    QColor destructiveAccent() const;
+    void setDestructiveAccent(QColor destructiveAccent);
+
     Qt::Edge windowControlSide() const;
 
     Q_INVOKABLE static QColor hovered(QColor color);
@@ -66,6 +70,7 @@ signals:
     void focusDecorationChanged();
     void backgroundAccentChanged();
     void layerChanged();
+    void destructiveAccentChanged();
 
 private:
     ContemporaryStylePrivate* d;

@@ -23,7 +23,7 @@ Rectangle {
         State {
             name: "off"
             PropertyChanges {
-                target: background
+                target: control
                 color: control.buttonColor
             }
         },
@@ -31,7 +31,7 @@ Rectangle {
             name: "disabled"
             when: !control.enabled
             PropertyChanges {
-                target: background
+                target: control
                 color: Contemporary.disabled(control.buttonColor)
             }
         },
@@ -39,7 +39,7 @@ Rectangle {
             name: "pressed"
             when: control.highlighted || control.checked || control.pressed
             PropertyChanges {
-                target: background
+                target: control
                 color: Contemporary.pressed(control.buttonColor)
             }
         },
@@ -47,7 +47,7 @@ Rectangle {
             name: "hovered"
             when: control.hovered
             PropertyChanges {
-                target: background
+                target: control
                 color: Contemporary.hovered(control.buttonColor)
             }
         }
