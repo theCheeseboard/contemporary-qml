@@ -15,6 +15,7 @@ qt_add_qml_module(contemporary-controls
         Layer.qml
         MenuSection.qml
         SwipeAction.qml
+        Interstitial.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp

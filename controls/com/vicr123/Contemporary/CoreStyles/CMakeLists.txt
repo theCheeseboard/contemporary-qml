@@ -18,6 +18,7 @@ qt_add_qml_module(contemporary-corecontrols
         GroupBox.qml
         SpinBox.qml
         BusyIndicator.qml
+        Popup.qml
     PLUGIN_TARGET contemporary-corecontrols-plugin
     NO_GENERATE_PLUGIN_SOURCE
     NO_PLUGIN_OPTIONAL
