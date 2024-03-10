@@ -44,11 +44,14 @@ MouseArea {
         Flickable {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            contentWidth: contentContainer.width
+            contentWidth: contentContainer.implicitWidth
 
             clip: true
 
             RowLayout {
+                // LayoutMirroring.enabled: false
+                // LayoutMirroring.childrenInherit: true
+
                 anchors.fill: parent
                 id: contentContainer
             }

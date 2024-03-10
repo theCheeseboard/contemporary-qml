@@ -20,6 +20,7 @@ qt_add_qml_module(contemporary-corecontrols
         BusyIndicator.qml
         Popup.qml
         Tumbler.qml
+        Label.qml
     PLUGIN_TARGET contemporary-corecontrols-plugin
     NO_GENERATE_PLUGIN_SOURCE
     NO_PLUGIN_OPTIONAL
