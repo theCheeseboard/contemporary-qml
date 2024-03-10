@@ -95,13 +95,6 @@ Control {
         edge: Qt.BottomEdge
         interactive: false
 
-        Keys.onReleased: {
-            if (event.key === Qt.Key_Back && popover1.visible) {
-                popover1.close()
-                event.accepted = true
-            }
-        }
-
         Drawer {
             id: popover2
             width: window.width - 400

@@ -58,6 +58,11 @@ if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
     target_link_libraries(appplayground
         PRIVATE contemporary-corecontrols-plugin contemporary-controls-plugin
     )
+else()
+    # Ensure the plugins are built
+    add_dependencies(appplayground
+        contemporary-corecontrols-plugin contemporary-controls-plugin
+    )
 endif()
 
 include(GNUInstallDirs)
