@@ -57,7 +57,7 @@ StackView {
                 easing.type: Easing.OutCubic
             }
             XAnimator {
-                from: d.animBackward ? 50 : -50
+                from: d.animBackward ^ Qt.application.layoutDirection === Qt.RightToLeft ? 50 : -50
                 to: 0
                 duration: 150
                 easing.type: Easing.OutCubic
@@ -77,7 +77,7 @@ StackView {
             }
             XAnimator {
                 from: 0
-                to: d.animBackward ? -50 : 50
+                to: d.animBackward ^ Qt.application.layoutDirection === Qt.RightToLeft ? -50 : 50
                 duration: 150
                 easing.type: Easing.OutCubic
             }
