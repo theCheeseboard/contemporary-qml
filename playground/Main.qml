@@ -101,11 +101,8 @@ ContemporaryWindow {
 
     Pager {
         id: stack
-        currentAnimation: Pager.Animation.SlideHorizontal
         anchors.fill: parent
 
-        Pages.Root {
-            anchors.fill: parent
-        }
+        Pages.Root { }
     }
 }

@@ -6,6 +6,9 @@ qt_add_qml_module(contemporary-controls-impl
         WindowControls.qml
         FocusDecoration.qml
         ButtonBackground.qml
+        TransitionFade.qml
+        TransitionSlide.qml
+        TransitionLift.qml
     SOURCES
         nativewindowbutton.h
     PLUGIN_TARGET contemporary-controls-impl-plugin
