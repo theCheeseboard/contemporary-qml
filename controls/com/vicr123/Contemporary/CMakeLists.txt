@@ -17,6 +17,7 @@ qt_add_qml_module(contemporary-controls
         SwipeAction.qml
         Interstitial.qml
         ContemporaryStackView.qml
+        ContemporaryWindowSurface.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp

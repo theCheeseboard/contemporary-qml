@@ -9,7 +9,6 @@ MouseArea {
     height: childrenRect.height
     Layout.fillWidth: true
 
-    property Window control
     default property alias contents: contentContainer.data
     property alias menuItems: windowMenu.contentData
 
@@ -60,5 +59,5 @@ MouseArea {
         // TODO: Add jobs button
     }
 
-    onPressed: root.control.startSystemMove();
+    onPressed: Window.window.startSystemMove();
 }

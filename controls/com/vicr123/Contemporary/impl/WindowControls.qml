@@ -12,8 +12,6 @@ MouseArea {
     implicitHeight: childrenRect.height
     implicitWidth: nmin.haveWindowControls ? childrenRect.width : 0
 
-    property Window control
-
     visible: nmin.haveWindowControls
 
     RowLayout {
@@ -58,7 +56,7 @@ MouseArea {
             Layout.preferredWidth: min.height
             icon.source: "qrc:/com/vicr123/Contemporary/qml/icons/min.svg"
             flat: true
-            onClicked: root.control.showMinimized()
+            onClicked: Window.window.showMinimized()
             visible: !nmin.haveNativeControls
             icon.width: 24
             icon.height: 24
@@ -67,9 +65,9 @@ MouseArea {
         Button {
             id: max
             Layout.preferredWidth: max.height
-            icon.source: `qrc:/com/vicr123/Contemporary/qml/icons/${root.control.visibility === Window.Maximized ? "res" : "max"}.svg`
+            icon.source: `qrc:/com/vicr123/Contemporary/qml/icons/${Window.window.visibility === Window.Maximized ? "res" : "max"}.svg`
             flat: true
-            onClicked: root.control.visibility === Window.Maximized ? root.control.showNormal() : root.control.showMaximized()
+            onClicked: Window.window.visibility === Window.Maximized ? Window.window.showNormal() : Window.window.showMaximized()
             visible: !nmin.haveNativeControls
             icon.width: 24
             icon.height: 24
@@ -80,12 +78,12 @@ MouseArea {
             Layout.preferredWidth: close.height
             icon.source: "qrc:/com/vicr123/Contemporary/qml/icons/close.svg"
             flat: true
-            onClicked: root.control.close()
+            onClicked: Window.window.close()
             visible: !nmin.haveNativeControls
             icon.width: 24
             icon.height: 24
         }
     }
 
-    onPressed: root.control.startSystemMove();
+    onPressed: Window.window.startSystemMove();
 }

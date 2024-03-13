@@ -11,7 +11,7 @@ StackView {
         Lift
     }
 
-    property int currentAnimation: Pager.Animation.Fade
+    property int currentAnimation: ContemporaryStackView.Animation.Fade
 
     TransitionFade {
         id: animFade
@@ -25,7 +25,11 @@ StackView {
         id: animLift
     }
 
-    onCurrentAnimationChanged: () => {
+    Component.onCompleted: root.updateAnimation()
+
+    onCurrentAnimationChanged: root.updateAnimation()
+
+    function updateAnimation() {
         switch (root.currentAnimation) {
             case Pager.Animation.Fade:
                 animFade.install(root);

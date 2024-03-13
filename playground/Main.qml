@@ -9,49 +9,10 @@ import Qt.labs.platform as Labs
 ContemporaryWindow {
     id: window
 
-    height: 480
-    overlayActionBar: true
+    width: 800
+    height: 600
     title: qsTr("Contemporary Playground")
     visible: true
-    width: 640
-
-    actionBar: ActionBar {
-        control: window
-
-        menuItems: [
-            Menu {
-                title: qsTr("Theme")
-
-                Action {
-                    text: qsTr("Light")
-                }
-                Action {
-                    text: qsTr("Dark")
-                }
-            },
-            MenuSeparator {
-            },
-            Action {
-                shortcut: "Ctrl+Q"
-                text: qsTr("Exit")
-
-                onTriggered: window.close()
-            }
-        ]
-
-        ActionBarTabber {
-            ActionBarTabber.Button {
-                text: qsTr("Components")
-                checked: stack.currentIndex === 0
-                onActivated: stack.currentIndex = 0
-            }
-            ActionBarTabber.Button {
-                text: qsTr("Patterns")
-                checked: stack.currentIndex === 1
-                onActivated: stack.currentIndex = 1
-            }
-        }
-    }
 
     Labs.MenuBar {
         Labs.Menu {
@@ -99,10 +60,86 @@ ContemporaryWindow {
         }
     }
 
-    Pager {
-        id: stack
+    ContemporaryStackView {
+        id: outerStack
         anchors.fill: parent
 
-        Pages.Root { }
+        currentAnimation: ContemporaryStackView.Animation.Lift
+
+        initialItem: ContemporaryWindowSurface {
+            actionBar: ActionBar {
+                menuItems: [
+                    Action {
+                        text: qsTr("Add Surface")
+                        onTriggered: outerStack.push(stackPush)
+                    },
+                    Menu {
+                        title: qsTr("Theme")
+
+                        Action {
+                            text: qsTr("Light")
+                        }
+                        Action {
+                            text: qsTr("Dark")
+                        }
+                    },
+                    MenuSeparator {
+                    },
+                    Action {
+                        shortcut: "Ctrl+Q"
+                        text: qsTr("Exit")
+
+                        onTriggered: window.close()
+                    }
+                ]
+
+                ActionBarTabber {
+                    ActionBarTabber.Button {
+                        text: qsTr("Components")
+                        checked: stack.currentIndex === 0
+                        onActivated: stack.currentIndex = 0
+                    }
+                    ActionBarTabber.Button {
+                        text: qsTr("Patterns")
+                        checked: stack.currentIndex === 1
+                        onActivated: stack.currentIndex = 1
+                    }
+                }
+            }
+            overlayActionBar: true
+
+            Pager {
+                id: stack
+                anchors.fill: parent
+
+                Pages.Root { }
+            }
+        }
+
+        Component {
+            id: stackPush
+
+            ContemporaryWindowSurface {
+                actionBar: ActionBar {
+
+                }
+                overlayActionBar: true
+
+                Grandstand {
+                    id: grandstand
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    innerTopMargin: SafeZone.top
+                    z: 20
+
+                    text: qsTr("Extra Surface")
+                    color: Contemporary.calculateLayer(1)
+
+                    backButtonVisible: true
+                    onBackButtonClicked: outerStack.pop()
+                }
+            }
+        }
     }
 }

@@ -11,8 +11,6 @@ ApplicationWindow {
     flags: Qt.Window | Qt.FramelessWindowHint | Qt.MaximizeUsingFullScreenGeometryHint
 
     default property alias contents: contentContainer.data
-    property alias actionBar: actionBarLoader.sourceComponent
-    property bool overlayActionBar: false
 
     minimumWidth: 200
     minimumHeight: 480
@@ -56,112 +54,10 @@ ApplicationWindow {
                 SafeZone.top: safeZones.top
                 SafeZone.bottom: safeZones.bottom
 
-                Loader {
-                    id: actionBarLoader
-                    Layout.preferredHeight: childrenRect.height
-                    Layout.fillWidth: true
-
-                    z: 100
-                }
-
-                WindowControls {
-                    id: windowControls
-                    control: window
-                    z: 100
-                }
-
                 Item {
                     id: contentContainer
+                    anchors.fill: parent
                 }
-
-                MouseArea {
-                    id: titleBar
-
-                    Label {
-                        anchors.fill: parent
-                        text: window.title
-                        horizontalAlignment: Qt.AlignLeft
-                        verticalAlignment: Qt.AlignVCenter
-                    }
-
-                    onPressed: window.startSystemMove();
-                }
-
-                states: [
-                    State {
-                        name: "mobile"
-                        when: window.width < 640
-                        AnchorChanges {
-                            target: windowControls
-                            anchors.left: Contemporary.windowControlSide === Qt.RightEdge ? undefined : rootRect.left
-                            anchors.top: rootRect.top
-                            anchors.right: Contemporary.windowControlSide === Qt.RightEdge ? rootRect.right : undefined
-                        }
-                        AnchorChanges {
-                            target: contentContainer
-                            anchors.left: rootRect.left
-                            anchors.top: window.overlayActionBar ? rootRect.top : windowControls.bottom
-                            anchors.right: rootRect.right
-                            anchors.bottom: window.overlayActionBar ? rootRect.bottom : actionBarLoader.top
-                        }
-                        AnchorChanges {
-                            target: titleBar
-                            anchors.left: Contemporary.windowControlSide === Qt.RightEdge ? rootRect.left : windowControls.right
-                            anchors.top: rootRect.top
-                            anchors.right: Contemporary.windowControlSide === Qt.RightEdge ? windowControls.left : rootRect.right
-                            anchors.bottom: windowControls.bottom
-
-                        }
-                        AnchorChanges {
-                            target: actionBarLoader
-                            anchors.left: rootRect.left
-                            anchors.right: rootRect.right
-                            anchors.bottom: rootRect.bottom
-                        }
-                        PropertyChanges {
-                            target: titleBar
-                            visible: true
-                        }
-                        PropertyChanges {
-                            target: safeZones
-                            top: Math.max(windowControls.height, titleBar.height)
-                            bottom: actionBarLoader.height
-                        }
-                    },
-                    State {
-                        name: "desktop"
-                        when: window.width >= 640
-                        AnchorChanges {
-                            target: windowControls
-                            anchors.left: Contemporary.windowControlSide === Qt.RightEdge ? undefined : rootRect.left
-                            anchors.top: rootRect.top
-                            anchors.right: Contemporary.windowControlSide === Qt.RightEdge ? rootRect.right : undefined
-                        }
-                        AnchorChanges {
-                            target: actionBarLoader
-                            anchors.left: Contemporary.windowControlSide === Qt.RightEdge ? rootRect.left : windowControls.right
-                            anchors.top: rootRect.top
-                            anchors.right: Contemporary.windowControlSide === Qt.RightEdge ? windowControls.left : rootRect.right
-                            anchors.bottom: windowControls.bottom
-                        }
-                        AnchorChanges {
-                            target: contentContainer
-                            anchors.left: rootRect.left
-                            anchors.top: window.overlayActionBar ? rootRect.top : windowControls.bottom
-                            anchors.right: rootRect.right
-                            anchors.bottom: rootRect.bottom
-                        }
-                        PropertyChanges {
-                            target: titleBar
-                            visible: false
-                        }
-                        PropertyChanges {
-                            target: safeZones
-                            top: Math.max(windowControls.height, actionBarLoader.height)
-                            bottom: 0
-                        }
-                    }
-                ]
             }
         }
 
