@@ -21,7 +21,7 @@ MouseArea {
 
         Button {
             id: menuButton
-            icon.name: "com.vicr123.thebeat"
+            icon.source: "qrc:/libcontemporary-appassets/appicon.svg"
             icon.color: "transparent"
             flat: true
             Layout.preferredWidth: menuButton.height

@@ -28,7 +28,7 @@ qt_add_qml_module(contemporary-corecontrols
 )
 
 target_link_libraries(contemporary-corecontrols
-    PRIVATE Qt6::Quick Qt6::QuickControls2
+    PRIVATE Qt::Quick Qt::QuickControls2
 )
 
 target_sources(contemporary-corecontrols-plugin PRIVATE
@@ -38,5 +38,5 @@ target_sources(contemporary-corecontrols-plugin PRIVATE
 )
 
 target_link_libraries(contemporary-corecontrols-plugin
-        PRIVATE Qt6::Quick Qt6::QuickControls2
+        PRIVATE Qt::Quick Qt::QuickControls2
 )

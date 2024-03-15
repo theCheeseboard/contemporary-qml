@@ -1,12 +1,13 @@
-#include <QGuiApplication>
+#include <tapplication.h>
 #include <QQmlApplicationEngine>
 #include <QQmlEngine>
 #include <QQuickStyle>
 #include <QIcon>
 
 int main(int argc, char* argv[]) {
-    QGuiApplication app(argc, argv);
+    tApplication app(argc, argv);
     app.setWindowIcon(QIcon::fromTheme("com.vicr123.thebeat"));
+    app.setApplicationVersion("1.0");
 
     QQuickStyle::setStyle("com.vicr123.Contemporary.CoreStyles");
     // QQuickStyle::setStyle("Material");

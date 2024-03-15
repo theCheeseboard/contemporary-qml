@@ -85,6 +85,14 @@ ContemporaryWindow {
                     },
                     MenuSeparator {
                     },
+                    Menu {
+                        title: qsTr("Help")
+
+                        Action {
+                            text: qsTr("About")
+                            onTriggered: outerStack.push(aboutSurface)
+                        }
+                    },
                     Action {
                         shortcut: "Ctrl+Q"
                         text: qsTr("Exit")
@@ -140,6 +148,10 @@ ContemporaryWindow {
                     onBackButtonClicked: outerStack.pop()
                 }
             }
+        }
+
+        AboutSurface {
+            id: aboutSurface
         }
     }
 }

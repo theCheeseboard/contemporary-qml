@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
+find_package(libcontemporary)
 
 qt_standard_project_setup()
 
@@ -47,7 +48,7 @@ set_target_properties(appplayground PROPERTIES
 )
 
 target_link_libraries(appplayground
-    PRIVATE Qt::Quick Qt::QuickControls2
+    PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )
 
 target_include_directories(appplayground

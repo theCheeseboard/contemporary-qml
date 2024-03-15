@@ -12,6 +12,14 @@ qt_add_qml_module(contemporary-controls-impl
     SOURCES
         nativewindowbutton.h
     PLUGIN_TARGET contemporary-controls-impl-plugin
+        NO_GENERATE_PLUGIN_SOURCE
+        NO_PLUGIN_OPTIONAL
+        CLASS_NAME ContemporaryImplStylePlugin
+)
+
+target_sources(contemporary-controls-impl-plugin PRIVATE
+    contemporaryimplstyleplugin.h contemporaryimplstyleplugin.cpp
+    contemporaryapplication.h contemporaryapplication.cpp
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
@@ -30,5 +38,9 @@ qt_add_resources(contemporary-controls-impl "contemporary-qml-impl-resources"
 )
 
 target_link_libraries(contemporary-controls-impl
-    PRIVATE Qt6::Quick Qt6::QuickControls2
+    PRIVATE Qt::Quick Qt::QuickControls2
+)
+
+target_link_libraries(contemporary-controls-impl-plugin
+        PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )
