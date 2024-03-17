@@ -1,8 +1,10 @@
-#include <tapplication.h>
+#include <QIcon>
+#include <QMessageBox>
 #include <QQmlApplicationEngine>
 #include <QQmlEngine>
 #include <QQuickStyle>
-#include <QIcon>
+#include <tapplication.h>
+#include <tlogger.h>
 
 int main(int argc, char* argv[]) {
     tApplication app(argc, argv);
@@ -17,11 +19,13 @@ int main(int argc, char* argv[]) {
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/qt/qml/playground/Main.qml"_qs);
     QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreationFailed,
-        &app,
-        []() {
+        &engine, &QQmlApplicationEngine::objectCreationFailed, &app, [](QUrl url) {
         QCoreApplication::exit(-1);
+    },
+        Qt::QueuedConnection);
+    QObject::connect(
+        &engine, &QQmlApplicationEngine::warnings, &app, [](const QList<QQmlError>& warnings) {
+
     },
         Qt::QueuedConnection);
     engine.load(url);
@@ -29,7 +33,7 @@ int main(int argc, char* argv[]) {
     return app.exec();
 }
 
-#ifdef Q_OS_IOS
-#include <QQmlExtensionPlugin>
+#if defined(Q_OS_IOS)
+    #include <QQmlExtensionPlugin>
 Q_IMPORT_QML_PLUGIN(com_vicr123_Contemporary_CoreStylesPlugin)
 #endif

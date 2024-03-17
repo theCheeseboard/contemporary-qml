@@ -6,6 +6,8 @@ import com.vicr123.Contemporary
 import Contemporary
 import Qt.labs.platform as Labs
 
+import com.vicr123.Contemporary.CoreStyles
+
 ContemporaryWindow {
     id: window
 
