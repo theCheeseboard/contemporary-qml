@@ -67,6 +67,7 @@ ContemporaryWindow {
                         text: qsTr("Add Surface")
                         onTriggered: outerStack.push(stackPush)
                     },
+                    MenuSeparator { },
                     Menu {
                         title: qsTr("Theme")
 
@@ -84,22 +85,6 @@ ContemporaryWindow {
                             checkable: true
                             onCheckedChanged: darkAction.checked && Contemporary.setColorTheme(Contemporary.Dark)
                         }
-                    },
-                    MenuSeparator {
-                    },
-                    Menu {
-                        title: qsTr("Help")
-
-                        Action {
-                            text: qsTr("About")
-                            onTriggered: outerStack.push(aboutSurface)
-                        }
-                    },
-                    Action {
-                        shortcut: "Ctrl+Q"
-                        text: qsTr("Exit")
-
-                        onTriggered: window.close()
                     }
                 ]
 

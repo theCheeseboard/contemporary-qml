@@ -17,6 +17,14 @@ int main(int argc, char* argv[]) {
     app.setApplicationName(T_APPMETA_READABLE_NAME);
     app.setDesktopFileName(T_APPMETA_DESKTOP_ID);
 
+    app.setGenericName(QApplication::translate("main", "Control Playground"));
+    app.setApplicationLicense(tApplication::Gpl3OrLater);
+    app.setCopyrightHolder("Victor Tran");
+    app.setCopyrightYear("2024");
+    app.setOrganizationName("theSuite");
+    app.setApplicationName(T_APPMETA_READABLE_NAME);
+    app.setDesktopFileName(T_APPMETA_DESKTOP_ID);
+
     QQuickStyle::setStyle("com.vicr123.Contemporary.CoreStyles");
     // QQuickStyle::setStyle("Material");
     // QQuickStyle::setStyle("Fusion");

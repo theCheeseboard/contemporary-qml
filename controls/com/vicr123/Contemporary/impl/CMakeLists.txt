@@ -9,6 +9,7 @@ qt_add_qml_module(contemporary-controls-impl
         TransitionFade.qml
         TransitionSlide.qml
         TransitionLift.qml
+        ActionBarPopup.qml
     SOURCES
         nativewindowbutton.h
     PLUGIN_TARGET contemporary-controls-impl-plugin

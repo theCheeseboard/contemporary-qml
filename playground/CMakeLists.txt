@@ -27,7 +27,6 @@ qt_add_qml_module(appplayground
         components/Ranges.qml
         components/Progress.qml
         components/Scrollable.qml
-
 )
 
 

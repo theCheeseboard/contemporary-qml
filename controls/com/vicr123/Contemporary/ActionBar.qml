@@ -10,7 +10,10 @@ MouseArea {
     Layout.fillWidth: true
 
     default property alias contents: contentContainer.data
-    property alias menuItems: windowMenu.contentData
+    property list<QtObject> menuItems
+
+    property bool exitButtonVisible: true
+    property bool exitButtonEnabled: true
 
     implicitHeight: childrenRect.height
 
@@ -29,12 +32,14 @@ MouseArea {
             icon.height: 24
 
             onClicked: {
-                windowMenu.open()
+                actionBarPopup.open()
             }
 
-            Menu {
-                id: windowMenu
-                y: menuButton.height
+            ActionBarPopup {
+                id: actionBarPopup
+                menuItems: root.menuItems
+                exitButtonVisible: root.exitButtonVisible
+                exitButtonEnabled: root.exitButtonEnabled
             }
 
             visible: Qt.platform.os !== "osx"
