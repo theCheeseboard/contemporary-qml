@@ -45,6 +45,7 @@ set_target_properties(appplayground PROPERTIES
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
         QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
+        QT_ANDROID_VERSION_CODE 2
         CNTP_DATA_SUBDIR contemporary/playground
 )
 
