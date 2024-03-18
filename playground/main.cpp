@@ -8,8 +8,14 @@
 
 int main(int argc, char* argv[]) {
     tApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme("com.vicr123.thebeat"));
     app.setApplicationVersion("1.0");
+    app.setGenericName(QApplication::translate("main", "Control Playground"));
+    app.setApplicationLicense(tApplication::Gpl3OrLater);
+    app.setCopyrightHolder("Victor Tran");
+    app.setCopyrightYear("2024");
+    app.setOrganizationName("theSuite");
+    app.setApplicationName(T_APPMETA_READABLE_NAME);
+    app.setDesktopFileName(T_APPMETA_DESKTOP_ID);
 
     QQuickStyle::setStyle("com.vicr123.Contemporary.CoreStyles");
     // QQuickStyle::setStyle("Material");
