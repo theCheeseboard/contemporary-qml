@@ -1,0 +1,98 @@
+name: Build Android
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Ninja
+      run: |
+        sudo apt-get update
+        sudo apt-get install ninja-build
+
+    - uses: vicr123/libcontemporary/prepare-vars@actions
+      id: vars
+
+    - name: Install Host Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: ${{ steps.vars.outputs.qtVersion }}
+        cache: true
+        modules: 'qtmultimedia qtwebsockets qt5compat'
+
+    - name: Configure and install host libcontemporary
+      uses: theCheeseboard/libcontemporary/install-libcontemporary@actions
+      with:
+        qcoroVersion: ${{ steps.vars.outputs.qcoroVersion }}
+        commitish: features/qml
+
+    - name: "Set Qt path"
+      shell: bash
+      run: |
+        echo "QT_HOST_PATH=$Qt6_DIR" >> $GITHUB_ENV
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: ${{ steps.vars.outputs.qtVersion }}
+        cache: true
+        target: android
+        arch: 'android_arm64_v8a'
+        modules: 'qtmultimedia qtwebsockets qt5compat'
+
+    - name: Configure CMake toolchain
+      run: |
+        echo "LCNTP_CMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake" >> $GITHUB_ENV
+        echo "ANDROID_PLATFORM=android-23" >> $GITHUB_ENV
+        echo "ANDROID_ABI=arm64-v8a" >> $GITHUB_ENV
+        echo "LCNTP_TARGET_PLATFORM=android" >> $GITHUB_ENV
+
+    - name: Configure and install libcontemporary
+      uses: theCheeseboard/libcontemporary/install-libcontemporary@actions
+      with:
+        qcoroVersion: ${{ steps.vars.outputs.qcoroVersion }}
+        commitish: features/qml
+
+    - uses: actions/checkout@v4
+    - uses: vicr123/libcontemporary/build-project@actions
+      name: "Build project"
+      with:
+        project: "."
+        extra-cmake-args: "-DCMAKE_BUILD_TYPE=Release -DANDROID_VERSION_CODE=${{ github.run_number }}"
+        target: "aab"
+
+    - uses: r0adkll/sign-android-release@v1
+      name: Sign APK
+      id: apksign
+      with:
+        releaseDirectory: build/playground/android-build/build/outputs/bundle/release
+        signingKeyBase64: ${{ secrets.ANDROID_GOOGLE_PLAY_KEYSTORE_BASE64 }}
+        alias: ${{ vars.ANDROID_GOOGLE_PLAY_KEYSTORE_KEY_ALIAS }}
+        keyStorePassword: ${{ secrets.ANDROID_GOOGLE_PLAY_KEYSTORE_PASSWORD }}
+        keyPassword: ${{ secrets.ANDROID_GOOGLE_PLAY_KEYSTORE_KEY_PASSWORD }}
+      env:
+        BUILD_TOOLS_VERSION: "34.0.0"
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: contemporary-playground-android-signed.aab
+        path: ${{steps.apksign.outputs.signedReleaseFile}}
+
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: contemporary-playground-android-signed.aab
+      - uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.ANDROID_GOOGLE_PLAY_SERVICE_ACCOUNT }}
+          packageName: com.vicr123.contemporary.playground
+          releaseFiles: android-build-release.aab
+          track: beta
