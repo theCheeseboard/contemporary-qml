@@ -58,6 +58,7 @@ ContemporaryWindow {
 
             Labs.MenuItem {
                 text: qsTr("&About")
+                onTriggered: outerStack.push(aboutSurface)
             }
         }
     }

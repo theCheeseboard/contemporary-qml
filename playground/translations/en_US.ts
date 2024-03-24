@@ -173,52 +173,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="75"/>
+        <location filename="../Main.qml" line="76"/>
         <source>Add Surface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="79"/>
+        <location filename="../Main.qml" line="80"/>
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="83"/>
+        <location filename="../Main.qml" line="84"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="90"/>
+        <location filename="../Main.qml" line="91"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="99"/>
+        <location filename="../Main.qml" line="100"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="102"/>
+        <location filename="../Main.qml" line="103"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="108"/>
+        <location filename="../Main.qml" line="109"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="116"/>
+        <location filename="../Main.qml" line="117"/>
         <source>Components</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="121"/>
+        <location filename="../Main.qml" line="122"/>
         <source>Patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="154"/>
+        <location filename="../Main.qml" line="155"/>
         <source>Extra Surface</source>
         <translation type="unfinished"></translation>
     </message>

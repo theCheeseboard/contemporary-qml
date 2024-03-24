@@ -33,7 +33,7 @@ Control {
 
         GroupBox {
             title: qsTr("Normal Buttons")
-            implicitWidth: 600
+            implicitWidth: Math.min(600, parent.width - 12)
 
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
@@ -58,7 +58,7 @@ Control {
 
         GroupBox {
             title: qsTr("Flat Buttons")
-            implicitWidth: 600
+            implicitWidth: Math.min(600, parent.width - 12)
 
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
