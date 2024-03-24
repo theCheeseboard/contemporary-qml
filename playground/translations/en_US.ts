@@ -183,42 +183,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="82"/>
+        <location filename="../Main.qml" line="83"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="85"/>
+        <location filename="../Main.qml" line="90"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="91"/>
+        <location filename="../Main.qml" line="99"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="94"/>
+        <location filename="../Main.qml" line="102"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="100"/>
+        <location filename="../Main.qml" line="108"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="108"/>
+        <location filename="../Main.qml" line="116"/>
         <source>Components</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="113"/>
+        <location filename="../Main.qml" line="121"/>
         <source>Patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="146"/>
+        <location filename="../Main.qml" line="154"/>
         <source>Extra Surface</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,0 +1,22 @@
+{
+  "dark": {
+    "accent": [0, 50, 150],
+    "background": [40, 40, 40],
+    "foreground": [255, 255, 255],
+    "line": [85, 85, 85],
+    "focusDecoration": [20, 125, 200],
+    "backgroundAccent": [50, 50, 50],
+    "layer": [255, 255, 255, 10],
+    "destructiveAccent": [200, 0, 0]
+  },
+  "light": {
+    "accent": [0, 150, 255],
+    "background": [245, 245, 245],
+    "foreground": [0, 0, 0],
+    "line": [230, 230, 230],
+    "focusDecoration": [20, 125, 200],
+    "backgroundAccent": [50, 50, 50],
+    "layer": [0, 0, 0, 20],
+    "destructiveAccent": [255, 0, 0]
+  }
+}

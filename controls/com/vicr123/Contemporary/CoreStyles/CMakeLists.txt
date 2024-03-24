@@ -37,6 +37,11 @@ target_sources(contemporary-corecontrols-plugin PRIVATE
     contemporaryinitialisation.h contemporaryinitialisation.cpp
 )
 
+qt_add_resources(contemporary-corecontrols-plugin libcontemporary-qml-corestyles
+    PREFIX "/com/vicr123/libcontemporary/corestyles"
+    FILES colors.json
+)
+
 target_link_libraries(contemporary-corecontrols-plugin
         PRIVATE Qt::Quick Qt::QuickControls2
 )

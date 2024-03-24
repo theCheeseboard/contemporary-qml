@@ -3,6 +3,8 @@
 #include <QColor>
 
 struct ContemporaryStylePrivate {
+    ContemporaryStyle::ColorTheme colorTheme = ContemporaryStyle::ColorTheme::Custom;
+
     QColor accent{0, 50, 150};
     QColor background{40, 40, 40};
     QColor foreground{255, 255, 255};
@@ -11,19 +13,13 @@ struct ContemporaryStylePrivate {
     QColor backgroundAccent{50, 50, 50};
     QColor layer{255, 255, 255, 10};
     QColor destructiveAccent{200, 0, 0};
-    // QColor accent{0, 150, 255};
-    // QColor background{245, 245, 245};
-    // QColor foreground{0, 0, 0};
-    // QColor line{230, 230, 230};
-    // QColor focusDecoration{20, 125, 200};
-    // QColor backgroundAccent{50, 50, 50};
-    // QColor layer{0, 0, 0, 20};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject *parent)
     : QObject{parent}
 {
     d = new ContemporaryStylePrivate();
+    this->setColorTheme(ColorTheme::Dark);
 }
 
 ContemporaryStyle::~ContemporaryStyle()
@@ -33,7 +29,8 @@ ContemporaryStyle::~ContemporaryStyle()
 
 ContemporaryStyle *ContemporaryStyle::qmlAttachedProperties(QObject *object)
 {
-    return new ContemporaryStyle(object);
+    static auto instance = new ContemporaryStyle();
+    return instance;
 }
 
 QColor ContemporaryStyle::accent() const {
@@ -43,6 +40,8 @@ QColor ContemporaryStyle::accent() const {
 void ContemporaryStyle::setAccent(QColor accent) {
     d->accent = accent;
     emit accentChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::background() const {
@@ -52,6 +51,8 @@ QColor ContemporaryStyle::background() const {
 void ContemporaryStyle::setBackground(QColor background) {
     d->background = background;
     emit backgroundChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::foreground() const {
@@ -61,6 +62,8 @@ QColor ContemporaryStyle::foreground() const {
 void ContemporaryStyle::setForeground(QColor foreground) {
     d->foreground = foreground;
     emit foregroundChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::line() const {
@@ -70,6 +73,8 @@ QColor ContemporaryStyle::line() const {
 void ContemporaryStyle::setLine(QColor line) {
     d->line = line;
     emit lineChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::focusDecoration() const {
@@ -79,6 +84,8 @@ QColor ContemporaryStyle::focusDecoration() const {
 void ContemporaryStyle::setFocusDecoration(QColor focusDecoration) {
     d->focusDecoration = focusDecoration;
     emit focusDecorationChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::backgroundAccent() const {
@@ -88,6 +95,8 @@ QColor ContemporaryStyle::backgroundAccent() const {
 void ContemporaryStyle::setBackgroundAccent(QColor backgroundAccent) {
     d->backgroundAccent = backgroundAccent;
     emit backgroundAccentChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::layer() const {
@@ -97,6 +106,8 @@ QColor ContemporaryStyle::layer() const {
 void ContemporaryStyle::setlayer(QColor layer) {
     d->layer = layer;
     emit layerChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
 QColor ContemporaryStyle::destructiveAccent() const {
@@ -106,15 +117,20 @@ QColor ContemporaryStyle::destructiveAccent() const {
 void ContemporaryStyle::setDestructiveAccent(QColor destructiveAccent) {
     d->destructiveAccent = destructiveAccent;
     emit destructiveAccentChanged();
+    d->colorTheme = ColorTheme::Custom;
+    emit colorThemeChanged();
 }
 
-Qt::Edge ContemporaryStyle::windowControlSide() const
-{
+Qt::Edge ContemporaryStyle::windowControlSide() const {
 #ifdef Q_OS_MAC
     return Qt::LeftEdge;
 #else
     return Qt::RightEdge;
 #endif
+}
+
+ContemporaryStyle::ColorTheme ContemporaryStyle::colorTheme() {
+    return d->colorTheme;
 }
 
 QColor ContemporaryStyle::hovered(QColor color)
@@ -157,4 +173,47 @@ QColor ContemporaryStyle::calculateLayer(uint layer, QColor base) {
         base.setBlueF(layerColor.alphaF() * layerColor.blueF() + (1 - layerColor.alphaF()) * base.blueF());
     }
     return base;
+}
+
+void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {
+    // Read color resources
+    QFile colorResourceFile(":/com/vicr123/libcontemporary/corestyles/colors.json");
+    colorResourceFile.open(QFile::ReadOnly);
+    auto colors = QJsonDocument::fromJson(colorResourceFile.readAll()).object();
+    colorResourceFile.close();
+
+    QJsonObject colorObject;
+    if (colorTheme == ColorTheme::Dark) {
+        colorObject = colors.value("dark").toObject();
+    } else if (colorTheme == ColorTheme::Light) {
+        colorObject = colors.value("light").toObject();
+    }
+
+    if (colorObject.isEmpty()) return;
+
+    d->accent = readColor(colorObject.value("accent"));
+    d->background = readColor(colorObject.value("background"));
+    d->foreground = readColor(colorObject.value("foreground"));
+    d->line = readColor(colorObject.value("line"));
+    d->focusDecoration = readColor(colorObject.value("focusDecoration"));
+    d->backgroundAccent = readColor(colorObject.value("backgroundAccent"));
+    d->layer = readColor(colorObject.value("layer"));
+    d->destructiveAccent = readColor(colorObject.value("destructiveAccent"));
+
+    emit accentChanged();
+    emit backgroundChanged();
+    emit foregroundChanged();
+    emit lineChanged();
+    emit focusDecorationChanged();
+    emit backgroundAccentChanged();
+    emit layerChanged();
+    emit destructiveAccentChanged();
+
+    d->colorTheme = colorTheme;
+    emit colorThemeChanged();
+}
+
+QColor ContemporaryStyle::readColor(const QJsonValue& jsonColor) {
+    QJsonArray colorArray = jsonColor.toArray();
+    return {colorArray[0].toInt(), colorArray[1].toInt(), colorArray[2].toInt(), colorArray.size() == 4 ? colorArray[3].toInt() : 255};
 }
