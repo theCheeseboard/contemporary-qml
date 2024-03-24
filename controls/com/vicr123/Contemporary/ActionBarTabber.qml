@@ -19,18 +19,6 @@ Rectangle {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         spacing: 2
-
-        // Repeater {
-        //     model: 2
-        //     Button {
-        //         required property int index
-        //         text: qsTr("Button %1").arg(index)
-        //         icon.name: "configure"
-        //         checkable: true
-        //         autoExclusive: true
-        //         checked: index === 0
-        //     }
-        // }
     }
 
     component Button: QQ.Button {

@@ -41,18 +41,32 @@ MouseArea {
         }
 
         Flickable {
+            id: flickable
             Layout.fillHeight: true
             Layout.fillWidth: true
             contentWidth: contentContainer.implicitWidth
 
             clip: true
 
-            RowLayout {
-                // LayoutMirroring.enabled: false
-                // LayoutMirroring.childrenInherit: true
+            MouseArea {
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
 
+                implicitWidth: flickable.width
+
+                onPressed: Window.window.startSystemMove()
+                onReleased: flickable.cancelFlick()
+            }
+
+            RowLayout {
                 anchors.fill: parent
-                id: contentContainer
+
+                RowLayout {
+                    // LayoutMirroring.enabled: false
+                    // LayoutMirroring.childrenInherit: true
+
+                    id: contentContainer
+                }
             }
         }
 
