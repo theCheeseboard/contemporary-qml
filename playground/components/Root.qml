@@ -11,7 +11,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.top: parent.top
-        color: Contemporary.calculateLayer(1)
+        color: Contemporary.calculateLayer(1).value
         radius: 4
         width: 300
         z: 10
@@ -22,7 +22,7 @@ Item {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            color: Contemporary.calculateLayer(2)
+            color: Contemporary.calculateLayer(2).value
             innerTopMargin: SafeZone.top
             text: qsTr("Components")
             z: 10

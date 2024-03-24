@@ -1,8 +1,10 @@
 #ifndef CONTEMPORARYSTYLE_H
 #define CONTEMPORARYSTYLE_H
 
-#include <QObject>
+#include "layercalculator.h"
+
 #include <QColor>
+#include <QObject>
 #include <QtQml>
 
 struct ContemporaryStylePrivate;
@@ -71,8 +73,8 @@ public:
     Q_INVOKABLE static QColor pressed(QColor color);
     Q_INVOKABLE static QColor disabled(QColor color);
     Q_INVOKABLE QColor calculateColor(QColor color, bool hovered, bool pressed, bool disabled);
-    Q_INVOKABLE QColor calculateLayer(uint layer);
-    Q_INVOKABLE QColor calculateLayer(uint layer, QColor base);
+    Q_INVOKABLE LayerCalculator* calculateLayer(uint layer);
+    Q_INVOKABLE LayerCalculator* calculateLayer(uint layer, QColor base);
     // ReSharper disable once CppRedundantQualifier
     Q_INVOKABLE void setColorTheme(ContemporaryStyle::ColorTheme colorTheme);
 

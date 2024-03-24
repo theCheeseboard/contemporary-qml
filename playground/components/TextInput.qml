@@ -18,7 +18,7 @@ Control {
 
         z: 10
         text: "Text Input";
-        color: Contemporary.calculateLayer(2)
+        color: Contemporary.calculateLayer(2).value
     }
 
     ColumnLayout {

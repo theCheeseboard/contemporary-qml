@@ -18,7 +18,7 @@ Control {
 
         z: 10
         text: "Progress";
-        color: Contemporary.calculateLayer(2)
+        color: Contemporary.calculateLayer(2).value
     }
 
     ColumnLayout {

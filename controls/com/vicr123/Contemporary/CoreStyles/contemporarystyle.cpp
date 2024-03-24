@@ -1,5 +1,7 @@
 #include "contemporarystyle.h"
 
+#include "layercalculator.h"
+
 #include <QColor>
 
 struct ContemporaryStylePrivate {
@@ -149,7 +151,11 @@ QColor ContemporaryStyle::disabled(QColor color)
 {
     if (color.alpha() == 0) return color;
 
-    return QColor::fromHsvF(color.hsvHueF(), color.hsvSaturationF() / 2, color.valueF() / 2);
+    if (color.valueF() < 0.5) {
+        return QColor::fromHsvF(color.hsvHueF(), color.hsvSaturationF() / 2, (1 - color.valueF()) / 2);
+    } else {
+        return QColor::fromHsvF(color.hsvHueF(), color.hsvSaturationF() / 2, color.valueF() / 2);
+    }
 }
 
 QColor ContemporaryStyle::calculateColor(QColor color, bool hovered, bool pressed, bool disabled) {
@@ -159,20 +165,20 @@ QColor ContemporaryStyle::calculateColor(QColor color, bool hovered, bool presse
     return color;
 }
 
-QColor ContemporaryStyle::calculateLayer(uint layer) {
-    return this->calculateLayer(layer, this->background());
+LayerCalculator* ContemporaryStyle::calculateLayer(uint layer) {
+    auto calculator = this->calculateLayer(layer, this->background());
+    connect(this, &ContemporaryStyle::backgroundChanged, calculator, [this, calculator] {
+        calculator->setLayerBase(this->background());
+    });
+    return calculator;
 }
 
-QColor ContemporaryStyle::calculateLayer(uint layer, QColor base) {
-    if (layer <= 0) return base;
-
-    auto layerColor = this->layer();
-    for (auto i = 0; i < layer; i++) {
-        base.setRedF(layerColor.alphaF() * layerColor.redF() + (1 - layerColor.alphaF()) * base.redF());
-        base.setGreenF(layerColor.alphaF() * layerColor.greenF() + (1 - layerColor.alphaF()) * base.greenF());
-        base.setBlueF(layerColor.alphaF() * layerColor.blueF() + (1 - layerColor.alphaF()) * base.blueF());
-    }
-    return base;
+LayerCalculator* ContemporaryStyle::calculateLayer(uint layer, QColor base) {
+    auto calculator = new LayerCalculator(layer, this->layer(), base);
+    connect(this, &ContemporaryStyle::layerChanged, calculator, [this, calculator] {
+        calculator->setLayerColor(this->layer());
+    });
+    return calculator;
 }
 
 void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {

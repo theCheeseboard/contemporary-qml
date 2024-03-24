@@ -19,7 +19,7 @@ Control {
 
         z: 10
         text: "Combo Box";
-        color: Contemporary.calculateLayer(2)
+        color: Contemporary.calculateLayer(2).value
     }
 
     ColumnLayout {

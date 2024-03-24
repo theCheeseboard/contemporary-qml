@@ -152,7 +152,7 @@ ContemporaryWindow {
                     z: 20
 
                     text: qsTr("Extra Surface")
-                    color: Contemporary.calculateLayer(1)
+                    color: Contemporary.calculateLayer(1).value
 
                     backButtonVisible: true
                     onBackButtonClicked: outerStack.pop()
