@@ -21,36 +21,27 @@ ContemporaryWindow {
             title: qsTr("&File")
 
             Labs.MenuItem {
-                text: qsTr("&New...")
-            }
-            Labs.MenuItem {
-                text: qsTr("&Open...")
-            }
-            Labs.MenuItem {
-                text: qsTr("&Save")
-            }
-            Labs.MenuItem {
-                text: qsTr("Save &As...")
-            }
-            MenuSeparator {
-            }
-            Labs.MenuItem {
                 text: qsTr("&Quit")
 
                 onTriggered: window.close()
             }
         }
         Labs.Menu {
-            title: qsTr("&Edit")
+            title: qsTr("&Theme")
 
             Labs.MenuItem {
-                text: qsTr("Cu&t")
+                id: lightAction
+                text: qsTr("Light")
+                checked: Contemporary.colorTheme == Contemporary.Light
+                checkable: true
+                onCheckedChanged: lightAction.checked && Contemporary.setColorTheme(Contemporary.Light)
             }
             Labs.MenuItem {
-                text: qsTr("&Copy")
-            }
-            Labs.MenuItem {
-                text: qsTr("&Paste")
+                id: darkAction
+                text: qsTr("Dark")
+                checked: Contemporary.colorTheme == Contemporary.Dark
+                checkable: true
+                onCheckedChanged: darkAction.checked && Contemporary.setColorTheme(Contemporary.Dark)
             }
         }
         Labs.Menu {
