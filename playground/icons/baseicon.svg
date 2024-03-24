@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.678384"
-     inkscape:cx="5.7610262"
-     inkscape:cy="10.069958"
+     inkscape:zoom="44.8"
+     inkscape:cx="14.341518"
+     inkscape:cy="25.558036"
      inkscape:document-units="mm"
      inkscape:current-layer="iconlayer"
      showgrid="true"
@@ -97,12 +97,24 @@
      id="iconlayer"
      inkscape:label="Icon">
     <path
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 4.9704094,3.3237206 0.3423999,1.19877 0.9650802,0.25859 0.89662,-0.86677 z m 0.21301,1.68166 -1.01145,2.48707 0.7180501,0.53669 0.8908999,-0.10558 0.3675899,-2.65959 z"
        id="path4171-0"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/victor/newcontemporary.png"
-       inkscape:export-xdpi="2165.5593"
-       inkscape:export-ydpi="2165.5593" />
+       style="opacity:0.25;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.1963581,4.9726173 4.1845336,7.459804 4.902836,7.9962053 5.7937377,7.8907855 6.1611571,5.2309995 Z" />
+    <path
+       id="path2"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.9702393 3.3238281 L 5.312854 4.5227214 L 6.277653 4.7811035 L 7.1747559 3.9144897 L 4.9702393 3.3238281 z " />
+    <path
+       id="path11"
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.1963581,4.9726173 4.4418822,6.8278013 5.0868041,7.3094255 5.887272,7.2148577 6.1611571,5.2309995 Z" />
+    <path
+       id="path10"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.1963581,4.9726173 4.7266194,6.1275856 5.290926,6.5487484 5.9906249,6.466583 6.1611571,5.2309995 Z" />
+    <path
+       id="path12"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.5102316,5.0566969 4.8234213,7.1697072 5.0327257,7.5122081 5.3854846,7.3201422 5.8472184,5.1468799 Z" />
   </g>
 </svg>
