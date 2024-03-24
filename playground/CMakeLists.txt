@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(ANDROID_VERSION_CODE 1 CACHE STRING "Android Version Code")
+
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 find_package(libcontemporary)
 
@@ -45,8 +47,10 @@ set_target_properties(appplayground PROPERTIES
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
         QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
-        QT_ANDROID_VERSION_CODE 2
+        QT_ANDROID_VERSION_CODE ${ANDROID_VERSION_CODE}
         CNTP_DATA_SUBDIR contemporary/playground
+        QT_QML_IMPORT_PATH ${CMAKE_BINARY_DIR}/qml
+        QT_ANDROID_TARGET_SDK_VERSION 33
 )
 
 cntp_init(appplayground 20)
