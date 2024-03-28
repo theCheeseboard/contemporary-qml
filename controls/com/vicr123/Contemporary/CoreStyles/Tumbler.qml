@@ -14,7 +14,7 @@ T.Tumbler {
 
     delegate: Text {
         text: modelData
-        color: Contemporary.foreground
+        color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
         font: control.font
         opacity: 1.0 - Math.abs(Tumbler.displacement) / (control.visibleItemCount / 2)
         horizontalAlignment: Text.AlignHCenter

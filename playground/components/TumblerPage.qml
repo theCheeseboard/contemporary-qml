@@ -21,18 +21,39 @@ Control {
         color: Contemporary.calculateLayer(2).value
     }
 
-    RowLayout {
+    ColumnLayout {
         anchors.top: grandstand.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
         anchors.topMargin: 6
 
-        Tumbler {
-            model: 100
-        }
+        GroupBox {
+            title: qsTr("Tumblers")
+            implicitWidth: Math.min(600, parent.width - 12)
 
-        Tumbler {
-            enabled: false
-            model: 100
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            RowLayout {
+                anchors.fill: parent
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                Tumbler {
+                    model: 100
+                }
+
+                Tumbler {
+                    enabled: false
+                    model: 100
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+            }
         }
     }
 }

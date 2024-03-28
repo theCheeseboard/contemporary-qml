@@ -21,87 +21,119 @@ Control {
         color: Contemporary.calculateLayer(2).value
     }
 
-    RowLayout {
+    ColumnLayout {
         anchors.top: grandstand.bottom
-        anchors.topMargin: 6
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
+        anchors.topMargin: 6
 
-        ColumnLayout {
-            CheckBox {
-                text: qsTr("Off")
-            }
+        GroupBox {
+            title: qsTr("Checkboxes")
+            implicitWidth: Math.min(600, parent.width - 12)
 
-            CheckBox {
-                checked: true
-                text: qsTr("On")
-            }
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-            CheckBox {
-                enabled: false
-                text: qsTr("Disabled Off")
-            }
+            Grid {
+                anchors.fill: parent
+                columns: 3
 
-            CheckBox {
-                enabled: false
-                checked: true
-                text: qsTr("Disabled On")
-            }
+                CheckBox {
+                    text: qsTr("Off")
+                }
 
-            CheckBox {
-                checkState: Qt.PartiallyChecked
-                tristate: true
-                text: qsTr("Indeterminate")
-            }
+                CheckBox {
+                    checked: true
+                    text: qsTr("On")
+                }
 
-            CheckBox {
-                checkState: Qt.PartiallyChecked
-                tristate: true
-                enabled: false
-                text: qsTr("Disabled Indeterminate")
-            }
-        }
+                CheckBox {
+                    checkState: Qt.PartiallyChecked
+                    tristate: true
+                    text: qsTr("Indeterminate")
+                }
 
-        ColumnLayout {
-            Switch {
-                text: qsTr("Off")
-            }
+                CheckBox {
+                    enabled: false
+                    text: qsTr("Disabled Off")
+                }
 
-            Switch {
-                checked: true
-                text: qsTr("On")
-            }
+                CheckBox {
+                    enabled: false
+                    checked: true
+                    text: qsTr("Disabled On")
+                }
 
-            Switch {
-                enabled: false
-                text: qsTr("Disabled Off")
-            }
-
-            Switch {
-                enabled: false
-                checked: true
-                text: qsTr("Disabled On")
+                CheckBox {
+                    checkState: Qt.PartiallyChecked
+                    tristate: true
+                    enabled: false
+                    text: qsTr("Disabled Indeterminate")
+                }
             }
         }
 
-        ColumnLayout {
-            RadioButton {
-                text: qsTr("Off")
-            }
+        GroupBox {
+            title: qsTr("Radio Buttons")
+            implicitWidth: Math.min(600, parent.width - 12)
 
-            RadioButton {
-                checked: true
-                text: qsTr("On")
-            }
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-            RadioButton {
-                enabled: false
-                text: qsTr("Disabled Off")
-            }
+            Grid {
+                anchors.fill: parent
+                columns: 2
 
-            RadioButton {
-                enabled: false
-                checked: true
-                text: qsTr("Disabled On")
+                RadioButton {
+                    text: qsTr("Off")
+                }
+
+                RadioButton {
+                    checked: true
+                    text: qsTr("On")
+                }
+
+                RadioButton {
+                    enabled: false
+                    text: qsTr("Disabled Off")
+                }
+
+                RadioButton {
+                    enabled: false
+                    checked: true
+                    text: qsTr("Disabled On")
+                }
+            }
+        }
+
+        GroupBox {
+            title: qsTr("Switches")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            Grid {
+                anchors.fill: parent
+                columns: 2
+
+                Switch {
+                    text: qsTr("Off")
+                }
+
+                Switch {
+                    checked: true
+                    text: qsTr("On")
+                }
+
+                Switch {
+                    enabled: false
+                    text: qsTr("Disabled Off")
+                }
+
+                Switch {
+                    enabled: false
+                    checked: true
+                    text: qsTr("Disabled On")
+                }
             }
         }
     }

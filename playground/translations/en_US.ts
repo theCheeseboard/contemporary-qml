@@ -67,30 +67,45 @@
 <context>
     <name>CheckboxesRadioButtons</name>
     <message>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="31"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="66"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="88"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="42"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="87"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="119"/>
         <source>Off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="36"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="71"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="93"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="47"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="92"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="124"/>
         <source>On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="41"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="76"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="98"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="58"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="97"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="129"/>
         <source>Disabled Off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="47"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="82"/>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="104"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="77"/>
+        <source>Radio Buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="109"/>
+        <source>Switches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="32"/>
+        <source>Checkboxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="64"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="103"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="135"/>
         <source>Disabled On</source>
         <translation type="unfinished"></translation>
     </message>
@@ -100,7 +115,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/CheckboxesRadioButtons.qml" line="60"/>
+        <location filename="../components/CheckboxesRadioButtons.qml" line="71"/>
         <source>Disabled Indeterminate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,13 +264,37 @@
 <context>
     <name>TextInput</name>
     <message>
-        <location filename="../components/TextInput.qml" line="30"/>
+        <location filename="../components/TextInput.qml" line="32"/>
+        <source>Text Fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/TextInput.qml" line="42"/>
         <source>Text Field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/TextInput.qml" line="35"/>
+        <location filename="../components/TextInput.qml" line="48"/>
+        <location filename="../components/TextInput.qml" line="72"/>
         <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/TextInput.qml" line="54"/>
+        <source>Text Areas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/TextInput.qml" line="65"/>
+        <source>Text Area</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TumblerPage</name>
+    <message>
+        <location filename="../components/TumblerPage.qml" line="32"/>
+        <source>Tumblers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
