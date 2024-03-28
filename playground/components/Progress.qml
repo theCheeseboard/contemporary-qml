@@ -23,6 +23,8 @@ Control {
 
     ColumnLayout {
         anchors.top: grandstand.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
         anchors.topMargin: 6
 
@@ -40,15 +42,27 @@ Control {
         //     Layout.preferredWidth: 16
         // }
 
-        ProgressBar {
-            from: 0
-            to: 100
-            value: 24
-        }
+        GroupBox {
+            title: qsTr("Progress Bars")
+            implicitWidth: Math.min(600, parent.width - 12)
 
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-        ProgressBar {
-            indeterminate: true
+            ColumnLayout {
+                anchors.fill: parent
+
+                ProgressBar {
+                    Layout.fillWidth: true
+                    from: 0
+                    to: 100
+                    value: 24
+                }
+
+                ProgressBar {
+                    Layout.fillWidth: true
+                    indeterminate: true
+                }
+            }
         }
     }
 }

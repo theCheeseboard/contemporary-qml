@@ -191,6 +191,14 @@
     </message>
 </context>
 <context>
+    <name>Progress</name>
+    <message>
+        <location filename="../components/Progress.qml" line="46"/>
+        <source>Progress Bars</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Root</name>
     <message>
         <location filename="../components/Root.qml" line="27"/>

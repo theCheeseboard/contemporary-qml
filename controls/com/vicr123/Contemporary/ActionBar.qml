@@ -54,7 +54,10 @@ MouseArea {
 
                 implicitWidth: flickable.width
 
-                onPressed: Window.window.startSystemMove()
+                onPressed: () => {
+                    Window.window.startSystemMove()
+                    flickable.cancelFlick();
+                }
                 onReleased: flickable.cancelFlick()
             }
 
