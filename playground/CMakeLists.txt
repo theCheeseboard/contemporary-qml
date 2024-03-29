@@ -41,9 +41,10 @@ qt_add_resources(appplayground "contemporary-playground-resources"
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 set_target_properties(appplayground PROPERTIES
-        #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appplayground
+        MACOSX_BUNDLE_GUI_IDENTIFIER com.vicr123.contemporary.PlaygrounC
         MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
         MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+        MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.in
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
         QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
@@ -57,7 +58,9 @@ cntp_init(appplayground 20)
 cntp_translate(appplayground)
 cntp_target_name(appplayground "Contemporary Playground")
 cntp_app_icon(appplayground
-    BASEICON icons/baseicon.svg)
+    BASEICON icons/baseicon.svg
+    BASEICON_MAC icons/baseicon-mac.svg
+)
 
 target_link_libraries(appplayground
     PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
