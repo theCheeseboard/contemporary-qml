@@ -19,6 +19,7 @@ qt_add_qml_module(contemporary-controls
         ContemporaryStackView.qml
         ContemporaryWindowSurface.qml
         AboutSurface.qml
+        NativeMenuBar.qml
     SOURCES
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp

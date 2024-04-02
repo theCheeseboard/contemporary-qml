@@ -5,8 +5,10 @@
 #include <QPainter>
 #include <QWindow>
 #include <QQuickWindow>
+#include <QTimer>
 
 struct NativeWindowButtonPrivate {
+    QTimer* timer;
     NativeWindowButton* parent;
     QWindow* window = nullptr;
     NSButton* button = nil;
@@ -35,11 +37,20 @@ NativeWindowButton::NativeWindowButton(QQuickItem *parent) : QQuickPaintedItem(p
         [d->button setHidden:!this->isVisible()];
     });
 
+    d->timer = new QTimer();
+    d->timer->setInterval(100);
+    connect(d->timer, &QTimer::timeout, this, [this] {
+        d->repositionButton();
+    });
+    d->timer->start();
+
     d->setupWindow(this->window());
 }
 
 NativeWindowButton::~NativeWindowButton()
 {
+    d->timer->stop();
+    d->timer->deleteLater();
     delete d;
 }
 
@@ -102,4 +113,9 @@ void NativeWindowButton::paint(QPainter *painter)
 bool NativeWindowButton::haveWindowControls()
 {
     return true;
+}
+
+void NativeWindowButton::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+    d->repositionButton();
 }

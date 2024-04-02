@@ -37,3 +37,7 @@ void NativeWindowButton::setSystemWindowType(int systemWindowType)
 {
 
 }
+
+void NativeWindowButton::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+}

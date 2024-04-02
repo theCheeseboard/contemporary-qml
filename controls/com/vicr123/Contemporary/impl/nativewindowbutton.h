@@ -32,6 +32,10 @@ private:
     // QQuickPaintedItem interface
 public:
     void paint(QPainter *painter);
+
+    // QQuickItem interface
+protected:
+    void geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry);
 };
 
 #endif // NATIVEWINDOWBUTTON_H

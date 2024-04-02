@@ -35,13 +35,13 @@ ApplicationWindow {
         MouseArea {
             id: insideMouseArea
             anchors.fill: parent
-            anchors.margins: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
+            anchors.margins: (window.visibility === Window.Maximized || window.visibility === Window.FullScreen) ? 0 : 5
 
             Rectangle {
                 id: rootRect
                 color: Contemporary.background
                 anchors.fill: parent
-                radius: (window.visibility === Window.Maximized && window.visibility !== Window.FullScreen) ? 0 : 5
+                radius: (window.visibility === Window.Maximized || window.visibility === Window.FullScreen) ? 0 : 5
 
                 clip: true
 

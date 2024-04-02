@@ -16,7 +16,7 @@ ContemporaryWindow {
     title: qsTr("Contemporary Playground")
     visible: true
 
-    Labs.MenuBar {
+    NativeMenuBar {
         Labs.Menu {
             title: qsTr("&File")
 
