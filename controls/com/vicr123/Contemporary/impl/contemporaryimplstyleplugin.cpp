@@ -2,8 +2,11 @@
 
 #include "contemporaryapplication.h"
 
-ContemporaryImplStylePlugin::ContemporaryImplStylePlugin(QObject* parent) {
+extern void qml_register_types_com_vicr123_Contemporary_impl();
 
+ContemporaryImplStylePlugin::ContemporaryImplStylePlugin(QObject* parent) {
+    volatile auto registration = &qml_register_types_com_vicr123_Contemporary_impl;
+    Q_UNUSED(registration);
 }
 
 void ContemporaryImplStylePlugin::initializeEngine(QQmlEngine* engine, const char* uri) {
