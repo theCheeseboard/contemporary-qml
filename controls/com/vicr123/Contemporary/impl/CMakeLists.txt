@@ -44,3 +44,9 @@ target_link_libraries(contemporary-controls-impl
 target_link_libraries(contemporary-controls-impl-plugin
         PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )
+
+install(TARGETS contemporary-controls-impl
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)

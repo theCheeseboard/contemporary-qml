@@ -29,4 +29,11 @@ target_link_libraries(contemporary-controls
     PRIVATE contemporary-controls-impl Qt6::Quick Qt6::QuickControls2
 )
 
+install(TARGETS contemporary-controls
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+
 add_subdirectory(CoreStyles)

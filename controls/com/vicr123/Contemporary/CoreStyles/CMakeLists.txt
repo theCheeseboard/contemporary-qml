@@ -47,3 +47,9 @@ qt_add_resources(contemporary-corecontrols-plugin libcontemporary-qml-corestyles
 target_link_libraries(contemporary-corecontrols-plugin
         PRIVATE Qt::Quick Qt::QuickControls2
 )
+
+install(TARGETS contemporary-corecontrols
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
