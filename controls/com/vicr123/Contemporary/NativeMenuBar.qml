@@ -15,6 +15,6 @@ Item {
     }
 
     Loader {
-        sourceComponent: Qt.platform.os !== "windows" && menuBar
+        sourceComponent: Qt.platform.os !== "windows" ? menuBar : null
     }
 }
