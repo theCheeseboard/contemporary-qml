@@ -58,20 +58,20 @@ Popup {
                 Layout.fillWidth: true
                 implicitHeight: currentItem.implicitHeight
                 implicitWidth: currentItem.implicitWidth
-                // currentAnimation: ContemporaryStackView.Animation.Lift
 
                 initialItem: firstMenu
 
                 Item {
                     id: firstMenu
                     implicitHeight: childrenRect.height
-                    implicitWidth: childrenRect.width
+                    implicitWidth: popupMenu.implicitWidth
 
                     ColumnLayout {
                         anchors.left: parent.left
                         anchors.right: parent.right
 
                         ActionBarPopupMenu {
+                            id: popupMenu
                             menu: root.menu
                             onClose: root.close()
                             onTriggerMenu: menu => menuPager.pushItem(submenuComponent, {"menu": menu})

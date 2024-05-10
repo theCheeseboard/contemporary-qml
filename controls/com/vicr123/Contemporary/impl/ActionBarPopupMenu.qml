@@ -59,6 +59,8 @@ ColumnLayout {
                 enabled: rootItem.modelData?.enabled
 
                 contentItem: RowLayout {
+                    id: buttonContent
+
                     IconLabel {
                         icon.name: rootItem.modelData.action?.checked ? "dialog-ok" : ""
                         icon.color: Contemporary.foreground
@@ -84,7 +86,7 @@ ColumnLayout {
                     }
 
                     Label {
-                        text: rootItem.modelData.shortcut ?? ""
+                        text: rootItem.modelData.action?.shortcut ?? ""
                         color: Contemporary.disabled(Contemporary.foreground)
                     }
 
