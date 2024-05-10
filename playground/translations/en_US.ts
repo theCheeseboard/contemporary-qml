@@ -366,6 +366,7 @@
     <name>main</name>
     <message>
         <location filename="../main.cpp" line="12"/>
+        <location filename="../main.cpp" line="20"/>
         <source>Control Playground</source>
         <translation type="unfinished"></translation>
     </message>

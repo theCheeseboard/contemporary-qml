@@ -24,6 +24,7 @@ qt_add_qml_module(contemporary-controls
         contemporarycontrolsqmlplugin.h contemporarycontrolsqmlplugin.cpp
         safezone.h safezone.cpp
     PLUGIN_TARGET contemporary-controls-plugin
+    NO_CACHEGEN
 )
 
 target_link_libraries(contemporary-controls

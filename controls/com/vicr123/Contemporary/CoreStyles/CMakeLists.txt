@@ -26,6 +26,7 @@ qt_add_qml_module(contemporary-corecontrols
     NO_GENERATE_PLUGIN_SOURCE
     NO_PLUGIN_OPTIONAL
     CLASS_NAME ContemporaryStylePlugin
+    NO_CACHEGEN
 )
 
 target_link_libraries(contemporary-corecontrols

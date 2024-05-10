@@ -82,8 +82,8 @@ Item {
                 id: leftDelegate
 
                 Item {
-                    height: childrenRect.height + 3
-                    width: sidebar.width
+                    implicitHeight: childrenRect.height + 3
+                    implicitWidth: sidebar.width
 
                     MouseArea {
                         anchors.fill: parent

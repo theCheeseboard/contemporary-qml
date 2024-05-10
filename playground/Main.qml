@@ -62,12 +62,14 @@ ContemporaryWindow {
 
         initialItem: ContemporaryWindowSurface {
             actionBar: ActionBar {
-                menuItems: [
+                menu: Menu {
                     Action {
                         text: qsTr("Add Surface")
+                        icon.name: "list-add"
+                        shortcut: "Ctrl+N"
                         onTriggered: outerStack.push(stackPush)
-                    },
-                    MenuSeparator { },
+                    }
+                    MenuSeparator { }
                     Menu {
                         title: qsTr("Theme")
 
@@ -86,7 +88,7 @@ ContemporaryWindow {
                             onCheckedChanged: darkAction.checked && Contemporary.setColorTheme(Contemporary.Dark)
                         }
                     }
-                ]
+                }
 
                 ActionBarTabber {
                     ActionBarTabber.Button {

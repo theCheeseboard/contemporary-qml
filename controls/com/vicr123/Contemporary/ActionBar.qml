@@ -10,7 +10,7 @@ MouseArea {
     Layout.fillWidth: true
 
     default property alias contents: contentContainer.data
-    property list<QtObject> menuItems
+    property Menu menu
 
     property bool exitButtonVisible: true
     property bool exitButtonEnabled: true
@@ -37,7 +37,7 @@ MouseArea {
 
             ActionBarPopup {
                 id: actionBarPopup
-                menuItems: root.menuItems
+                menu: root.menu
                 exitButtonVisible: root.exitButtonVisible
                 exitButtonEnabled: root.exitButtonEnabled
             }

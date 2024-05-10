@@ -2,25 +2,33 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Contemporary
+import com.vicr123.Contemporary
 
 Popup {
     id: root
+    clip: true
 
-    property list<QtObject> menuItems
+    property Menu menu
 
-    // width: item.width
-    // height: item.height
-
-    // y: parent.height + 9
+    property bool exitButtonEnabled: true
+    property bool exitButtonVisible: true
 
     modal: true
     transformOrigin: Item.TopLeft
 
-    Item {
+    onClosed: menuPager.pop(firstMenu, StackView.Immediate)
+
+    FocusScope {
         id: item
 
         implicitHeight: childrenRect.height + 12
         implicitWidth: childrenRect.width + 12
+
+        Behavior on implicitHeight {
+            NumberAnimation {
+                duration: 50
+            }
+        }
 
         ColumnLayout {
             anchors.top: parent.top
@@ -43,85 +51,101 @@ Popup {
                 implicitHeight: 7
             }
 
-            Repeater {
-                model: root.menuItems
+            ContemporaryStackView {
+                id: menuPager
+                Layout.fillWidth: true
+                implicitHeight: currentItem.implicitHeight
+                implicitWidth: currentItem.implicitWidth
+                // currentAnimation: ContemporaryStackView.Animation.Lift
+
+                initialItem: firstMenu
 
                 Item {
-                    id: rootItem
-                    Layout.fillWidth: true
-
-                    implicitHeight: button.visible ? button.height : separator.height
+                    id: firstMenu
+                    implicitHeight: childrenRect.height
                     implicitWidth: childrenRect.width
 
-                    required property var modelData;
-                    readonly property string itemType: modelData.addMenu ? "menu" : modelData.triggered ? "menuItem" : "separator"
-
-                    Button {
-                        id: button
-                        anchors.top: parent.top
+                    ColumnLayout {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        text: rootItem.modelData.text ?? rootItem.modelData.title
-                        icon: rootItem.modelData.icon
-                        flat: true
-                        visible: rootItem.itemType !== "separator"
 
-                        contentItem: IconLabel {
-                            spacing: button.spacing
-                            mirrored: button.mirrored
-                            display: button.display
-
-                            alignment: Qt.AlignLeft | Qt.AlignVCenter
-
-                            icon: button.icon
-                            text: button.text
-                            font: button.font
-                            color: button.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
+                        ActionBarPopupMenu {
+                            menu: root.menu
+                            onClose: root.close()
+                            onTriggerMenu: menu => menuPager.pushItem(submenuComponent, {"menu": menu})
                         }
 
-                        onClicked: () => {
-                                       switch (rootItem.itemType) {
-                                           case "menu":
-                                           break;
-                                           case "menuItem":
-                                           rootItem.modelData.triggered()
-                                           root.close()
-                                           break;
-                                       }
-                       }
+                        RowLayout {
+                            Button {
+                                id: helpButton
+                                icon.name: "help-contents"
+                                implicitWidth: helpButton.height
+                                flat: true
+
+                                onClicked: menuPager.pushItem(helpComponent)
+                            }
+
+                            Item {
+                                Layout.fillWidth: true
+                            }
+
+                            Button {
+                                id: exitButton
+                                icon.name: "application-exit"
+                                implicitWidth: exitButton.height
+                                flat: true
+
+                                visible: root.exitButtonVisible
+                                enabled: root.exitButtonEnabled
+
+                                onClicked: Qt.quit()
+                            }
+                        }
                     }
+                }
 
-                    Rectangle {
-                        property bool exitButtonVisible: true
-                        property bool exitButtonEnabled: true
-                        id: separator
-                        anchors.top: parent.top
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        implicitHeight: 1
-                        color: Contemporary.line
-                        visible: rootItem.itemType === "separator"
+                Component {
+                    id: submenuComponent
+
+                    ActionBarPopupMenu {
+                        onClose: root.close()
+                        onGoBack: menuPager.pop()
+                        showBackButton: true
+                        onTriggerMenu: menu => menuPager.push(submenuComponent, {"menu": menu})
                     }
                 }
-            }
 
-            RowLayout {
-                Button {
-                    id: helpButton
-                    icon.name: "help-contents"
-                    implicitWidth: helpButton.height
-                    flat: true
-                }
+                Component {
+                    id: helpComponent
 
-                Item {
-                    Layout.fillWidth: true
-                }
+                    ActionBarPopupMenu {
+                        showBackButton: true
+                        onGoBack: menuPager.pop()
 
-                Button {
-                    id: exitButton
-                    icon.name: "application-exit"
-                    implicitWidth: exitButton.height
-                    flat: true
+                        icon.name: "help-contents"
+                        icon.color: Contemporary.foreground
+                        text: qsTr("Help")
+
+                        menu: Menu {
+                            Action {
+                                text: "Test Action 1"
+                            }
+                            Action {
+                                text: "Test Action 2"
+                            }
+                            Action {
+                                text: "Test Action 3"
+                            }
+                            Action {
+                                text: "Test Action 4"
+                            }
+                            MenuSeparator {}
+                            Action {
+                                icon.name: "help-about"
+                                text: qsTr("About %1").arg(Application.displayName)
+                            }
+                        }
+                    }
                 }
             }
         }
