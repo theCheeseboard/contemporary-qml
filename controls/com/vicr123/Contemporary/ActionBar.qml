@@ -15,6 +15,8 @@ MouseArea {
     property bool exitButtonVisible: true
     property bool exitButtonEnabled: true
 
+    signal aboutClicked
+
     implicitHeight: childrenRect.height
 
     RowLayout {
@@ -40,6 +42,7 @@ MouseArea {
                 menu: root.menu
                 exitButtonVisible: root.exitButtonVisible
                 exitButtonEnabled: root.exitButtonEnabled
+                onAboutClicked: () => root.aboutClicked()
             }
 
             visible: Qt.platform.os !== "osx"

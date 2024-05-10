@@ -102,6 +102,8 @@ ContemporaryWindow {
                         onActivated: stack.currentIndex = 1
                     }
                 }
+
+                onAboutClicked: () => outerStack.push(aboutSurface)
             }
             overlayActionBar: true
 
@@ -139,8 +141,10 @@ ContemporaryWindow {
             }
         }
 
-        AboutSurface {
+        Component {
             id: aboutSurface
+            AboutSurface {
+            }
         }
     }
 }

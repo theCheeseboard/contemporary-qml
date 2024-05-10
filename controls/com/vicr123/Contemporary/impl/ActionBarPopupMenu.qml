@@ -56,6 +56,7 @@ ColumnLayout {
                 icon: rootItem.icon
                 flat: true
                 visible: rootItem.itemType !== "separator"
+                enabled: rootItem.modelData?.enabled
 
                 contentItem: RowLayout {
                     IconLabel {
@@ -111,16 +112,6 @@ ColumnLayout {
 
                             root.close()
                             break;
-                    }
-                }
-            }
-
-            Component {
-
-                Menu {
-                    id: subm
-                    Action {
-                        text: "Test"
                     }
                 }
             }

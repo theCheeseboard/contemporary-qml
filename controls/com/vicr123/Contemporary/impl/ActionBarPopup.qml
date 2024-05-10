@@ -13,6 +13,8 @@ Popup {
     property bool exitButtonEnabled: true
     property bool exitButtonVisible: true
 
+    signal aboutClicked
+
     modal: true
     transformOrigin: Item.TopLeft
 
@@ -121,6 +123,7 @@ Popup {
                     ActionBarPopupMenu {
                         showBackButton: true
                         onGoBack: menuPager.pop()
+                        onClose: root.close()
 
                         icon.name: "help-contents"
                         icon.color: Contemporary.foreground
@@ -128,21 +131,27 @@ Popup {
 
                         menu: Menu {
                             Action {
-                                text: "Test Action 1"
+                                id: fileBugAction
+                                icon.name: "tools-report-bug"
+                                text: qsTr("File Bug")
+                                onTriggered: Qt.openUrlExternally(ContemporaryApplication.fileBugUrl)
+                                enabled: ContemporaryApplication.fileBugUrl != ""
                             }
+
                             Action {
-                                text: "Test Action 2"
+                                id: sourcesAction
+                                icon.name: "commit"
+                                text: qsTr("Sources")
+                                onTriggered: Qt.openUrlExternally(ContemporaryApplication.sourcesUrl)
+                                enabled: ContemporaryApplication.sourcesUrl != ""
                             }
-                            Action {
-                                text: "Test Action 3"
-                            }
-                            Action {
-                                text: "Test Action 4"
-                            }
+
                             MenuSeparator {}
+
                             Action {
                                 icon.name: "help-about"
                                 text: qsTr("About %1").arg(Application.displayName)
+                                onTriggered: root.aboutClicked()
                             }
                         }
                     }
