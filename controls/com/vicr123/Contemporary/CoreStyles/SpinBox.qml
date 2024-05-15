@@ -91,6 +91,7 @@ T.SpinBox {
     background: Rectangle {
         implicitWidth: 140
         radius: 5
+        color: "transparent"
         border.color: Contemporary.line
     }
 }
