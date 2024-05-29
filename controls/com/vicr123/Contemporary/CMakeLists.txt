@@ -25,6 +25,7 @@ qt_add_qml_module(contemporary-controls
         safezone.h safezone.cpp
     PLUGIN_TARGET contemporary-controls-plugin
     NO_CACHEGEN
+    QML_FILES LayerCalculator.qml
 )
 
 target_link_libraries(contemporary-controls

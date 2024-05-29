@@ -12,6 +12,8 @@ qt_add_qml_module(contemporary-controls-impl
         ActionBarPopup.qml
     SOURCES
         nativewindowbutton.h
+        layercalculator.h layercalculator.cpp
+        qmllayercalculator.h qmllayercalculator.cpp
     PLUGIN_TARGET contemporary-controls-impl-plugin
         NO_GENERATE_PLUGIN_SOURCE
         NO_PLUGIN_OPTIONAL

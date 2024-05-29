@@ -1,36 +1,33 @@
 #include "contemporarystyle.h"
 
-#include "layercalculator.h"
+#include "../impl/layercalculator.h"
 
 #include <QColor>
 
 struct ContemporaryStylePrivate {
-    ContemporaryStyle::ColorTheme colorTheme = ContemporaryStyle::ColorTheme::Custom;
+        ContemporaryStyle::ColorTheme colorTheme = ContemporaryStyle::ColorTheme::Custom;
 
-    QColor accent{0, 50, 150};
-    QColor background{40, 40, 40};
-    QColor foreground{255, 255, 255};
-    QColor line{85, 85, 85};
-    QColor focusDecoration{20, 125, 200};
-    QColor backgroundAccent{50, 50, 50};
-    QColor layer{255, 255, 255, 10};
-    QColor destructiveAccent{200, 0, 0};
+        QColor accent{0, 50, 150};
+        QColor background{40, 40, 40};
+        QColor foreground{255, 255, 255};
+        QColor line{85, 85, 85};
+        QColor focusDecoration{20, 125, 200};
+        QColor backgroundAccent{50, 50, 50};
+        QColor layer{255, 255, 255, 10};
+        QColor destructiveAccent{200, 0, 0};
 };
 
-ContemporaryStyle::ContemporaryStyle(QObject *parent)
-    : QObject{parent}
-{
+ContemporaryStyle::ContemporaryStyle(QObject* parent) :
+    QObject{parent} {
     d = new ContemporaryStylePrivate();
     this->setColorTheme(ColorTheme::Dark);
 }
 
-ContemporaryStyle::~ContemporaryStyle()
-{
+ContemporaryStyle::~ContemporaryStyle() {
     delete d;
 }
 
-ContemporaryStyle *ContemporaryStyle::qmlAttachedProperties(QObject *object)
-{
+ContemporaryStyle* ContemporaryStyle::qmlAttachedProperties(QObject* object) {
     static auto instance = new ContemporaryStyle();
     return instance;
 }
@@ -135,20 +132,17 @@ ContemporaryStyle::ColorTheme ContemporaryStyle::colorTheme() {
     return d->colorTheme;
 }
 
-QColor ContemporaryStyle::hovered(QColor color)
-{
+QColor ContemporaryStyle::hovered(QColor color) {
     if (color.alpha() == 0) return QColor{255, 255, 255, 75};
     return color.lighter();
 }
 
-QColor ContemporaryStyle::pressed(QColor color)
-{
+QColor ContemporaryStyle::pressed(QColor color) {
     if (color.alpha() == 0) return QColor{0, 0, 0, 75};
     return color.darker();
 }
 
-QColor ContemporaryStyle::disabled(QColor color)
-{
+QColor ContemporaryStyle::disabled(QColor color) {
     if (color.alpha() == 0) return color;
 
     if (color.valueF() < 0.5) {
@@ -163,22 +157,6 @@ QColor ContemporaryStyle::calculateColor(QColor color, bool hovered, bool presse
     if (pressed) return this->pressed(color);
     if (hovered) return this->hovered(color);
     return color;
-}
-
-LayerCalculator* ContemporaryStyle::calculateLayer(uint layer) {
-    auto calculator = this->calculateLayer(layer, this->background());
-    connect(this, &ContemporaryStyle::backgroundChanged, calculator, [this, calculator] {
-        calculator->setLayerBase(this->background());
-    });
-    return calculator;
-}
-
-LayerCalculator* ContemporaryStyle::calculateLayer(uint layer, QColor base) {
-    auto calculator = new LayerCalculator(layer, this->layer(), base);
-    connect(this, &ContemporaryStyle::layerChanged, calculator, [this, calculator] {
-        calculator->setLayerColor(this->layer());
-    });
-    return calculator;
 }
 
 void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {

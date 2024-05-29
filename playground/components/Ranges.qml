@@ -7,6 +7,11 @@ import Contemporary
 Control {
     id: rectangle
 
+    LayerCalculator {
+        id: layer2
+        layer: 2
+    }
+
     Grandstand {
         anchors.top: parent.top
         anchors.left: parent.left
@@ -18,7 +23,7 @@ Control {
 
         z: 10
         text: "Ranges";
-        color: Contemporary.calculateLayer(2).value
+        color: layer2.color
     }
 
     ColumnLayout {

@@ -16,6 +16,11 @@ ContemporaryWindow {
     title: qsTr("Contemporary Playground")
     visible: true
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     NativeMenuBar {
         Labs.Menu {
             title: qsTr("&File")
@@ -133,7 +138,7 @@ ContemporaryWindow {
                     z: 20
 
                     text: qsTr("Extra Surface")
-                    color: Contemporary.calculateLayer(1).value
+                    color: layer1.color
 
                     backButtonVisible: true
                     onBackButtonClicked: outerStack.pop()

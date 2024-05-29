@@ -37,7 +37,6 @@ target_sources(contemporary-corecontrols-plugin PRIVATE
     contemporarystyleplugin.h contemporarystyleplugin.cpp
     contemporarystyle.cpp contemporarystyle.h
     contemporaryinitialisation.h contemporaryinitialisation.cpp
-    layercalculator.h layercalculator.cpp
 )
 
 qt_add_resources(contemporary-corecontrols-plugin libcontemporary-qml-corestyles
