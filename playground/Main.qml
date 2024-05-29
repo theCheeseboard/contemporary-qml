@@ -86,16 +86,23 @@ ContemporaryWindow {
                         title: qsTr("Theme")
 
                         Action {
+                            id: followSystemAction
+                            text: qsTr("Follow System")
+                            checked: Contemporary.followSystemColorTheme
+                            checkable: true
+                            onCheckedChanged: followSystemAction.checked && (Contemporary.followSystemColorTheme = true)
+                        }
+                        Action {
                             id: lightAction
                             text: qsTr("Light")
-                            checked: Contemporary.colorTheme == Contemporary.Light
+                            checked: !Contemporary.followSystemColorTheme && Contemporary.colorTheme == Contemporary.Light
                             checkable: true
                             onCheckedChanged: lightAction.checked && Contemporary.setColorTheme(Contemporary.Light)
                         }
                         Action {
                             id: darkAction
                             text: qsTr("Dark")
-                            checked: Contemporary.colorTheme == Contemporary.Dark
+                            checked: !Contemporary.followSystemColorTheme && Contemporary.colorTheme == Contemporary.Dark
                             checkable: true
                             onCheckedChanged: darkAction.checked && Contemporary.setColorTheme(Contemporary.Dark)
                         }

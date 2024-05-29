@@ -23,11 +23,13 @@ ContemporaryStyle::ContemporaryStyle(QObject* parent) :
     d = new ContemporaryStylePrivate();
     this->setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
     d->followSystemColorTheme = true;
+    emit followSystemColorThemeChanged();
 
     connect(ContemporaryQmlPlatform::platform(), &ContemporaryQmlPlatform::systemColorThemeChanged, this, [this] {
         if (d->followSystemColorTheme) {
             this->setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
             d->followSystemColorTheme = true;
+            emit followSystemColorThemeChanged();
         }
     });
 }
@@ -169,6 +171,7 @@ void ContemporaryStyle::setFollowSystemColorTheme(bool followSystemColorTheme) {
         // Update the color theme now
         setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
         d->followSystemColorTheme = true;
+        emit followSystemColorThemeChanged();
     }
 }
 
