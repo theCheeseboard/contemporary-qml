@@ -9,5 +9,12 @@ qt_policy(
     SET QTP0001 NEW
 )
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    set(CNTP_BUNDLE_ICONS_DEFAULT OFF)
+else()
+    set(CNTP_BUNDLE_ICONS_DEFAULT ON)
+endif()
+option(CNTP_BUNDLE_ICONS "Bundle Contemporary Icons" ${CNTP_BUNDLE_ICONS_DEFAULT})
+
 add_subdirectory(controls)
 add_subdirectory(playground)

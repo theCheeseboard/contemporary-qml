@@ -54,3 +54,7 @@ install(TARGETS contemporary-corecontrols
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+if(CNTP_BUNDLE_ICONS)
+    include(IconBundler.cmake)
+endif()
