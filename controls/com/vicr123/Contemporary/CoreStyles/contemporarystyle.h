@@ -28,6 +28,7 @@ class ContemporaryStyle : public QObject {
         Q_PROPERTY(QColor destructiveAccent READ destructiveAccent WRITE setDestructiveAccent NOTIFY destructiveAccentChanged)
         Q_PROPERTY(Qt::Edge windowControlSide READ windowControlSide CONSTANT)
         Q_PROPERTY(ColorTheme colorTheme READ colorTheme NOTIFY colorThemeChanged)
+        Q_PROPERTY(bool followSystemColorTheme READ followSystemColorTheme WRITE setFollowSystemColorTheme NOTIFY followSystemColorThemeChanged FINAL)
 
         QML_NAMED_ELEMENT(Contemporary)
         QML_UNCREATABLE("")
@@ -67,6 +68,9 @@ class ContemporaryStyle : public QObject {
 
         ColorTheme colorTheme();
 
+        bool followSystemColorTheme();
+        void setFollowSystemColorTheme(bool followSystemColorTheme);
+
         Q_INVOKABLE static QColor hovered(QColor color);
         Q_INVOKABLE static QColor pressed(QColor color);
         Q_INVOKABLE static QColor disabled(QColor color);
@@ -84,6 +88,7 @@ class ContemporaryStyle : public QObject {
         void layerChanged();
         void destructiveAccentChanged();
         void colorThemeChanged();
+        void followSystemColorThemeChanged();
 
     private:
         ContemporaryStylePrivate* d;

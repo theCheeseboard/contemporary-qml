@@ -170,34 +170,40 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="53"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="53"/>
+        <location filename="../Main.qml" line="39"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="39"/>
+        <source>Follow System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="60"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="60"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="56"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="56"/>
+        <location filename="../Main.qml" line="63"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="63"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Main.qml" line="72"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="72"/>
-        <source>Add Surface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Main.qml" line="79"/>
         <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="79"/>
+        <source>Add Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="86"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="86"/>
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="39"/>
-        <location filename="../Main.qml" line="83"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="39"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="83"/>
+        <location filename="../Main.qml" line="46"/>
+        <location filename="../Main.qml" line="90"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="46"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="90"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
@@ -208,28 +214,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="46"/>
-        <location filename="../Main.qml" line="90"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="46"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="90"/>
+        <location filename="../Main.qml" line="53"/>
+        <location filename="../Main.qml" line="97"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="53"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="97"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="100"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="100"/>
+        <location filename="../Main.qml" line="107"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="107"/>
         <source>Components</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="105"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="105"/>
+        <location filename="../Main.qml" line="112"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="112"/>
         <source>Patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="140"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="140"/>
+        <location filename="../Main.qml" line="147"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="147"/>
         <source>Extra Surface</source>
         <translation type="unfinished"></translation>
     </message>

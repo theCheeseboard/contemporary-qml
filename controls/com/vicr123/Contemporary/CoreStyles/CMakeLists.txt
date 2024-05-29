@@ -37,7 +37,17 @@ target_sources(contemporary-corecontrols-plugin PRIVATE
     contemporarystyleplugin.h contemporarystyleplugin.cpp
     contemporarystyle.cpp contemporarystyle.h
     contemporaryinitialisation.h contemporaryinitialisation.cpp
+
+    platform/contemporaryqmlplatform.h platform/contemporaryqmlplatform.cpp
+    platform/contemporarydummyplatform.h platform/contemporarydummyplatform.cpp
 )
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    target_sources(contemporary-corecontrols-plugin PRIVATE
+        platform/contemporarymacplatform.h
+        platform/contemporarymacplatform.mm
+    )
+endif()
 
 qt_add_resources(contemporary-corecontrols-plugin libcontemporary-qml-corestyles
     PREFIX "/com/vicr123/libcontemporary/corestyles"

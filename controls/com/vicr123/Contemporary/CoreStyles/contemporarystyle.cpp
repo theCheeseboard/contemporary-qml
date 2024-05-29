@@ -1,11 +1,12 @@
 #include "contemporarystyle.h"
 
-#include "../impl/layercalculator.h"
+#include "platform/contemporaryqmlplatform.h"
 
 #include <QColor>
 
 struct ContemporaryStylePrivate {
         ContemporaryStyle::ColorTheme colorTheme = ContemporaryStyle::ColorTheme::Custom;
+        bool followSystemColorTheme = true;
 
         QColor accent{0, 50, 150};
         QColor background{40, 40, 40};
@@ -20,7 +21,15 @@ struct ContemporaryStylePrivate {
 ContemporaryStyle::ContemporaryStyle(QObject* parent) :
     QObject{parent} {
     d = new ContemporaryStylePrivate();
-    this->setColorTheme(ColorTheme::Dark);
+    this->setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
+    d->followSystemColorTheme = true;
+
+    connect(ContemporaryQmlPlatform::platform(), &ContemporaryQmlPlatform::systemColorThemeChanged, this, [this] {
+        if (d->followSystemColorTheme) {
+            this->setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
+            d->followSystemColorTheme = true;
+        }
+    });
 }
 
 ContemporaryStyle::~ContemporaryStyle() {
@@ -39,6 +48,8 @@ QColor ContemporaryStyle::accent() const {
 void ContemporaryStyle::setAccent(QColor accent) {
     d->accent = accent;
     emit accentChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -50,6 +61,8 @@ QColor ContemporaryStyle::background() const {
 void ContemporaryStyle::setBackground(QColor background) {
     d->background = background;
     emit backgroundChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -61,6 +74,8 @@ QColor ContemporaryStyle::foreground() const {
 void ContemporaryStyle::setForeground(QColor foreground) {
     d->foreground = foreground;
     emit foregroundChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -72,6 +87,8 @@ QColor ContemporaryStyle::line() const {
 void ContemporaryStyle::setLine(QColor line) {
     d->line = line;
     emit lineChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -83,6 +100,8 @@ QColor ContemporaryStyle::focusDecoration() const {
 void ContemporaryStyle::setFocusDecoration(QColor focusDecoration) {
     d->focusDecoration = focusDecoration;
     emit focusDecorationChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -94,6 +113,8 @@ QColor ContemporaryStyle::backgroundAccent() const {
 void ContemporaryStyle::setBackgroundAccent(QColor backgroundAccent) {
     d->backgroundAccent = backgroundAccent;
     emit backgroundAccentChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -105,6 +126,8 @@ QColor ContemporaryStyle::layer() const {
 void ContemporaryStyle::setlayer(QColor layer) {
     d->layer = layer;
     emit layerChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -116,6 +139,8 @@ QColor ContemporaryStyle::destructiveAccent() const {
 void ContemporaryStyle::setDestructiveAccent(QColor destructiveAccent) {
     d->destructiveAccent = destructiveAccent;
     emit destructiveAccentChanged();
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
     d->colorTheme = ColorTheme::Custom;
     emit colorThemeChanged();
 }
@@ -130,6 +155,21 @@ Qt::Edge ContemporaryStyle::windowControlSide() const {
 
 ContemporaryStyle::ColorTheme ContemporaryStyle::colorTheme() {
     return d->colorTheme;
+}
+
+bool ContemporaryStyle::followSystemColorTheme() {
+    return d->followSystemColorTheme;
+}
+
+void ContemporaryStyle::setFollowSystemColorTheme(bool followSystemColorTheme) {
+    d->followSystemColorTheme = followSystemColorTheme;
+    emit followSystemColorThemeChanged();
+
+    if (followSystemColorTheme) {
+        // Update the color theme now
+        setColorTheme(ContemporaryQmlPlatform::platform()->systemColorTheme());
+        d->followSystemColorTheme = true;
+    }
 }
 
 QColor ContemporaryStyle::hovered(QColor color) {
@@ -192,6 +232,9 @@ void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {
     emit backgroundAccentChanged();
     emit layerChanged();
     emit destructiveAccentChanged();
+
+    d->followSystemColorTheme = false;
+    emit followSystemColorThemeChanged();
 
     d->colorTheme = colorTheme;
     emit colorThemeChanged();
