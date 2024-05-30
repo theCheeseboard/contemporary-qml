@@ -26,6 +26,7 @@ qt_add_qml_module(contemporary-controls
     PLUGIN_TARGET contemporary-controls-plugin
     NO_CACHEGEN
     QML_FILES LayerCalculator.qml
+    QML_FILES ErrorFlasher.qml
 )
 
 target_link_libraries(contemporary-controls

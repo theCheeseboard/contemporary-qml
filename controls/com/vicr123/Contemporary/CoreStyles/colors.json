@@ -13,7 +13,7 @@
     "accent": [0, 150, 255],
     "background": [245, 245, 245],
     "foreground": [0, 0, 0],
-    "line": [230, 230, 230],
+    "line": [210, 210, 210],
     "focusDecoration": [20, 125, 200],
     "backgroundAccent": [50, 50, 50],
     "layer": [0, 0, 0, 20],
