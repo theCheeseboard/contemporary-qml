@@ -34,10 +34,21 @@ T.ComboBox {
     indicator: IconLabel {
         mirrored: control.mirrored
         display: control.display
-        x: control.mirrored ? control.leftPadding : control.width - width - control.rightPadding
-        y: control.topPadding + (control.availableHeight - height) / 2
+        x: control.flat ?
+               (control.mirrored ? control.leftPadding : control.width - width - control.rightPadding) :
+               (control.mirrored ? 4 : (control.width - width - 4))
+        y: control.flat ?
+               (control.topPadding + (control.availableHeight - height) / 2) :
+               (control.height - height - 4)
 
-        icon.name: "arrow-down"
+        transform: Scale {
+            xScale: control.mirrored ? -1 : 1
+            origin.x: indicator.width / 2
+            origin.y: indicator.height / 2
+        }
+
+        icon.source: control.flat ? undefined : "qrc:/com/vicr123/libcontemporary/corestyles/combobox-corner.svg"
+        icon.name: control.flat ? "arrow-down" : undefined
         icon.color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
     }
 
@@ -59,7 +70,7 @@ T.ComboBox {
         color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
 
         verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: control.flat ? Text.AlignRight : Text.AlignLeft
+        horizontalAlignment: (control.flat ^ control.mirrored) ? Text.AlignRight : Text.AlignLeft
 
         TextMetrics {
             id: textFieldMetrics

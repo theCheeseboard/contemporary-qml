@@ -52,7 +52,9 @@ endif()
 
 qt_add_resources(contemporary-corecontrols-plugin libcontemporary-qml-corestyles
     PREFIX "/com/vicr123/libcontemporary/corestyles"
-    FILES colors.json
+    FILES
+        colors.json
+        combobox-corner.svg
 )
 
 target_link_libraries(contemporary-corecontrols-plugin
