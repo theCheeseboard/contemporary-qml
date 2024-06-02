@@ -29,16 +29,78 @@ Control {
 
     ColumnLayout {
         anchors.top: grandstand.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
         anchors.topMargin: 6
 
-        ComboBox {
-            model: 100
+        GroupBox {
+            title: qsTr("Combo Boxes")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                ComboBox {
+                    model: 100
+                }
+
+                ComboBox {
+                    enabled: false
+                    model: 100
+                }
+            }
         }
 
-        ComboBox {
-            enabled: false
-            model: 100
+        GroupBox {
+            title: qsTr("Editable Combo Boxes")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                ComboBox {
+                    model: 100
+                    editable: true
+                }
+
+                ComboBox {
+                    enabled: false
+                    model: 100
+                    editable: true
+                }
+            }
+        }
+
+        GroupBox {
+            title: qsTr("Flat Combo Boxes")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                ComboBox {
+                    model: 100
+                    flat: true
+                }
+
+                ComboBox {
+                    enabled: false
+                    model: 100
+                    flat: true
+                }
+            }
+        }
+
+        Item {
+            Layout.fillHeight: true
         }
     }
 }

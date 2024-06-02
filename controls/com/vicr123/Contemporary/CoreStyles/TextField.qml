@@ -15,10 +15,10 @@ T.TextField {
     padding: 0
     leftPadding: padding + 4
 
-    color: control.palette.text
-    selectionColor: control.palette.highlight
-    selectedTextColor: control.palette.highlightedText
-    placeholderTextColor: control.palette.placeholderText
+    color: control.enabled ? Contemporary.foreground : Contemporary.disabled(Contemporary.foreground)
+    selectionColor: Contemporary.accent
+    selectedTextColor: Contemporary.foreground
+    placeholderTextColor: Contemporary.disabled(Contemporary.foreground)
     verticalAlignment: TextInput.AlignVCenter
 
     PlaceholderText {

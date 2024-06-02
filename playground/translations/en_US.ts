@@ -150,6 +150,27 @@
     </message>
 </context>
 <context>
+    <name>ComboBoxPage</name>
+    <message>
+        <location filename="../components/ComboBoxPage.qml" line="39"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/ComboBoxPage.qml" line="39"/>
+        <source>Combo Boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/ComboBoxPage.qml" line="59"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/ComboBoxPage.qml" line="59"/>
+        <source>Editable Combo Boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/ComboBoxPage.qml" line="81"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/ComboBoxPage.qml" line="81"/>
+        <source>Flat Combo Boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
         <location filename="../Main.qml" line="16"/>
