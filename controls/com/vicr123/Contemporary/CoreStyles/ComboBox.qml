@@ -32,7 +32,6 @@ T.ComboBox {
     }
 
     indicator: IconLabel {
-        id: icon
         mirrored: control.mirrored
         display: control.display
         x: control.mirrored ? control.leftPadding : control.width - width - control.rightPadding
@@ -44,8 +43,8 @@ T.ComboBox {
 
     contentItem: TextField {
         id: textField
-        leftPadding: !control.mirrored ? 12 : (control.editable && activeFocus ? 3 : 1) + icon.width + 3
-        rightPadding: control.mirrored ? 12 : (control.editable && activeFocus ? 3 : 1) + icon.width + 3
+        leftPadding: !control.mirrored ? 12 : (control.editable && activeFocus ? 3 : 1) + indicator.width + 3
+        rightPadding: control.mirrored ? 12 : (control.editable && activeFocus ? 3 : 1) + indicator.width + 3
         topPadding: 6 - control.padding
         bottomPadding: 6 - control.padding
 
@@ -62,13 +61,19 @@ T.ComboBox {
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: control.flat ? Text.AlignRight : Text.AlignLeft
 
+        TextMetrics {
+            id: textFieldMetrics
+            text: textField.text
+            font: textField.font
+        }
+
         background: Item {
 
         }
     }
 
     background: Layer {
-        implicitWidth: 140
+        implicitWidth: control.flat ? textFieldMetrics.advanceWidth : 140
         implicitHeight: 40
 
         visible: !control.flat || control.down
@@ -82,8 +87,8 @@ T.ComboBox {
 
     popup: T.Popup {
         y: control.height
-        width: control.width
-        height: Math.min(contentItem.implicitHeight, control.Window.height - topMargin - bottomMargin)
+        width: control.flat ? Math.max(control.width, 140) : control.width
+        height: Math.min(contentItem.implicitHeight, 300, control.Window.height - topMargin - bottomMargin)
         topMargin: 10
         bottomMargin: 10
 
