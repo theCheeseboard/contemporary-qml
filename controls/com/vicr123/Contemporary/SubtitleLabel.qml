@@ -4,7 +4,7 @@ import QtQuick.Controls
 Item {
     id: root
     property string text
-    property font font
+    property font font: label.font
     property alias verticalAlignment: label.verticalAlignment
     property alias color: label.color
 
