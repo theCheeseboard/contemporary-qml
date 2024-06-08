@@ -63,7 +63,7 @@ Control {
 
                 Button {
                     Layout.fillWidth: true
-                    text: qsTr("Something Dangerous")
+                    text: qsTr("Shut down the nuclear reactor!")
                     onClicked: dangerBox.open()
                 }
             }

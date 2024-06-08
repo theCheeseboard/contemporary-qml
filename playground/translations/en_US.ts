@@ -223,7 +223,7 @@
     <message>
         <location filename="../patterns/DialogBoxes.qml" line="66"/>
         <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="66"/>
-        <source>Something Dangerous</source>
+        <source>Shut down the nuclear reactor!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

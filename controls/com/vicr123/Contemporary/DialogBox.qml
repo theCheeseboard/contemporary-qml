@@ -78,7 +78,7 @@ Item {
         parent: QQ.Overlay.overlay
         visible: root.isOpen
         modal: true
-        closePolicy: Popup.NoAutoClose
+        closePolicy: Popup.CloseOnEscape
 
         x: Math.round((parent.width - width) / 2)
         y: Math.round((parent.height - height) / 2)
