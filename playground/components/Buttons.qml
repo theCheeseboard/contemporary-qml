@@ -72,6 +72,7 @@ Control {
                 Button {
                     text: qsTr("Flat Default Button")
                     flat: true
+                    onClicked: dialogBox.open()
                 }
 
                 Button {
@@ -165,5 +166,25 @@ Control {
                 Layout.fillHeight: true
             }
         }
+    }
+
+    DialogBox {
+        id: dialogBox
+        titleText: qsTr("Erase this disk?")
+        messageText: qsTr("Erase all data from all disks?")
+
+        buttons: [
+            DialogBox.Button {
+                text: qsTr("Cancel")
+                onClicked: dialogBox.close()
+            },
+            DialogBox.Button {
+                text: qsTr("Erase")
+                destructive: true
+                icon.name: "media-harddisk-erase"
+
+                onClicked: dialogBox.close()
+            }
+        ]
     }
 }

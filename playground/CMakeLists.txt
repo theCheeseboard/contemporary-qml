@@ -28,6 +28,8 @@ qt_add_qml_module(appplayground
         components/Progress.qml
         components/Scrollable.qml
     NO_CACHEGEN
+    QML_FILES patterns/Root.qml
+    QML_FILES patterns/DialogBoxes.qml
 )
 
 

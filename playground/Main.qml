@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import "components" as Pages
+import "components" as Components
+import "patterns" as Patterns
 import com.vicr123.Contemporary
 import Contemporary
 import Qt.labs.platform as Labs
@@ -130,7 +131,8 @@ ContemporaryWindow {
                 id: stack
                 anchors.fill: parent
 
-                Pages.Root { }
+                Components.Root { }
+                Patterns.Root { }
             }
         }
 

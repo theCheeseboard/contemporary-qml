@@ -40,39 +40,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="80"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="80"/>
+        <location filename="../components/Buttons.qml" line="81"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="81"/>
         <source>Flat Disabled Button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="86"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="86"/>
+        <location filename="../components/Buttons.qml" line="87"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="87"/>
         <source>Flat Checkable Button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="131"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="131"/>
+        <location filename="../components/Buttons.qml" line="132"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="132"/>
         <source>Popover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="144"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="144"/>
+        <location filename="../components/Buttons.qml" line="145"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="145"/>
         <source>Popover Contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="153"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="153"/>
+        <location filename="../components/Buttons.qml" line="154"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="154"/>
         <source>This is the contents of the popover.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../components/Buttons.qml" line="158"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="158"/>
+        <location filename="../components/Buttons.qml" line="159"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="159"/>
         <source>Open Popover 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Buttons.qml" line="173"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="173"/>
+        <source>Erase this disk?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Buttons.qml" line="174"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="174"/>
+        <source>Erase all data from all disks?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Buttons.qml" line="182"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="182"/>
+        <source>Erase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Buttons.qml" line="178"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Buttons.qml" line="178"/>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -171,94 +195,187 @@
     </message>
 </context>
 <context>
+    <name>DialogBoxes</name>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="39"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="39"/>
+        <source>Combo Boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="49"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="49"/>
+        <source>Click on a button to open a dialog box.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="54"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="54"/>
+        <source>Informational Dialog Box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="60"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="60"/>
+        <source>Oh no! Goblins!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="66"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="66"/>
+        <source>Something Dangerous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="79"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="79"/>
+        <source>Message Box Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="80"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="80"/>
+        <source>This is the main text of the message box. It conveys the primary information or message that needs to be communicated to the user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="91"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="91"/>
+        <source>After battling through hordes of goblins, you finally stand before the throne of the Goblin King himself. The grotesque creature eyes you with contempt from his towering seat.
+
+&quot;So, you&apos;re the meddlesome adventurer who&apos;s been causing trouble in my kingdom,&quot; he growls. &quot;I&apos;ll give you one chance to save your miserable hide. Swear fealty to me, and I&apos;ll let you live as my servant. Refuse, and you&apos;ll spend the rest of your days in the darkest pit of my dungeons!&quot;
+
+The Goblin King leans forward, his putrid breath washing over you as he awaits your answer. The weight of your decision could shape the fate of the entire goblin realm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="103"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="103"/>
+        <source>Swear Fealty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="111"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="111"/>
+        <source>Danger! Extremely Hazardous Operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="112"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="112"/>
+        <source>You are attempting to perform an extremely hazardous operation that could result in catastrophic consequences if not executed with extreme caution.
+
+This operation has the potential to cause:
+- Complete data loss
+- Irreversible system damage
+- Breach of security protocols
+- Unrecoverable corruption
+
+Only proceed if you are an expert user and fully understand the risks involved. Improper handling could lead to disastrous and irreparable results.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="121"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="121"/>
+        <source>This is the informative text displayed in grey below the main text. It provides additional context and warnings about the dangerous operation. Attempting this operation without proper expertise and precautions could lead to permanent and devastating damage to your systems and data. Proceed at your own risk.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="99"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="99"/>
+        <source>Refuse</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
-        <location filename="../Main.qml" line="16"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="16"/>
+        <location filename="../Main.qml" line="17"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="17"/>
         <source>Contemporary Playground</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="26"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="26"/>
+        <location filename="../Main.qml" line="27"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="27"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="29"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="29"/>
+        <location filename="../Main.qml" line="30"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="30"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="39"/>
-        <location filename="../Main.qml" line="90"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="39"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="90"/>
+        <location filename="../Main.qml" line="40"/>
+        <location filename="../Main.qml" line="91"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="40"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="91"/>
         <source>Follow System</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="60"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="60"/>
+        <location filename="../Main.qml" line="61"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="61"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="63"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="63"/>
+        <location filename="../Main.qml" line="64"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="64"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="79"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="79"/>
+        <location filename="../Main.qml" line="80"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="80"/>
         <source>Add Surface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="86"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="86"/>
+        <location filename="../Main.qml" line="87"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="87"/>
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="46"/>
-        <location filename="../Main.qml" line="97"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="46"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="97"/>
+        <location filename="../Main.qml" line="47"/>
+        <location filename="../Main.qml" line="98"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="47"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="98"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="35"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="35"/>
+        <location filename="../Main.qml" line="36"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="36"/>
         <source>&amp;Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="53"/>
-        <location filename="../Main.qml" line="104"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="53"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="104"/>
+        <location filename="../Main.qml" line="54"/>
+        <location filename="../Main.qml" line="105"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="54"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="105"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="114"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="114"/>
+        <location filename="../Main.qml" line="115"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="115"/>
         <source>Components</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="119"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="119"/>
+        <location filename="../Main.qml" line="120"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="120"/>
         <source>Patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="154"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="154"/>
+        <location filename="../Main.qml" line="156"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/Main.qml" line="156"/>
         <source>Extra Surface</source>
         <translation type="unfinished"></translation>
     </message>
@@ -326,6 +443,18 @@
         <location filename="../components/Root.qml" line="85"/>
         <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/components/Root.qml" line="85"/>
         <source>Scrollable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Root.qml" line="37"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/Root.qml" line="37"/>
+        <source>Patterns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Root.qml" line="64"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/Root.qml" line="64"/>
+        <source>Dialog Boxes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
