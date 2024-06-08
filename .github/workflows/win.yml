@@ -48,7 +48,7 @@ jobs:
           INSTALL_DIRECTORY: ${{ steps.contemporaryqml.outputs.install-directory }}
         run: |
           New-Item -ItemType Directory -Force -Path output
-          $executable = Move-Item -Path "$env:BUILD_DIRECTORY/contemporary*.exe" -Destination output -Force -PassThru
+          $executable = Move-Item -Path "$env:BUILD_DIRECTORY/playground/contemporary*.exe" -Destination output -Force -PassThru
           windeployqt output --qmldir="$env:SOURCE_DIRECTORY" -printsupport
           copy $env:INSTALL_DIRECTORY/bin/*.dll output
       - name: Upload contemporary-qml artifact
