@@ -10,6 +10,8 @@ Item {
     property string titleText
     property string messageText
     property string informativeText
+    property string checkboxText
+    property bool checkboxChecked
     property list<Item> buttons
 
     component Button: QQ.Button {
@@ -127,6 +129,17 @@ Item {
                 wrapMode: QQ.Label.Wrap
 
                 height: Math.max(contentHeight + 40, 80)
+            }
+
+            QQ.CheckBox {
+                Layout.fillWidth: true
+
+                id: checkbox
+                text: root.checkboxText
+                visible: root.checkboxText
+                checked: root.checkboxChecked
+
+                onCheckedChanged: root.checkboxChecked = checkbox.checked
             }
 
             Layer {

@@ -227,20 +227,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="79"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="79"/>
+        <location filename="../patterns/DialogBoxes.qml" line="72"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="72"/>
+        <source>Low Battery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="85"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="85"/>
         <source>Message Box Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="80"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="80"/>
+        <location filename="../patterns/DialogBoxes.qml" line="86"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="86"/>
         <source>This is the main text of the message box. It conveys the primary information or message that needs to be communicated to the user.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="91"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="91"/>
+        <location filename="../patterns/DialogBoxes.qml" line="97"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="97"/>
         <source>After battling through hordes of goblins, you finally stand before the throne of the Goblin King himself. The grotesque creature eyes you with contempt from his towering seat.
 
 &quot;So, you&apos;re the meddlesome adventurer who&apos;s been causing trouble in my kingdom,&quot; he growls. &quot;I&apos;ll give you one chance to save your miserable hide. Swear fealty to me, and I&apos;ll let you live as my servant. Refuse, and you&apos;ll spend the rest of your days in the darkest pit of my dungeons!&quot;
@@ -249,20 +255,20 @@ The Goblin King leans forward, his putrid breath washing over you as he awaits y
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="103"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="103"/>
+        <location filename="../patterns/DialogBoxes.qml" line="109"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="109"/>
         <source>Swear Fealty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="111"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="111"/>
+        <location filename="../patterns/DialogBoxes.qml" line="117"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="117"/>
         <source>Danger! Extremely Hazardous Operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="112"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="112"/>
+        <location filename="../patterns/DialogBoxes.qml" line="118"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="118"/>
         <source>You are attempting to perform an extremely hazardous operation that could result in catastrophic consequences if not executed with extreme caution.
 
 This operation has the potential to cause:
@@ -275,14 +281,44 @@ Only proceed if you are an expert user and fully understand the risks involved. 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="121"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="121"/>
+        <location filename="../patterns/DialogBoxes.qml" line="127"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="127"/>
         <source>This is the informative text displayed in grey below the main text. It provides additional context and warnings about the dangerous operation. Attempting this operation without proper expertise and precautions could lead to permanent and devastating damage to your systems and data. Proceed at your own risk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="99"/>
-        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="99"/>
+        <location filename="../patterns/DialogBoxes.qml" line="143"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="143"/>
+        <source>Warning!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="144"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="144"/>
+        <source>Your battery is low!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="145"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="145"/>
+        <source>Never tell me again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="165"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="165"/>
+        <source>You checked the box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="165"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="165"/>
+        <source>You didn&apos;t check the box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/DialogBoxes.qml" line="105"/>
+        <location filename="../../../build-contemporary-qml-Desktop_ARM-Debug/playground/playground/patterns/DialogBoxes.qml" line="105"/>
         <source>Refuse</source>
         <translation type="unfinished"></translation>
     </message>

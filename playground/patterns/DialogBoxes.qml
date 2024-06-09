@@ -66,6 +66,12 @@ Control {
                     text: qsTr("Shut down the nuclear reactor!")
                     onClicked: dangerBox.open()
                 }
+
+                Button {
+                    Layout.fillWidth: true
+                    text: qsTr("Low Battery")
+                    onClicked: checkboxBox.open()
+                }
             }
         }
 
@@ -127,6 +133,40 @@ Only proceed if you are an expert user and fully understand the risks involved. 
             DialogBox.OkButton {
                 destructive: true
                 onClicked: dangerBox.close()
+            }
+        ]
+    }
+
+
+    DialogBox {
+        id: checkboxBox
+        titleText: qsTr("Warning!")
+        messageText: qsTr(`Your battery is low!`)
+        checkboxText: qsTr("Never tell me again")
+
+        buttons: [
+            DialogBox.CancelButton {
+                onClicked: () => {
+                    checkboxBox.close()
+                    checkboxAckBox.open()
+                }
+            },
+            DialogBox.OkButton {
+                onClicked: () => {
+                    checkboxBox.close()
+                    checkboxAckBox.open()
+                }
+            }
+        ]
+    }
+
+    DialogBox {
+        id: checkboxAckBox
+        messageText: checkboxBox.checkboxChecked ? qsTr("You checked the box") : qsTr("You didn't check the box")
+
+        buttons: [
+            DialogBox.OkButton {
+                onClicked: checkboxAckBox.close()
             }
         ]
     }
