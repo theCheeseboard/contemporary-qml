@@ -78,6 +78,9 @@ class ContemporaryStyle : public QObject {
         // ReSharper disable once CppRedundantQualifier
         Q_INVOKABLE void setColorTheme(ContemporaryStyle::ColorTheme colorTheme);
 
+        Q_INVOKABLE QString quoteString(QString string);
+        Q_INVOKABLE QString quoteString(QString locale, QString string);
+
     signals:
         void accentChanged();
         void backgroundChanged();
