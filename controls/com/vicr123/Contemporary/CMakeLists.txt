@@ -28,6 +28,7 @@ qt_add_qml_module(contemporary-controls
     QML_FILES LayerCalculator.qml
     QML_FILES ErrorFlasher.qml
     QML_FILES DialogBox.qml
+    QML_FILES RemoteDeviceButton.qml
 )
 
 target_link_libraries(contemporary-controls
