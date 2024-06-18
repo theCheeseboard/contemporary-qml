@@ -23,7 +23,7 @@ Item {
         opacity: 0
 
         SequentialAnimation {
-            running: true
+            running: rect.state === "on"
             loops: Animation.Infinite
             ColorAnimation {
                 target: rect.border
