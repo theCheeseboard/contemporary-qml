@@ -251,6 +251,14 @@ QString ContemporaryStyle::quoteString(QString locale, QString string) {
     return QLocale(locale).quoteString(string);
 }
 
+QString ContemporaryStyle::createSeparatedList(QStringList list) {
+    return QLocale().createSeparatedList(list);
+}
+
+QString ContemporaryStyle::createSeparatedList(QString locale, QStringList list) {
+    return QLocale(locale).createSeparatedList(list);
+}
+
 QColor ContemporaryStyle::readColor(const QJsonValue& jsonColor) {
     QJsonArray colorArray = jsonColor.toArray();
     return {colorArray[0].toInt(), colorArray[1].toInt(), colorArray[2].toInt(), colorArray.size() == 4 ? colorArray[3].toInt() : 255};

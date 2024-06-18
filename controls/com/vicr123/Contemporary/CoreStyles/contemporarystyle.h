@@ -80,6 +80,8 @@ class ContemporaryStyle : public QObject {
 
         Q_INVOKABLE QString quoteString(QString string);
         Q_INVOKABLE QString quoteString(QString locale, QString string);
+        Q_INVOKABLE QString createSeparatedList(QStringList list);
+        Q_INVOKABLE QString createSeparatedList(QString locale, QStringList list);
 
     signals:
         void accentChanged();

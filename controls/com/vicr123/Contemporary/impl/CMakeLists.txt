@@ -20,6 +20,7 @@ qt_add_qml_module(contemporary-controls-impl
         CLASS_NAME ContemporaryImplStylePlugin
     NO_CACHEGEN
     QML_FILES ActionBarPopupMenu.qml
+    QML_FILES
 )
 
 target_sources(contemporary-controls-impl-plugin PRIVATE
