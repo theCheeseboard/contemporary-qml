@@ -5,7 +5,9 @@ import com.vicr123.Contemporary
 import Contemporary
 
 Control {
-    id: rectangle
+    id: root
+
+    property int value: 50
 
     LayerCalculator {
         id: layer2
@@ -13,62 +15,120 @@ Control {
     }
 
     Grandstand {
+        id: grandstand
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
 
-        id: grandstand
-
         innerTopMargin: SafeZone.top
 
         z: 10
-        text: "Ranges";
+        text: "Ranges"
         color: layer2.color
     }
 
     ColumnLayout {
         anchors.top: grandstand.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottomMargin: SafeZone.bottom
         anchors.topMargin: 6
 
-        RowLayout {
-            SpinBox {
-                id: spin1
-                from: 0
-                to: 100
-                value: 50
-                onValueChanged: slider1.value = spin1.value
-            }
+        GroupBox {
+            title: qsTr("Spin Boxes")
+            implicitWidth: Math.min(600, parent.width - 12)
 
-            Slider {
-                id: slider1
-                from: 0
-                to: 100
-                value: 50
-                onValueChanged: spin1.value = slider1.value;
-            }
-        }
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
+            ColumnLayout {
+                anchors.fill: parent
 
-        SpinBox {
-            from: 0
-            to: items.length - 1
-            value: 1 // "Medium"
-
-            property var items: ["Small", "Medium", "Large"]
-
-            textFromValue: function(value) {
-                return items[value];
-            }
-
-            valueFromText: function(text) {
-                for (var i = 0; i < items.length; ++i) {
-                    if (items[i].toLowerCase().indexOf(text.toLowerCase()) === 0)
-                        return i
+                SpinBox {
+                    id: spin1
+                    from: 0
+                    to: 100
+                    value: root.value
+                    onValueChanged: root.value = spin1.value
                 }
-                return sb.value
+
+                SpinBox {
+                    from: 0
+                    to: items.length - 1
+                    value: 1 // "Medium"
+
+                    property var items: ["Small", "Medium", "Large"]
+
+                    textFromValue: function (value) {
+                        return items[value];
+                    }
+
+                    valueFromText: function (text) {
+                        for (var i = 0; i < items.length; ++i) {
+                            if (items[i].toLowerCase().indexOf(text.toLowerCase()) === 0)
+                                return i;
+                        }
+                        return sb.value;
+                    }
+                }
             }
         }
 
+        GroupBox {
+            title: qsTr("Horizontal Sliders")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                Slider {
+                    id: slider1
+                    from: 0
+                    to: 100
+                    value: root.value
+                    onValueChanged: root.value = slider1.value
+                }
+
+                Slider {
+                    id: slider2
+                    from: 0
+                    to: 100
+                    value: root.value
+                    onValueChanged: root.value = slider2.value
+                    enabled: false
+                }
+            }
+        }
+
+        GroupBox {
+            title: qsTr("Vertical Sliders")
+            implicitWidth: Math.min(600, parent.width - 12)
+
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+            RowLayout {
+                anchors.fill: parent
+
+                Slider {
+                    id: slider3
+                    from: 0
+                    to: 100
+                    value: root.value
+                    onValueChanged: root.value = slider3.value
+                    orientation: Qt.Vertical
+                }
+
+                Slider {
+                    id: slider4
+                    from: 0
+                    to: 100
+                    value: root.value
+                    onValueChanged: root.value = slider4.value
+                    enabled: false
+                    orientation: Qt.Vertical
+                }
+            }
+        }
     }
 }
