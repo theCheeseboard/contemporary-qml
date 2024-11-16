@@ -8,6 +8,8 @@ import com.vicr123.Contemporary
 Popup {
     id: root
     clip: true
+    popupType: Popup.Window
+    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     property Menu menu
 
@@ -165,6 +167,11 @@ Popup {
         id: overlay
         opacity: 0.7
         color: "black"
+
+        MouseArea {
+            anchors.fill: parent
+            onPressed: root.close()
+        }
     }
 
     enter: Transition {
