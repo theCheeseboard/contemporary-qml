@@ -24,6 +24,7 @@ jobs:
           version: '6.8.0'
           target: 'desktop'
           cache: true
+          arch: 'win64_msvc2022_64'
           modules: 'qt3d qtcharts qtconnectivity qtdatavis3d qtgraphs qtgrpc qthttpserver qtimageformats qtlanguageserver qtlocation qtlottie qtmultimedia qtnetworkauth qtpdf qtpositioning qtquick3dphysics qtquickeffectmaker qtremoteobjects qtscxml qtsensors qtserialbus qtserialport qtspeech qtvirtualkeyboard qtwebchannel qtwebengine qtwebsockets qtwebview qt5compat qtquick3d qtquicktimeline qtshadertools'
       - name: Install QCoro
         uses: theCheeseboard/actions/build-cmake-project@actions
