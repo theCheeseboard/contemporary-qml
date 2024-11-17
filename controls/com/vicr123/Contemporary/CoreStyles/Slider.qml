@@ -112,9 +112,10 @@ T.Slider {
         width: control.horizontal ? control.availableWidth : implicitWidth
         height: control.horizontal ? implicitHeight : control.availableHeight
         radius: 4
-        color: "transparent"
+        color: Contemporary.layer
         scale: control.horizontal && control.mirrored ? -1 : 1
-        border.color: control.foreground
+
+        // border.color: control.foreground
 
         Rectangle {
             y: control.horizontal ? 0 : control.visualPosition * (parent.height - control.thickness)
@@ -123,7 +124,7 @@ T.Slider {
 
             radius: 4
             color: control.accent
-            border.color: control.foreground
+            // border.color: control.foreground
         }
     }
 }

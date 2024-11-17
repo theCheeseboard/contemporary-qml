@@ -14,16 +14,15 @@ Control {
     }
 
     Grandstand {
+        id: grandstand
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
 
-        id: grandstand
-
         innerTopMargin: SafeZone.top
 
         z: 10
-        text: "Dialog Boxes";
+        text: qsTr("Dialog Boxes")
         color: layer2.color
     }
 
@@ -36,7 +35,7 @@ Control {
         anchors.topMargin: 6
 
         GroupBox {
-            title: qsTr("Combo Boxes")
+            title: qsTr("Dialog Boxes")
             implicitWidth: Math.min(600, parent.width - 12)
 
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -137,7 +136,6 @@ Only proceed if you are an expert user and fully understand the risks involved. 
         ]
     }
 
-
     DialogBox {
         id: checkboxBox
         titleText: qsTr("Warning!")
@@ -147,14 +145,14 @@ Only proceed if you are an expert user and fully understand the risks involved. 
         buttons: [
             DialogBox.CancelButton {
                 onClicked: () => {
-                    checkboxBox.close()
-                    checkboxAckBox.open()
+                    checkboxBox.close();
+                    checkboxAckBox.open();
                 }
             },
             DialogBox.OkButton {
                 onClicked: () => {
-                    checkboxBox.close()
-                    checkboxAckBox.open()
+                    checkboxBox.close();
+                    checkboxAckBox.open();
                 }
             }
         ]
