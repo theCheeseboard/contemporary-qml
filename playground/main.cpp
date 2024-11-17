@@ -34,14 +34,16 @@ int main(int argc, char* argv[]) {
     const QUrl url(u"qrc:/qt/qml/playground/Main.qml"_qs);
     QObject::connect(
         &engine, &QQmlApplicationEngine::objectCreationFailed, &app, [](QUrl url) {
-        QCoreApplication::exit(-1);
-    },
-        Qt::QueuedConnection);
+        QTextStream(stderr) << "Object creation failed";
+        QTextStream(stderr) << url.toString();
+        QCoreApplication::exit(1);
+    }, Qt::QueuedConnection);
     QObject::connect(
         &engine, &QQmlApplicationEngine::warnings, &app, [](const QList<QQmlError>& warnings) {
-
-    },
-        Qt::QueuedConnection);
+        for (auto warning : warnings) {
+            QTextStream(stderr) << "QML: " << warning.toString();
+        }
+    }, Qt::QueuedConnection);
     engine.load(url);
 
     return app.exec();
