@@ -6,6 +6,6 @@ Name[]=Contemporary Playground Blueprint
 GenericName[]=Control Playground
 Categories=Development;
 Exec=contemporary-playground-blueprint %U
-Icon=com.vicr123.contemporary.playground
+Icon=com.vicr123.contemporary.playground_blueprint
 #T:A list of words that can be searched for. Please ensure that the list also ends with a semicolon!
 Keywords[]=contemporary;playground;
