@@ -39,7 +39,7 @@ jobs:
         with:
           project: .
           commitish: .
-          extra-cmake-args: -DCNTP_BUNDLE_ICONS=ON
+          extra-cmake-args: -DCNTP_BUNDLE_ICONS=ON -DBUILD_PLAYGROUND=ON
       - name: Deploy Contemporary Playground
         uses: theCheeseboard/actions/deploy-project@actions
         with:

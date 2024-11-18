@@ -42,6 +42,7 @@ jobs:
         with:
           project: .
           commitish: .
+          extra-cmake-args: -DBUILD_PLAYGROUND=ON
       - name: Deploy contemporary-qml
         env:
           SOURCE_DIRECTORY: ${{ steps.contemporaryqml.outputs.source-directory }}

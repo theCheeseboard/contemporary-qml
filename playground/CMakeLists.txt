@@ -63,6 +63,9 @@ cntp_app_icon(appplayground
     BASEICON icons/baseicon.svg
     BASEICON_MAC icons/baseicon-mac.svg
 )
+cntp_target_desktop_file(appplayground
+    DESKTOP_FILE com.vicr123.contemporary.playground.desktop
+    BLUEPRINT_DESKTOP_FILE com.com.vicr123.contemporary.playground_blueprint.desktop)
 
 target_link_libraries(appplayground
     PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
