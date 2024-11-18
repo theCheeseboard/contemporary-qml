@@ -26,6 +26,7 @@ class ContemporaryStyle : public QObject {
         Q_PROPERTY(QColor backgroundAccent READ backgroundAccent WRITE setBackgroundAccent NOTIFY backgroundAccentChanged)
         Q_PROPERTY(QColor layer READ layer WRITE setlayer NOTIFY layerChanged)
         Q_PROPERTY(QColor destructiveAccent READ destructiveAccent WRITE setDestructiveAccent NOTIFY destructiveAccentChanged)
+        Q_PROPERTY(QColor translucentBorder READ translucentBorder WRITE setTranslucentBorder NOTIFY translucentBorderChanged FINAL)
         Q_PROPERTY(Qt::Edge windowControlSide READ windowControlSide CONSTANT)
         Q_PROPERTY(ColorTheme colorTheme READ colorTheme NOTIFY colorThemeChanged)
         Q_PROPERTY(bool followSystemColorTheme READ followSystemColorTheme WRITE setFollowSystemColorTheme NOTIFY followSystemColorThemeChanged FINAL)
@@ -64,6 +65,9 @@ class ContemporaryStyle : public QObject {
         QColor destructiveAccent() const;
         void setDestructiveAccent(QColor destructiveAccent);
 
+        QColor translucentBorder() const;
+        void setTranslucentBorder(QColor translucentBorder);
+
         Qt::Edge windowControlSide() const;
 
         ColorTheme colorTheme();
@@ -92,6 +96,7 @@ class ContemporaryStyle : public QObject {
         void backgroundAccentChanged();
         void layerChanged();
         void destructiveAccentChanged();
+        void translucentBorderChanged();
         void colorThemeChanged();
         void followSystemColorThemeChanged();
 

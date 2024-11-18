@@ -7,7 +7,8 @@
     "focusDecoration": [20, 125, 200],
     "backgroundAccent": [50, 50, 50],
     "layer": [255, 255, 255, 10],
-    "destructiveAccent": [200, 0, 0]
+    "destructiveAccent": [200, 0, 0],
+    "translucentBorder": [255, 255, 255, 60]
   },
   "light": {
     "accent": [0, 150, 255],
@@ -17,6 +18,7 @@
     "focusDecoration": [20, 125, 200],
     "backgroundAccent": [50, 50, 50],
     "layer": [0, 0, 0, 20],
-    "destructiveAccent": [255, 0, 0]
+    "destructiveAccent": [255, 0, 0],
+    "translucentBorder": [0, 0, 0, 60]
   }
 }

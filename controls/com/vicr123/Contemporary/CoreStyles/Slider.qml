@@ -115,8 +115,6 @@ T.Slider {
         color: Contemporary.layer
         scale: control.horizontal && control.mirrored ? -1 : 1
 
-        // border.color: control.foreground
-
         Rectangle {
             y: control.horizontal ? 0 : control.visualPosition * (parent.height - control.thickness)
             width: control.horizontal ? control.thickness + control.position * (parent.width - control.thickness) : control.thickness
@@ -124,7 +122,13 @@ T.Slider {
 
             radius: 4
             color: control.accent
-            // border.color: control.foreground
+        }
+
+        Rectangle {
+            anchors.fill: parent
+            radius: 4
+            color: "transparent"
+            border.color: control.enabled ? Contemporary.translucentBorder : Contemporary.disabled(Contemporary.translucentBorder)
         }
     }
 }

@@ -161,47 +161,48 @@
 <context>
     <name>DialogBoxes</name>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="39"/>
-        <source>Combo Boxes</source>
+        <location filename="../patterns/DialogBoxes.qml" line="25"/>
+        <location filename="../patterns/DialogBoxes.qml" line="38"/>
+        <source>Dialog Boxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="49"/>
+        <location filename="../patterns/DialogBoxes.qml" line="48"/>
         <source>Click on a button to open a dialog box.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="54"/>
+        <location filename="../patterns/DialogBoxes.qml" line="53"/>
         <source>Informational Dialog Box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="60"/>
+        <location filename="../patterns/DialogBoxes.qml" line="59"/>
         <source>Oh no! Goblins!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="66"/>
+        <location filename="../patterns/DialogBoxes.qml" line="65"/>
         <source>Shut down the nuclear reactor!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="72"/>
+        <location filename="../patterns/DialogBoxes.qml" line="71"/>
         <source>Low Battery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="85"/>
+        <location filename="../patterns/DialogBoxes.qml" line="84"/>
         <source>Message Box Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="86"/>
+        <location filename="../patterns/DialogBoxes.qml" line="85"/>
         <source>This is the main text of the message box. It conveys the primary information or message that needs to be communicated to the user.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="97"/>
+        <location filename="../patterns/DialogBoxes.qml" line="96"/>
         <source>After battling through hordes of goblins, you finally stand before the throne of the Goblin King himself. The grotesque creature eyes you with contempt from his towering seat.
 
 &quot;So, you&apos;re the meddlesome adventurer who&apos;s been causing trouble in my kingdom,&quot; he growls. &quot;I&apos;ll give you one chance to save your miserable hide. Swear fealty to me, and I&apos;ll let you live as my servant. Refuse, and you&apos;ll spend the rest of your days in the darkest pit of my dungeons!&quot;
@@ -210,17 +211,17 @@ The Goblin King leans forward, his putrid breath washing over you as he awaits y
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="109"/>
+        <location filename="../patterns/DialogBoxes.qml" line="108"/>
         <source>Swear Fealty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="117"/>
+        <location filename="../patterns/DialogBoxes.qml" line="116"/>
         <source>Danger! Extremely Hazardous Operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="118"/>
+        <location filename="../patterns/DialogBoxes.qml" line="117"/>
         <source>You are attempting to perform an extremely hazardous operation that could result in catastrophic consequences if not executed with extreme caution.
 
 This operation has the potential to cause:
@@ -233,37 +234,37 @@ Only proceed if you are an expert user and fully understand the risks involved. 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="127"/>
+        <location filename="../patterns/DialogBoxes.qml" line="126"/>
         <source>This is the informative text displayed in grey below the main text. It provides additional context and warnings about the dangerous operation. Attempting this operation without proper expertise and precautions could lead to permanent and devastating damage to your systems and data. Proceed at your own risk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="143"/>
+        <location filename="../patterns/DialogBoxes.qml" line="141"/>
         <source>Warning!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="144"/>
+        <location filename="../patterns/DialogBoxes.qml" line="142"/>
         <source>Your battery is low!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="145"/>
+        <location filename="../patterns/DialogBoxes.qml" line="143"/>
         <source>Never tell me again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="165"/>
+        <location filename="../patterns/DialogBoxes.qml" line="163"/>
         <source>You checked the box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="165"/>
+        <location filename="../patterns/DialogBoxes.qml" line="163"/>
         <source>You didn&apos;t check the box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../patterns/DialogBoxes.qml" line="105"/>
+        <location filename="../patterns/DialogBoxes.qml" line="104"/>
         <source>Refuse</source>
         <translation type="unfinished"></translation>
     </message>

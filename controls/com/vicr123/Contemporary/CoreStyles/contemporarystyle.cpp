@@ -16,6 +16,7 @@ struct ContemporaryStylePrivate {
         QColor backgroundAccent{50, 50, 50};
         QColor layer{255, 255, 255, 10};
         QColor destructiveAccent{200, 0, 0};
+        QColor translucentBorder{255, 255, 255, 60};
 };
 
 ContemporaryStyle::ContemporaryStyle(QObject* parent) :
@@ -147,6 +148,15 @@ void ContemporaryStyle::setDestructiveAccent(QColor destructiveAccent) {
     emit colorThemeChanged();
 }
 
+QColor ContemporaryStyle::translucentBorder() const {
+    return d->translucentBorder;
+}
+
+void ContemporaryStyle::setTranslucentBorder(QColor translucentBorder) {
+    d->translucentBorder = translucentBorder;
+    emit translucentBorderChanged();
+}
+
 Qt::Edge ContemporaryStyle::windowControlSide() const {
 #ifdef Q_OS_MAC
     return Qt::LeftEdge;
@@ -226,6 +236,7 @@ void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {
     d->backgroundAccent = readColor(colorObject.value("backgroundAccent"));
     d->layer = readColor(colorObject.value("layer"));
     d->destructiveAccent = readColor(colorObject.value("destructiveAccent"));
+    d->translucentBorder = readColor(colorObject.value("translucentBorder"));
 
     emit accentChanged();
     emit backgroundChanged();
@@ -235,6 +246,7 @@ void ContemporaryStyle::setColorTheme(ColorTheme colorTheme) {
     emit backgroundAccentChanged();
     emit layerChanged();
     emit destructiveAccentChanged();
+    emit translucentBorderChanged();
 
     d->followSystemColorTheme = false;
     emit followSystemColorThemeChanged();
