@@ -9,11 +9,8 @@ import Contemporary
 T.ComboBox {
     id: control
 
-    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                            implicitContentWidth + leftPadding + rightPadding)
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             implicitContentHeight + topPadding + bottomPadding,
-                             implicitIndicatorHeight + topPadding + bottomPadding)
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, implicitContentWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding, implicitIndicatorHeight + topPadding + bottomPadding)
 
     leftPadding: padding + (!control.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
     rightPadding: padding + (control.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
@@ -73,14 +70,13 @@ T.ComboBox {
             font: textField.font
         }
 
-        background: Item {
-
-        }
+        background: Item {}
     }
 
     background: Layer {
         implicitWidth: control.flat ? textFieldMetrics.advanceWidth : 140
         implicitHeight: 40
+        border.color: control.flat ? "transparent" : control.enabled ? Contemporary.translucentBorder : Contemporary.disabled(Contemporary.translucentBorder)
 
         visible: !control.flat || control.down
 

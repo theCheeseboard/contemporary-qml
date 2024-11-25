@@ -6,19 +6,8 @@ import Contemporary
 T.ProgressBar {
     id: control
 
-    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                            implicitContentWidth + leftPadding + rightPadding)
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             implicitContentHeight + topPadding + bottomPadding)
-
-    // contentItem: ProgressBarImpl {
-    //     implicitHeight: 6
-    //     implicitWidth: 116
-    //     scale: control.mirrored ? -1 : 1
-    //     progress: control.position
-    //     indeterminate: control.visible && control.indeterminate
-    //     color: control.palette.dark
-    // }
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, implicitContentWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding)
 
     contentItem: Item {
         implicitHeight: 24
@@ -31,7 +20,6 @@ T.ProgressBar {
             visible: !control.indeterminate
             color: Contemporary.accent
         }
-
 
         Item {
             anchors.fill: parent

@@ -29,6 +29,7 @@ qt_add_qml_module(contemporary-corecontrols
     NO_PLUGIN_OPTIONAL
     CLASS_NAME ContemporaryStylePlugin
     NO_CACHEGEN
+    QML_FILES TextArea.qml
 )
 
 target_link_libraries(contemporary-corecontrols

@@ -125,21 +125,13 @@ Item {
         anchors.top: parent.top
         currentAnimation: Pager.Animation.Lift
 
-        Pages.Buttons {
-        }
-        Pages.CheckboxesRadioButtons {
-        }
-        Pages.TextInput {
-        }
-        Pages.ComboBoxPage {
-        }
-        Pages.Progress {
-        }
-        Pages.Ranges {
-        }
-        Pages.TumblerPage {
-        }
-        Pages.Scrollable {
-        }
+        Pages.Buttons {}
+        Pages.CheckboxesRadioButtons {}
+        Pages.TextInput {}
+        Pages.ComboBoxPage {}
+        Pages.Progress {}
+        Pages.Ranges {}
+        Pages.TumblerPage {}
+        Pages.Scrollable {}
     }
 }
