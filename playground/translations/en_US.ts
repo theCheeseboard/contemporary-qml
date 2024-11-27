@@ -270,6 +270,95 @@ Only proceed if you are an expert user and fully understand the risks involved. 
     </message>
 </context>
 <context>
+    <name>Jobs</name>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="30"/>
+        <location filename="../patterns/Jobs.qml" line="43"/>
+        <source>Jobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="53"/>
+        <source>Jobs represent long running processes that are currently running in the background. When a job is added, it shows in the Jobs pane in the top right corner of the window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="59"/>
+        <source>Start Normal Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="64"/>
+        <source>Start Indeterminate Processing Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="69"/>
+        <source>Start Transient Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Jobs.qml" line="74"/>
+        <source>Start Failing Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>JobsPaneController</name>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="13"/>
+        <source>Standard Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="14"/>
+        <source>Job Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="28"/>
+        <location filename="../jobspanecontroller.cpp" line="51"/>
+        <location filename="../jobspanecontroller.cpp" line="74"/>
+        <source>Job is now complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="36"/>
+        <source>Indeterminate Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="37"/>
+        <source>This job has an indeterminate progress bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="59"/>
+        <source>Transient Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="60"/>
+        <source>This job is transient and so will disappear automatically once it is complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="82"/>
+        <source>Failing job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="83"/>
+        <source>This job will fail halfway through processing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../jobspanecontroller.cpp" line="97"/>
+        <source>Job has failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
         <location filename="../Main.qml" line="17"/>
@@ -426,6 +515,11 @@ Only proceed if you are an expert user and fully understand the risks involved. 
     <message>
         <location filename="../patterns/Root.qml" line="64"/>
         <source>Dialog Boxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../patterns/Root.qml" line="67"/>
+        <source>Jobs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

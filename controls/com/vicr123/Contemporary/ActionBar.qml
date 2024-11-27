@@ -19,6 +19,10 @@ MouseArea {
 
     implicitHeight: childrenRect.height
 
+    function openJobPane() {
+        jobButton.openJobPane();
+    }
+
     RowLayout {
         height: childrenRect.height
         anchors.left: root.left
@@ -34,7 +38,7 @@ MouseArea {
             icon.height: 24
 
             onClicked: {
-                actionBarPopup.open()
+                actionBarPopup.open();
             }
 
             ActionBarPopup {
@@ -63,7 +67,7 @@ MouseArea {
                 implicitWidth: flickable.width
 
                 onPressed: () => {
-                    Window.window.startSystemMove()
+                    Window.window.startSystemMove();
                     flickable.cancelFlick();
                 }
                 onReleased: flickable.cancelFlick()
@@ -81,8 +85,11 @@ MouseArea {
             }
         }
 
-        // TODO: Add jobs button
+        JobButton {
+            id: jobButton
+            Layout.preferredWidth: jobButton.height
+        }
     }
 
-    onPressed: Window.window.startSystemMove();
+    onPressed: Window.window.startSystemMove()
 }

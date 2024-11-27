@@ -21,6 +21,10 @@ qt_add_qml_module(contemporary-controls-impl
     NO_CACHEGEN
     QML_FILES ActionBarPopupMenu.qml
     QML_FILES
+    QML_FILES StandardJobComponent.qml
+    QML_FILES JobPopup.qml
+    SOURCES jobmodel.h jobmodel.cpp
+    QML_FILES JobButton.qml
 )
 
 target_sources(contemporary-controls-impl-plugin PRIVATE
@@ -44,7 +48,7 @@ qt_add_resources(contemporary-controls-impl "contemporary-qml-impl-resources"
 )
 
 target_link_libraries(contemporary-controls-impl
-    PRIVATE Qt::Quick Qt::QuickControls2
+    PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )
 
 target_link_libraries(contemporary-controls-impl-plugin

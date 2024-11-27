@@ -63,6 +63,9 @@ Item {
                 ListElement {
                     name: qsTr("Dialog Boxes")
                 }
+                ListElement {
+                    name: qsTr("Jobs")
+                }
             }
 
             onCurrentIndexChanged: stack.currentIndex = sidebar.currentIndex
@@ -104,6 +107,7 @@ Item {
         anchors.top: parent.top
         currentAnimation: Pager.Animation.Lift
 
-        Pages.DialogBoxes { }
+        Pages.DialogBoxes {}
+        Pages.Jobs {}
     }
 }

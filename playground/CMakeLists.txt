@@ -27,9 +27,12 @@ qt_add_qml_module(appplayground
         components/Ranges.qml
         components/Progress.qml
         components/Scrollable.qml
+        patterns/Root.qml
+        patterns/DialogBoxes.qml
+        patterns/Jobs.qml
     NO_CACHEGEN
-    QML_FILES patterns/Root.qml
-    QML_FILES patterns/DialogBoxes.qml
+    SOURCES
+        jobspanecontroller.h jobspanecontroller.cpp
 )
 
 
