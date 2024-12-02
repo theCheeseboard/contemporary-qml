@@ -9,10 +9,10 @@
 #endif
 
 struct ContemporaryWindowPlatformPrivate {
-    QQuickWindow* window = nullptr;
+        QQuickWindow* window = nullptr;
 
 #ifdef Q_OS_WIN
-    HWND windowHandle;
+        HWND windowHandle;
 #endif
 };
 
@@ -55,6 +55,8 @@ void ContemporaryWindowPlatform::setWindow(QQuickWindow* window) {
 
     // Force the window to recalculate its frame
     SetWindowPos(d->windowHandle, nullptr, 0, 0, 0, 0, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE);
+#else
+    window->setFlags(Qt::Window | Qt::FramelessWindowHint | Qt::MaximizeUsingFullscreenGeometryHint);
 #endif
 }
 
