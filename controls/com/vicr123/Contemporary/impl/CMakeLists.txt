@@ -25,6 +25,7 @@ qt_add_qml_module(contemporary-controls-impl
     QML_FILES JobPopup.qml
     SOURCES jobmodel.h jobmodel.cpp
     QML_FILES JobButton.qml
+    SOURCES contemporarywindowplatform.h contemporarywindowplatform.cpp
 )
 
 target_sources(contemporary-controls-impl-plugin PRIVATE
