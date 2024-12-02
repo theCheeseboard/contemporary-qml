@@ -18,7 +18,8 @@ Popup {
 
     signal aboutClicked
 
-    modal: true
+    modal: false
+    dim: true
     transformOrigin: Item.TopLeft
 
     onClosed: menuPager.pop(firstMenu, StackView.Immediate)
@@ -77,7 +78,9 @@ Popup {
                             id: popupMenu
                             menu: root.menu
                             onClose: root.close()
-                            onTriggerMenu: menu => menuPager.pushItem(submenuComponent, {"menu": menu})
+                            onTriggerMenu: menu => menuPager.pushItem(submenuComponent, {
+                                    "menu": menu
+                                })
                         }
 
                         RowLayout {
@@ -116,7 +119,9 @@ Popup {
                         onClose: root.close()
                         onGoBack: menuPager.pop()
                         showBackButton: true
-                        onTriggerMenu: menu => menuPager.push(submenuComponent, {"menu": menu})
+                        onTriggerMenu: menu => menuPager.push(submenuComponent, {
+                                "menu": menu
+                            })
                     }
                 }
 
@@ -163,7 +168,7 @@ Popup {
         }
     }
 
-    Overlay.modal: Rectangle {
+    Overlay.modeless: Rectangle {
         id: overlay
         opacity: 0.7
         color: "black"
