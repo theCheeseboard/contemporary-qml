@@ -79,6 +79,9 @@ Item {
                     name: qsTr("Ranges")
                 }
                 ListElement {
+                    name: qsTr("Admonitions")
+                }
+                ListElement {
                     name: qsTr("Tumbler")
                 }
                 ListElement {
@@ -131,6 +134,7 @@ Item {
         Pages.ComboBoxPage {}
         Pages.Progress {}
         Pages.Ranges {}
+        Pages.Admonitions {}
         Pages.TumblerPage {}
         Pages.Scrollable {}
     }

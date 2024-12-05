@@ -33,6 +33,7 @@ qt_add_qml_module(appplayground
     NO_CACHEGEN
     SOURCES
         jobspanecontroller.h jobspanecontroller.cpp
+        QML_FILES components/Admonitions.qml
 )
 
 

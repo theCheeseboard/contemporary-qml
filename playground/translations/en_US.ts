@@ -2,6 +2,45 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>Admonitions</name>
+    <message>
+        <location filename="../components/Admonitions.qml" line="24"/>
+        <location filename="../components/Admonitions.qml" line="36"/>
+        <source>Admonitions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="47"/>
+        <source>Informational Admonition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="48"/>
+        <source>This is a string with information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="54"/>
+        <source>Warning Admonition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="55"/>
+        <source>This is a warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="61"/>
+        <source>Error Admonition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Admonitions.qml" line="62"/>
+        <source>This is an error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Buttons</name>
     <message>
         <location filename="../components/Buttons.qml" line="40"/>
@@ -499,11 +538,16 @@ Only proceed if you are an expert user and fully understand the risks involved. 
     </message>
     <message>
         <location filename="../components/Root.qml" line="82"/>
-        <source>Tumbler</source>
+        <source>Admonitions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../components/Root.qml" line="85"/>
+        <source>Tumbler</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../components/Root.qml" line="88"/>
         <source>Scrollable</source>
         <translation type="unfinished"></translation>
     </message>
